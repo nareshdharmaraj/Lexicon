@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,35 +8,74 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap"
+        rel="stylesheet">
     <style>
-        .service-tab{padding:.75rem 1.5rem;background:rgba(51,65,85,.5);border:1px solid rgba(148,163,184,.3);border-radius:.5rem;color:rgba(226,232,240,.8);font-weight:600;font-size:.875rem;cursor:pointer;transition:all .3s;white-space:nowrap}
-        .service-tab:hover{background:rgba(217,119,6,.2);border-color:rgba(217,119,6,.5);color:#d97706}
-        .service-tab.active{background:linear-gradient(135deg,#d97706 0%,#b45309 100%);border-color:#d97706;color:#fff}
-        .service-panel{display:none}
-        .service-panel.active{display:block}
+        .service-tab {
+            padding: .75rem 1.5rem;
+            background: rgba(51, 65, 85, .5);
+            border: 1px solid rgba(148, 163, 184, .3);
+            border-radius: .5rem;
+            color: rgba(226, 232, 240, .8);
+            font-weight: 600;
+            font-size: .875rem;
+            cursor: pointer;
+            transition: all .3s;
+            white-space: nowrap
+        }
+
+        .service-tab:hover {
+            background: rgba(217, 119, 6, .2);
+            border-color: rgba(217, 119, 6, .5);
+            color: #d97706
+        }
+
+        .service-tab.active {
+            background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+            border-color: #d97706;
+            color: #fff
+        }
+
+        .service-panel {
+            display: none
+        }
+
+        .service-panel.active {
+            display: block
+        }
     </style>
 </head>
+
 <body class="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 min-h-screen">
-    <nav class="navbar fixed w-full top-0 z-50 bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900 backdrop-blur-sm">
+    <nav
+        class="navbar fixed w-full top-0 z-50 bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900 backdrop-blur-sm">
         <div class="max-w-7xl mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
                 <div class="flex items-center">
                     <a href="index.html" class="text-2xl font-bold flex items-center space-x-2 group">
                         <i class="fas fa-balance-scale text-cyan-300 group-hover:rotate-12 transition-transform"></i>
-                        <span class="gradient-text" style="background:linear-gradient(135deg,#4facfe 0%,#00f2fe 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">LexIcon</span>
+                        <span class="gradient-text"
+                            style="background:linear-gradient(135deg,#4facfe 0%,#00f2fe 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">LexIcon</span>
                     </a>
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="text-white hover:text-cyan-300 transition-all uppercase tracking-wide text-sm font-semibold">Home</a>
-                    <a href="about.html" class="text-white hover:text-cyan-300 transition-all uppercase tracking-wide text-sm font-semibold">About</a>
-                    <a href="services.html" class="text-white hover:text-cyan-300 transition-all uppercase tracking-wide text-sm font-semibold">Services</a>
-                    <a href="team.html" class="text-white hover:text-cyan-300 transition-all uppercase tracking-wide text-sm font-semibold">Team</a>
-                    <a href="contact.html" class="text-white hover:text-cyan-300 transition-all uppercase tracking-wide text-sm font-semibold">Contact</a>
+                    <a href="index.html"
+                        class="text-white hover:text-cyan-300 transition-all uppercase tracking-wide text-sm font-semibold">Home</a>
+                    <a href="about.html"
+                        class="text-white hover:text-cyan-300 transition-all uppercase tracking-wide text-sm font-semibold">About</a>
+                    <a href="services.html"
+                        class="text-white hover:text-cyan-300 transition-all uppercase tracking-wide text-sm font-semibold">Services</a>
+                    <a href="team.html"
+                        class="text-white hover:text-cyan-300 transition-all uppercase tracking-wide text-sm font-semibold">Team</a>
+                    <a href="contact.html"
+                        class="text-white hover:text-cyan-300 transition-all uppercase tracking-wide text-sm font-semibold">Contact</a>
                 </div>
                 <div class="hidden md:flex items-center space-x-4">
-                    <a href="login.html" class="text-white hover:text-cyan-300 transition-all"><i class="fas fa-user text-xl"></i></a>
-                    <button id="language-toggle" class="text-white hover:text-cyan-300 transition-all"><i class="fas fa-language text-xl"></i></button>
+                    <a href="login.html" class="text-white hover:text-cyan-300 transition-all"><i
+                            class="fas fa-user text-xl"></i></a>
+                    <button id="language-toggle" class="text-white hover:text-cyan-300 transition-all"><i
+                            class="fas fa-globe text-xl"></i></button>
                 </div>
             </div>
         </div>
@@ -44,7 +84,8 @@
     <section class="pt-32 pb-20 px-6">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-12">
-                <h1 class="text-5xl md:text-6xl font-black text-white mb-4 uppercase" style="font-family:'Plus Jakarta Sans',sans-serif;">
+                <h1 class="text-5xl md:text-6xl font-black text-white mb-4 uppercase"
+                    style="font-family:'Plus Jakarta Sans',sans-serif;">
                     Book Your <span class="text-amber-600">Consultation</span>
                 </h1>
                 <p class="text-xl text-slate-300">Schedule a strategic session with our elite legal team</p>
@@ -52,13 +93,20 @@
 
             <div class="bg-slate-800/50 backdrop-blur-lg rounded-2xl p-8 md:p-12 border border-slate-700">
                 <div class="flex overflow-x-auto gap-2 mb-8 pb-4 border-b border-slate-700">
-                    <button class="service-tab active" data-service="mergers-acquisitions"><i class="fas fa-handshake mr-2"></i>M&A</button>
-                    <button class="service-tab" data-service="white-collar"><i class="fas fa-shield-alt mr-2"></i>White Collar</button>
-                    <button class="service-tab" data-service="intellectual-property"><i class="fas fa-lightbulb mr-2"></i>IP Law</button>
-                    <button class="service-tab" data-service="corporate-litigation"><i class="fas fa-gavel mr-2"></i>Litigation</button>
-                    <button class="service-tab" data-service="real-estate"><i class="fas fa-building mr-2"></i>Real Estate</button>
-                    <button class="service-tab" data-service="employment"><i class="fas fa-users mr-2"></i>Employment</button>
-                    <button class="service-tab" data-service="general"><i class="fas fa-briefcase mr-2"></i>General</button>
+                    <button class="service-tab active" data-service="mergers-acquisitions"><i
+                            class="fas fa-handshake mr-2"></i>M&A</button>
+                    <button class="service-tab" data-service="white-collar"><i class="fas fa-shield-alt mr-2"></i>White
+                        Collar</button>
+                    <button class="service-tab" data-service="intellectual-property"><i
+                            class="fas fa-lightbulb mr-2"></i>IP Law</button>
+                    <button class="service-tab" data-service="corporate-litigation"><i
+                            class="fas fa-gavel mr-2"></i>Litigation</button>
+                    <button class="service-tab" data-service="real-estate"><i class="fas fa-building mr-2"></i>Real
+                        Estate</button>
+                    <button class="service-tab" data-service="employment"><i
+                            class="fas fa-users mr-2"></i>Employment</button>
+                    <button class="service-tab" data-service="general"><i
+                            class="fas fa-briefcase mr-2"></i>General</button>
                 </div>
 
                 <div id="service-panels"></div>
@@ -87,18 +135,18 @@
     <script src="js/main.js"></script>
     <script src="js/rtl-toggle.js"></script>
     <script>
-const services={
-"mergers-acquisitions":{title:"Mergers & Acquisitions",desc:"Strategic guidance for complex cross-border transactions",fee:2500,duration:"2-hour",label:"Transaction Details"},
-"white-collar":{title:"White Collar Defense",desc:"Confidential representation for regulatory investigations",fee:3000,duration:"2-hour",label:"Matter Description (Confidential)"},
-"intellectual-property":{title:"Intellectual Property Law",desc:"Patent, trademark, copyright protection and IP litigation",fee:1800,duration:"90-minute",label:"IP Matter Description"},
-"corporate-litigation":{title:"Corporate Litigation",desc:"High-stakes commercial disputes and business litigation",fee:2200,duration:"2-hour",label:"Case Description"},
-"real-estate":{title:"Real Estate Law",desc:"Commercial real estate transactions and property development",fee:1500,duration:"90-minute",label:"Project Description"},
-"employment":{title:"Employment Law",desc:"Workplace disputes, executive contracts, and labor compliance",fee:1200,duration:"60-minute",label:"Employment Matter Description"},
-"general":{title:"General Legal Consultation",desc:"Initial consultation for matters not listed above",fee:1000,duration:"60-minute",label:"Matter Description"}
-};
+        const services = {
+            "mergers-acquisitions": { title: "Mergers & Acquisitions", desc: "Strategic guidance for complex cross-border transactions", fee: 2500, duration: "2-hour", label: "Transaction Details" },
+            "white-collar": { title: "White Collar Defense", desc: "Confidential representation for regulatory investigations", fee: 3000, duration: "2-hour", label: "Matter Description (Confidential)" },
+            "intellectual-property": { title: "Intellectual Property Law", desc: "Patent, trademark, copyright protection and IP litigation", fee: 1800, duration: "90-minute", label: "IP Matter Description" },
+            "corporate-litigation": { title: "Corporate Litigation", desc: "High-stakes commercial disputes and business litigation", fee: 2200, duration: "2-hour", label: "Case Description" },
+            "real-estate": { title: "Real Estate Law", desc: "Commercial real estate transactions and property development", fee: 1500, duration: "90-minute", label: "Project Description" },
+            "employment": { title: "Employment Law", desc: "Workplace disputes, executive contracts, and labor compliance", fee: 1200, duration: "60-minute", label: "Employment Matter Description" },
+            "general": { title: "General Legal Consultation", desc: "Initial consultation for matters not listed above", fee: 1000, duration: "60-minute", label: "Matter Description" }
+        };
 
-function createPanel(key,data){
-return`<div class="service-panel ${key==='mergers-acquisitions'?'active':''}" data-panel="${key}">
+        function createPanel(key, data) {
+            return `<div class="service-panel ${key === 'mergers-acquisitions' ? 'active' : ''}" data-panel="${key}">
 <div class="mb-8 p-6 bg-amber-600/10 border border-amber-600/30 rounded-lg">
 <h3 class="text-2xl font-bold text-white mb-2">${data.title}</h3>
 <p class="text-slate-300 mb-4">${data.desc}</p>
@@ -142,47 +190,48 @@ return`<div class="service-panel ${key==='mergers-acquisitions'?'active':''}" da
 </button>
 </form>
 </div>`;
-}
+        }
 
-document.addEventListener('DOMContentLoaded',function(){
-window.alignmentManager=new AlignmentManager();
-const container=document.getElementById('service-panels');
-Object.keys(services).forEach(key=>container.innerHTML+=createPanel(key,services[key]));
+        document.addEventListener('DOMContentLoaded', function () {
+            window.alignmentManager = new AlignmentManager();
+            const container = document.getElementById('service-panels');
+            Object.keys(services).forEach(key => container.innerHTML += createPanel(key, services[key]));
 
-const tabs=document.querySelectorAll('.service-tab');
-const panels=document.querySelectorAll('.service-panel');
-tabs.forEach(tab=>tab.addEventListener('click',function(){
-const service=this.getAttribute('data-service');
-tabs.forEach(t=>t.classList.remove('active'));
-panels.forEach(p=>p.classList.remove('active'));
-this.classList.add('active');
-document.querySelector(`[data-panel="${service}"]`).classList.add('active');
-}));
+            const tabs = document.querySelectorAll('.service-tab');
+            const panels = document.querySelectorAll('.service-panel');
+            tabs.forEach(tab => tab.addEventListener('click', function () {
+                const service = this.getAttribute('data-service');
+                tabs.forEach(t => t.classList.remove('active'));
+                panels.forEach(p => p.classList.remove('active'));
+                this.classList.add('active');
+                document.querySelector(`[data-panel="${service}"]`).classList.add('active');
+            }));
 
-const urlParams=new URLSearchParams(window.location.search);
-const serviceParam=urlParams.get('service');
-if(serviceParam){
-tabs.forEach(t=>t.classList.remove('active'));
-panels.forEach(p=>p.classList.remove('active'));
-const activeTab=document.querySelector(`[data-service="${serviceParam}"]`);
-const activePanel=document.querySelector(`[data-panel="${serviceParam}"]`);
-if(activeTab&&activePanel){
-activeTab.classList.add('active');
-activePanel.classList.add('active');
-}
-}
+            const urlParams = new URLSearchParams(window.location.search);
+            const serviceParam = urlParams.get('service');
+            if (serviceParam) {
+                tabs.forEach(t => t.classList.remove('active'));
+                panels.forEach(p => p.classList.remove('active'));
+                const activeTab = document.querySelector(`[data-service="${serviceParam}"]`);
+                const activePanel = document.querySelector(`[data-panel="${serviceParam}"]`);
+                if (activeTab && activePanel) {
+                    activeTab.classList.add('active');
+                    activePanel.classList.add('active');
+                }
+            }
 
-document.querySelectorAll('.booking-form').forEach(form=>form.addEventListener('submit',function(e){
-e.preventDefault();
-const fee=this.querySelector('[name="fee"]').value;
-const notif=document.createElement('div');
-notif.className='fixed top-24 right-6 bg-green-600 text-white px-6 py-4 rounded-lg shadow-xl z-50';
-notif.innerHTML=`<i class="fas fa-check-circle mr-2"></i>Booking confirmed! Fee: $${parseInt(fee).toLocaleString()}. We'll contact you shortly.`;
-document.body.appendChild(notif);
-setTimeout(()=>{notif.style.opacity='0';notif.style.transition='opacity 0.3s';setTimeout(()=>notif.remove(),300)},5000);
-this.reset();
-}));
-});
+            document.querySelectorAll('.booking-form').forEach(form => form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                const fee = this.querySelector('[name="fee"]').value;
+                const notif = document.createElement('div');
+                notif.className = 'fixed top-24 right-6 bg-green-600 text-white px-6 py-4 rounded-lg shadow-xl z-50';
+                notif.innerHTML = `<i class="fas fa-check-circle mr-2"></i>Booking confirmed! Fee: $${parseInt(fee).toLocaleString()}. We'll contact you shortly.`;
+                document.body.appendChild(notif);
+                setTimeout(() => { notif.style.opacity = '0'; notif.style.transition = 'opacity 0.3s'; setTimeout(() => notif.remove(), 300) }, 5000);
+                this.reset();
+            }));
+        });
     </script>
 </body>
+
 </html>

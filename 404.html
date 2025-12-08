@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>404 - Page Not Found | LexIcon</title>
-    
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
+
 <body class="bg-slate-950 min-h-screen flex items-center justify-center">
-    
+
     <div class="text-center px-6">
         <!-- Gavel Icon -->
         <div class="mb-8 relative">
@@ -30,7 +32,8 @@
             The page you're looking for has been dismissed from the proceedings.
         </p>
         <p class="text-lg text-slate-400 mb-12 max-w-2xl mx-auto">
-            It seems this URL is not in our jurisdiction. Perhaps it was moved, deleted, or never existed in the first place.
+            It seems this URL is not in our jurisdiction. Perhaps it was moved, deleted, or never existed in the first
+            place.
         </p>
 
         <!-- Actions -->
@@ -66,8 +69,9 @@
 
         <!-- Language Toggle -->
         <div class="mt-12">
-            <button id="language-toggle" class="text-slate-400 hover:text-amber-600 transition-colors" title="Toggle Text Direction (LTR/RTL)">
-                <i class="fas fa-language text-2xl mr-2"></i>
+            <button id="language-toggle" class="text-slate-400 hover:text-amber-600 transition-colors"
+                title="Toggle Text Direction (LTR/RTL)">
+                <i class="fas fa-globe text-2xl mr-2"></i>
                 <span class="text-sm">Toggle Language Direction</span>
             </button>
         </div>
@@ -83,18 +87,22 @@
 
     <style>
         @keyframes gavel-strike {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: rotate(-20deg);
             }
+
             50% {
                 transform: rotate(0deg);
             }
         }
-        
+
         .fas.fa-gavel {
             animation: gavel-strike 2s ease-in-out infinite;
         }
     </style>
-    
+
 </body>
+
 </html>

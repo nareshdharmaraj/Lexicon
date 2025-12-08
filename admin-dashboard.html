@@ -196,11 +196,13 @@
 
         /* Mobile header height reduction */
         @media (max-width: 768px) {
-            body, html {
+
+            body,
+            html {
                 overflow-x: hidden !important;
                 max-width: 100vw !important;
             }
-            
+
             .mobile-header {
                 height: 50px !important;
                 padding: 0.5rem 1rem !important;
@@ -385,7 +387,7 @@
             </button>
             <h1 class="text-lg font-bold" style="font-family: 'Playfair Display', serif;">LexIcon Admin</h1>
             <button id="rtl-toggle-btn" class="p-2 text-white hover:text-amber-400 md:hidden">
-                <i class="fas fa-language text-lg"></i>
+                <i class="fas fa-globe text-lg"></i>
             </button>
         </div>
 
@@ -464,7 +466,7 @@
             <div class="absolute bottom-0 w-64 p-4 border-t border-slate-800">
                 <button id="rtl-toggle-btn-sidebar"
                     class="hidden md:flex items-center gap-3 px-4 py-3 text-slate-300 hover:bg-slate-800 rounded-lg w-full mb-2">
-                    <i class="fas fa-language"></i>
+                    <i class="fas fa-globe"></i>
                     <span>RTL/LTR Toggle</span>
                 </button>
                 <a href="login.html"
@@ -487,7 +489,7 @@
                     <div class="flex items-center gap-2 md:gap-4">
                         <button id="rtl-toggle-btn" class="text-slate-400 hover:text-indigo-400 transition-colors"
                             title="Toggle Text Direction (LTR/RTL)">
-                            <i class="fas fa-language text-xl md:text-2xl"></i>
+                            <i class="fas fa-globe text-xl md:text-2xl"></i>
                         </button>
                         <button class="relative">
                             <i class="fas fa-bell text-xl md:text-2xl text-slate-400"></i>
