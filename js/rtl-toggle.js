@@ -74,7 +74,7 @@ class AlignmentManager {
     // Apply body-level direction
     document.body.setAttribute('dir', this.currentDir);
     document.documentElement.setAttribute('dir', this.currentDir);
-    
+
     // Ensure no horizontal overflow
     document.body.style.overflowX = 'hidden';
     document.body.style.maxWidth = '100vw';
@@ -516,6 +516,14 @@ if (typeof window !== 'undefined') {
 }
 
 // Auto-initialize
-document.addEventListener('DOMContentLoaded', () => {
+function initAlignmentManager() {
+  if (typeof AlignmentManager !== 'undefined') {
     new AlignmentManager();
-});
+  }
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initAlignmentManager);
+} else {
+  initAlignmentManager();
+}
