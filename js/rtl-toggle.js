@@ -514,3 +514,8 @@ class AlignmentManager {
 if (typeof window !== 'undefined') {
   window.AlignmentManager = AlignmentManager;
 }
+
+// Auto-initialize
+document.addEventListener('DOMContentLoaded', () => {
+    new AlignmentManager();
+});

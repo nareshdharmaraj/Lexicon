@@ -202,6 +202,15 @@
                                 <i class="fab fa-linkedin text-lg text-blue-700"></i>
                             </button>
                         </div>
+
+                        <!-- Register Link -->
+                        <div class="mt-6 text-center text-sm">
+                            <span class="text-slate-600">Don't have an account?</span>
+                            <button type="button" id="start-register-btn"
+                                class="font-semibold text-indigo-600 hover:text-purple-600 ml-1 hover:underline transition-all">
+                                Register Now
+                            </button>
+                        </div>
                     </form>
                 </div>
 
@@ -620,6 +629,15 @@
         // Add transition styles
         loginForm.style.transition = 'opacity 0.3s ease';
         registerForm.style.transition = 'opacity 0.3s ease';
+
+        // Link "Register Now" button to the register tab
+        const startRegisterBtn = document.getElementById('start-register-btn');
+        if (startRegisterBtn) {
+            startRegisterBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                registerToggle.click();
+            });
+        }
     </script>
 
 </body>
