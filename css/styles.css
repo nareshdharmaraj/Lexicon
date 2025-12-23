@@ -620,7 +620,7 @@ h6 {
       0 10px 30px rgba(0, 0, 0, 0.12),
       0 0 0 1px rgba(217, 119, 6, 0.2);
   }
-  
+
   .timeline-item {
     margin-bottom: 3rem;
   }
@@ -698,17 +698,17 @@ h6 {
   .timeline-item:hover .timeline-dot {
     transform: scale(1.05);
   }
-  
+
   .timeline-item {
     padding-top: 3.5rem;
     margin-left: 0;
     padding-left: 0;
   }
-  
+
   .timeline-item .grid {
     margin-top: 0.5rem;
   }
-  
+
   .timeline-item .grid>div {
     padding: 1.5rem;
     margin-left: 0;
@@ -740,11 +740,11 @@ h6 {
     left: auto;
     transform: translateX(0);
   }
-  
+
   [dir="rtl"] .timeline-item:hover .timeline-dot {
     transform: scale(1.05);
   }
-  
+
   [dir="rtl"] .timeline-item:not(:last-child)::after {
     right: 20px;
     left: auto;
@@ -1558,6 +1558,7 @@ textarea:focus::placeholder {
    MOBILE OPTIMIZATIONS
    ========================= */
 @media (max-width: 768px) {
+
   /* Reduce hero section height */
   section[class*="min-h-screen"],
   .hero-section,
@@ -1566,13 +1567,13 @@ textarea:focus::placeholder {
     padding-top: 4rem !important;
     padding-bottom: 4rem !important;
   }
-  
+
   /* Reduce spacing between navbar and hero sections */
   section.mt-20,
   section[class*="mt-"] {
     margin-top: 4rem !important;
   }
-  
+
   section.pt-20,
   section.pt-24,
   section.pt-32 {
@@ -1584,30 +1585,36 @@ textarea:focus::placeholder {
     padding-top: 3rem !important;
     padding-bottom: 3rem !important;
   }
-  
+
   section[class*="py-16"] {
     padding-top: 2.5rem !important;
     padding-bottom: 2.5rem !important;
   }
-  
+
   section[class*="py-12"] {
     padding-top: 2rem !important;
     padding-bottom: 2rem !important;
   }
-  
+
   /* Ensure no horizontal overflow */
-  body, html, main, section, div[class*="container"], div[class*="max-w"] {
+  body,
+  html,
+  main,
+  section,
+  div[class*="container"],
+  div[class*="max-w"] {
     overflow-x: hidden !important;
     max-width: 100vw !important;
   }
-  
+
   /* Fix navbar positioning */
-  nav, .navbar {
+  nav,
+  .navbar {
     left: 0 !important;
     right: 0 !important;
     width: 100% !important;
   }
-  
+
   /* Ensure mobile menu doesn't cause overflow */
   #mobile-menu {
     max-width: 100vw !important;
@@ -1668,4 +1675,55 @@ textarea:focus::placeholder {
 
 .dark-mode .btn-gradient:hover {
   box-shadow: 0 8px 25px rgba(102, 126, 234, 0.7);
+}
+
+/* User Requested Glowing/Hover Animations */
+.premium-card:hover,
+.glass-dark:hover,
+.glass:hover,
+.service-card:hover,
+.team-member:hover,
+.timeline-item .grid>div:hover {
+  box-shadow: 0 0 20px rgba(217, 119, 6, 0.4) !important;
+  /* Amber glow */
+  border-color: rgba(217, 119, 6, 0.5) !important;
+  transition: all 0.3s ease;
+}
+
+/* Mobile Font Alignment & Size Boost */
+@media (max-width: 768px) {
+
+  html,
+  body {
+    font-size: 18px !important;
+    /* Increase base size */
+  }
+
+  p,
+  span,
+  div,
+  a,
+  li,
+  button,
+  input,
+  select,
+  textarea {
+    line-height: 1.6 !important;
+  }
+
+  h1 {
+    font-size: 2.5rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  h3 {
+    font-size: 1.75rem !important;
+  }
+
+  h4 {
+    font-size: 1.5rem !important;
+  }
 }

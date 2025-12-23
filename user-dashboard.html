@@ -769,7 +769,7 @@
     <!-- Dashboard Content -->
     <div class="flex h-screen overflow-hidden" id="main-container">
         <!-- Mobile Header -->
-        <div class="mobile-header">
+        <div class="mobile-header flex items-center justify-between md:hidden">
             <button class="mobile-sidebar-toggle p-2 text-slate-600 hover:text-indigo-600 rounded-lg hover:bg-slate-50">
                 <div class="mobile-hamburger">
                     <span></span>
@@ -777,6 +777,18 @@
                     <span></span>
                 </div>
             </button>
+
+            <div class="flex items-center gap-3">
+                <button id="rtl-toggle-btn-mobile" class="text-slate-600 hover:text-indigo-600 transition-colors"
+                    title="Toggle Text Direction (LTR/RTL)">
+                    <i class="fas fa-globe text-xl"></i>
+                </button>
+                <button class="relative">
+                    <i class="fas fa-bell text-xl text-slate-600"></i>
+                    <span
+                        class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">5</span>
+                </button>
+            </div>
         </div>
 
         <!-- Mobile Sidebar Overlay -->
@@ -845,13 +857,14 @@
         <!-- Main Content -->
         <main id="main-content" class="flex-1 overflow-y-auto main-content">
             <!-- Top Bar -->
-            <header class="bg-white border-b border-slate-200 px-4 md:px-8 py-4">
-                <div class="flex items-center justify-between">
-                    <div>
-                        <h1 class="text-xl md:text-2xl font-bold text-slate-900">Welcome Back, Mr. Wayne</h1>
-                        <p class="text-slate-600 text-sm">Here's an overview of your case</p>
+            <header class="bg-white border-b border-slate-200 px-4 md:px-8 py-4 hidden md:block">
+                <div class="flex items-center justify-between w-full" id="user-header-content">
+                    <div class="flex-1">
+                        <h1 class="text-lg md:text-2xl font-bold text-slate-900 leading-tight">Welcome Back, Mr. Wayne
+                        </h1>
+                        <p class="text-slate-600 text-xs md:text-sm hidden md:block">Here's an overview of your case</p>
                     </div>
-                    <div class="flex items-center gap-2 md:gap-4">
+                    <div class="flex items-center gap-2 md:gap-4 flex-shrink-0">
                         <button id="rtl-toggle-btn" class="text-slate-600 hover:text-indigo-600 transition-colors"
                             title="Toggle Text Direction (LTR/RTL)">
                             <i class="fas fa-globe text-xl md:text-2xl"></i>
@@ -916,14 +929,15 @@
                     <div class="grid md:grid-cols-3 gap-6 mb-8">
                         <div class="glass rounded-xl p-6 border border-white/20 hover:shadow-2xl transition-shadow">
                             <div class="flex items-start justify-between mb-4">
-                                <div>
-                                    <p class="text-slate-600 text-sm uppercase tracking-wide mb-2">Next Hearing</p>
-                                    <h3 class="text-3xl font-bold gradient-text"
+                                <div class="flex-1 min-w-0">
+                                    <p class="text-slate-600 text-sm uppercase tracking-wide mb-2 truncate">Next Hearing
+                                    </p>
+                                    <h3 class="text-2xl md:text-3xl font-bold gradient-text"
                                         style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
                                         Tomorrow</h3>
                                 </div>
                                 <div
-                                    class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
+                                    class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg flex-shrink-0 ml-4 rtl:ml-0 rtl:mr-4">
                                     <i class="fas fa-calendar-check text-2xl text-white"></i>
                                 </div>
                             </div>
@@ -932,14 +946,15 @@
 
                         <div class="glass rounded-xl p-6 border border-white/20 hover:shadow-2xl transition-shadow">
                             <div class="flex items-start justify-between mb-4">
-                                <div>
-                                    <p class="text-slate-600 text-sm uppercase tracking-wide mb-2">Case Status</p>
-                                    <h3 class="text-3xl font-bold gradient-text"
+                                <div class="flex-1 min-w-0">
+                                    <p class="text-slate-600 text-sm uppercase tracking-wide mb-2 truncate">Case Status
+                                    </p>
+                                    <h3 class="text-2xl md:text-3xl font-bold gradient-text"
                                         style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
                                         Active</h3>
                                 </div>
                                 <div
-                                    class="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-xl flex items-center justify-center shadow-lg">
+                                    class="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-xl flex items-center justify-center shadow-lg flex-shrink-0 ml-4 rtl:ml-0 rtl:mr-4">
                                     <i class="fas fa-briefcase text-2xl text-white"></i>
                                 </div>
                             </div>
@@ -948,14 +963,15 @@
 
                         <div class="glass rounded-xl p-6 border border-white/20 hover:shadow-2xl transition-shadow">
                             <div class="flex items-start justify-between mb-4">
-                                <div>
-                                    <p class="text-slate-600 text-sm uppercase tracking-wide mb-2">Days Active</p>
-                                    <h3 class="text-3xl font-bold gradient-text" data-target="87"
+                                <div class="flex-1 min-w-0">
+                                    <p class="text-slate-600 text-sm uppercase tracking-wide mb-2 truncate">Days Active
+                                    </p>
+                                    <h3 class="text-2xl md:text-3xl font-bold gradient-text" data-target="87"
                                         style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
                                         0</h3>
                                 </div>
                                 <div
-                                    class="w-12 h-12 bg-gradient-to-br from-pink-500 to-red-600 rounded-xl flex items-center justify-center shadow-lg">
+                                    class="w-12 h-12 bg-gradient-to-br from-pink-500 to-red-600 rounded-xl flex items-center justify-center shadow-lg flex-shrink-0 ml-4 rtl:ml-0 rtl:mr-4">
                                     <i class="fas fa-hourglass-half text-2xl text-white"></i>
                                 </div>
                             </div>

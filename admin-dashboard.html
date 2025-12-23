@@ -381,14 +381,21 @@
 
     <div id="main-container">
         <!-- Mobile Header -->
-        <div class="mobile-header">
+        <div class="mobile-header flex items-center justify-between md:hidden">
             <button class="mobile-sidebar-toggle p-2 text-white hover:text-amber-400">
                 <i class="fas fa-bars text-xl"></i>
             </button>
-            <h1 class="text-lg font-bold" style="font-family: 'Playfair Display', serif;">LexIcon Admin</h1>
-            <button id="rtl-toggle-btn" class="p-2 text-white hover:text-amber-400 md:hidden">
-                <i class="fas fa-globe text-lg"></i>
-            </button>
+
+            <div class="flex items-center gap-3">
+                <button id="rtl-toggle-btn-mobile" class="p-2 text-white hover:text-amber-400">
+                    <i class="fas fa-globe text-xl"></i>
+                </button>
+                <button class="relative p-2 text-white hover:text-amber-400">
+                    <i class="fas fa-bell text-xl"></i>
+                    <span
+                        class="absolute top-1 right-1 bg-red-500 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">8</span>
+                </button>
+            </div>
         </div>
 
         <!-- Mobile Sidebar Overlay -->
@@ -464,11 +471,7 @@
             </nav>
 
             <div class="absolute bottom-0 w-64 p-4 border-t border-slate-800">
-                <button id="rtl-toggle-btn-sidebar"
-                    class="hidden md:flex items-center gap-3 px-4 py-3 text-slate-300 hover:bg-slate-800 rounded-lg w-full mb-2">
-                    <i class="fas fa-globe"></i>
-                    <span>RTL/LTR Toggle</span>
-                </button>
+
                 <a href="login.html"
                     class="flex items-center gap-3 px-4 py-3 text-slate-300 hover:bg-slate-800 rounded-lg">
                     <i class="fas fa-sign-out-alt"></i>
@@ -481,12 +484,13 @@
         <main id="main-content" class="flex-1 overflow-y-auto bg-slate-950 admin-main-content">
             <!-- Top Bar -->
             <header class="bg-slate-900 border-b border-slate-800 px-4 md:px-8 py-4 hidden md:block">
-                <div class="flex items-center justify-between" id="admin-header-content">
-                    <div>
-                        <h1 class="text-xl md:text-2xl font-bold text-white">Welcome Back, Alexander</h1>
-                        <p class="text-slate-400 text-sm">Here's what's happening with your cases today</p>
+                <div class="flex items-center justify-between w-full" id="admin-header-content">
+                    <div class="flex-1">
+                        <h1 class="text-lg md:text-2xl font-bold text-white leading-tight">Welcome Back, Alexander</h1>
+                        <p class="text-slate-400 text-xs md:text-sm hidden md:block">Here's what's happening with your
+                            cases today</p>
                     </div>
-                    <div class="flex items-center gap-2 md:gap-4">
+                    <div class="flex items-center gap-2 md:gap-4 flex-shrink-0">
                         <button id="rtl-toggle-btn" class="text-slate-400 hover:text-indigo-400 transition-colors"
                             title="Toggle Text Direction (LTR/RTL)">
                             <i class="fas fa-globe text-xl md:text-2xl"></i>
@@ -510,15 +514,18 @@
 
             <div class="p-4 md:p-8">
                 <!-- KPI Cards -->
-                <div class="admin-grid grid md:grid-cols-4 gap-4 md:gap-6 mb-6 md:mb-8">
+                <!-- KPI Cards -->
+                <div class="admin-grid grid md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-6 md:mb-8">
                     <div class="glass-dark p-6 rounded-lg">
                         <div class="flex items-start justify-between mb-4">
-                            <div>
-                                <p class="text-slate-400 text-sm uppercase tracking-wide mb-2">Billable Hours</p>
-                                <h3 class="text-4xl font-bold text-white">142<span class="text-2xl">h</span></h3>
+                            <div class="flex-1 min-w-0">
+                                <p class="text-slate-400 text-sm uppercase tracking-wide mb-2 truncate">Billable Hours
+                                </p>
+                                <h3 class="text-2xl md:text-4xl font-bold text-white">142<span
+                                        class="text-xl md:text-2xl">h</span></h3>
                             </div>
                             <div
-                                class="w-12 h-12 bg-amber-600 bg-opacity-20 rounded-lg flex items-center justify-center">
+                                class="w-12 h-12 bg-amber-600 bg-opacity-20 rounded-lg flex items-center justify-center flex-shrink-0 ml-4 rtl:ml-0 rtl:mr-4">
                                 <i class="fas fa-clock text-2xl text-amber-600"></i>
                             </div>
                         </div>
@@ -532,12 +539,13 @@
 
                     <div class="glass-dark p-6 rounded-lg">
                         <div class="flex items-start justify-between mb-4">
-                            <div>
-                                <p class="text-slate-400 text-sm uppercase tracking-wide mb-2">Win Rate</p>
-                                <h3 class="text-4xl font-bold text-white">94<span class="text-2xl">%</span></h3>
+                            <div class="flex-1 min-w-0">
+                                <p class="text-slate-400 text-sm uppercase tracking-wide mb-2 truncate">Win Rate</p>
+                                <h3 class="text-2xl md:text-4xl font-bold text-white">94<span
+                                        class="text-xl md:text-2xl">%</span></h3>
                             </div>
                             <div
-                                class="w-12 h-12 bg-green-600 bg-opacity-20 rounded-lg flex items-center justify-center">
+                                class="w-12 h-12 bg-green-600 bg-opacity-20 rounded-lg flex items-center justify-center flex-shrink-0 ml-4 rtl:ml-0 rtl:mr-4">
                                 <i class="fas fa-trophy text-2xl text-green-400"></i>
                             </div>
                         </div>
@@ -551,12 +559,13 @@
 
                     <div class="glass-dark p-6 rounded-lg">
                         <div class="flex items-start justify-between mb-4">
-                            <div>
-                                <p class="text-slate-400 text-sm uppercase tracking-wide mb-2">Pending Invoices</p>
-                                <h3 class="text-4xl font-bold text-white">$450K</h3>
+                            <div class="flex-1 min-w-0">
+                                <p class="text-slate-400 text-sm uppercase tracking-wide mb-2 truncate">Pending Invoices
+                                </p>
+                                <h3 class="text-2xl md:text-4xl font-bold text-white">$450K</h3>
                             </div>
                             <div
-                                class="w-12 h-12 bg-blue-600 bg-opacity-20 rounded-lg flex items-center justify-center">
+                                class="w-12 h-12 bg-blue-600 bg-opacity-20 rounded-lg flex items-center justify-center flex-shrink-0 ml-4 rtl:ml-0 rtl:mr-4">
                                 <i class="fas fa-file-invoice-dollar text-2xl text-blue-400"></i>
                             </div>
                         </div>
@@ -567,12 +576,12 @@
 
                     <div class="glass-dark p-6 rounded-lg">
                         <div class="flex items-start justify-between mb-4">
-                            <div>
-                                <p class="text-slate-400 text-sm uppercase tracking-wide mb-2">Active Cases</p>
-                                <h3 class="text-4xl font-bold text-white">12</h3>
+                            <div class="flex-1 min-w-0">
+                                <p class="text-slate-400 text-sm uppercase tracking-wide mb-2 truncate">Active Cases</p>
+                                <h3 class="text-2xl md:text-4xl font-bold text-white">12</h3>
                             </div>
                             <div
-                                class="w-12 h-12 bg-purple-600 bg-opacity-20 rounded-lg flex items-center justify-center">
+                                class="w-12 h-12 bg-purple-600 bg-opacity-20 rounded-lg flex items-center justify-center flex-shrink-0 ml-4 rtl:ml-0 rtl:mr-4">
                                 <i class="fas fa-briefcase text-2xl text-purple-400"></i>
                             </div>
                         </div>
@@ -587,17 +596,17 @@
                 <!-- Tab Content: Overview -->
                 <div class="tab-content" data-tab="overview" style="display: block;">
                     <!-- Charts Row -->
-                    <div class="grid lg:grid-cols-2 gap-6 mb-8">
-                        <div class="glass-dark rounded-xl p-6">
+                    <div class="grid lg:grid-cols-2 gap-6 mb-8 min-w-0">
+                        <div class="glass-dark rounded-xl p-6 overflow-hidden">
                             <h3 class="text-xl font-bold text-white mb-4">Revenue Trend</h3>
-                            <div style="max-height: 250px; position: relative;">
+                            <div class="relative w-full max-w-full h-64">
                                 <canvas id="revenueChart"></canvas>
                             </div>
                         </div>
 
-                        <div class="glass-dark rounded-xl p-6">
+                        <div class="glass-dark rounded-xl p-6 overflow-hidden">
                             <h3 class="text-xl font-bold text-white mb-4">Case Distribution</h3>
-                            <div style="max-height: 250px; position: relative;">
+                            <div class="relative w-full max-w-full h-64">
                                 <canvas id="caseDistChart"></canvas>
                             </div>
                         </div>
@@ -1826,8 +1835,7 @@
         </main>
     </div>
 
-    <script src="js/main.js"></script>
-    <script src="js/rtl-toggle.js"></script>
+
     <script>
         // Tab Switching Functionality
         function showTab(tabName) {

@@ -30,7 +30,7 @@ class LexIconUI {
   highlightActiveNav() {
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     const navLinks = document.querySelectorAll('nav a[href]');
-    
+
     navLinks.forEach(link => {
       const href = link.getAttribute('href');
       if (href === currentPage || (currentPage === '' && href === 'index.html')) {
@@ -48,7 +48,7 @@ class LexIconUI {
   // Enhanced Navbar with scroll effects
   initNavbar() {
     this.navbar = document.querySelector('.navbar');
-    
+
     if (this.navbar) {
       window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
@@ -69,15 +69,15 @@ class LexIconUI {
         { label: 'Home - Modern (Vanguard)', url: 'index.html', icon: 'fa-rocket' },
         { label: 'Home - Classic (Authority)', url: 'index2.html', icon: 'fa-building-columns' }
       ]);
-      
+
       const homeWrapper = document.createElement('div');
       homeWrapper.className = 'relative dropdown-wrapper inline-block';
       homeLink.parentNode.insertBefore(homeWrapper, homeLink);
       homeWrapper.appendChild(homeLink);
       homeWrapper.appendChild(dropdown);
-      
+
       let hideTimeout;
-      
+
       const showDropdown = () => {
         clearTimeout(hideTimeout);
         dropdown.style.display = 'block';
@@ -86,7 +86,7 @@ class LexIconUI {
           dropdown.style.transform = 'translateY(0)';
         }, 10);
       };
-      
+
       const hideDropdown = () => {
         hideTimeout = setTimeout(() => {
           dropdown.style.opacity = '0';
@@ -94,7 +94,7 @@ class LexIconUI {
           setTimeout(() => dropdown.style.display = 'none', 300);
         }, 100);
       };
-      
+
       homeWrapper.addEventListener('mouseenter', showDropdown);
       homeWrapper.addEventListener('mouseleave', hideDropdown);
       dropdown.addEventListener('mouseenter', showDropdown);
@@ -108,16 +108,16 @@ class LexIconUI {
         { label: 'Client Portal', url: 'login.html?portal=client', icon: 'fa-user' },
         { label: 'Attorney Portal', url: 'login.html?portal=attorney', icon: 'fa-user-tie' }
       ]);
-      
+
       const loginWrapper = document.createElement('div');
       loginWrapper.className = 'relative dropdown-wrapper inline-block';
       const loginLink = loginIcon.parentElement;
       loginLink.parentNode.insertBefore(loginWrapper, loginLink);
       loginWrapper.appendChild(loginLink);
       loginWrapper.appendChild(loginDropdown);
-      
+
       let hideTimeout;
-      
+
       const showDropdown = () => {
         clearTimeout(hideTimeout);
         loginDropdown.style.display = 'block';
@@ -126,7 +126,7 @@ class LexIconUI {
           loginDropdown.style.transform = 'translateY(0)';
         }, 10);
       };
-      
+
       const hideDropdown = () => {
         hideTimeout = setTimeout(() => {
           loginDropdown.style.opacity = '0';
@@ -134,7 +134,7 @@ class LexIconUI {
           setTimeout(() => loginDropdown.style.display = 'none', 300);
         }, 100);
       };
-      
+
       loginWrapper.addEventListener('mouseenter', showDropdown);
       loginWrapper.addEventListener('mouseleave', hideDropdown);
       loginDropdown.addEventListener('mouseenter', showDropdown);
@@ -153,7 +153,7 @@ class LexIconUI {
       transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
       z-index: 1000;
     `;
-    
+
     items.forEach((item, index) => {
       const link = document.createElement('a');
       link.href = item.url;
@@ -161,70 +161,106 @@ class LexIconUI {
       link.innerHTML = `<i class="fas ${item.icon} mr-3"></i>${item.label}`;
       dropdown.appendChild(link);
     });
-    
+
     return dropdown;
   }
 
-  // Enhanced Carousel
+  // Enhanced Carousel with Infinite Loop
   initCarousel() {
     const carousels = document.querySelectorAll('.carousel-container');
-    
+
     carousels.forEach(carousel => {
       const track = carousel.querySelector('.carousel-track');
       const prevBtn = carousel.querySelector('.carousel-prev');
       const nextBtn = carousel.querySelector('.carousel-next');
-      
+
       if (!track) return;
-      
-      const cards = track.querySelectorAll('.carousel-card');
+
+      const cards = Array.from(track.querySelectorAll('.carousel-card'));
       if (cards.length === 0) return;
-      
+
       const cardWidth = cards[0].offsetWidth;
       const gap = 32;
-      let currentIndex = 0;
+      const itemWidth = cardWidth + gap;
+
+      // Clone first and last cards for infinite effect
+      const firstClone = cards[0].cloneNode(true);
+      const lastClone = cards[cards.length - 1].cloneNode(true);
+
+      // Mark clones
+      firstClone.classList.add('clone');
+      lastClone.classList.add('clone');
+
+      track.appendChild(firstClone);
+      track.insertBefore(lastClone, cards[0]);
+
+      // We now have: [LastClone, Card1, Card2, ..., CardN, FirstClone]
+      // Real Start is index 1.
+
+      let currentIndex = 1;
+      let isTransitioning = false;
       let autoPlayInterval;
-      
-      const updateCarousel = () => {
-        track.style.transform = `translateX(-${currentIndex * (cardWidth + gap)}px)`;
-        track.style.transition = 'transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
+
+      // Initial position (show Card 1)
+      track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+
+      const updateCarousel = (withTransition = true) => {
+        if (withTransition) {
+          track.style.transition = 'transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
+          isTransitioning = true;
+        } else {
+          track.style.transition = 'none';
+          isTransitioning = false;
+        }
+        track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
       };
-      
+
+      // Handle transition end for seamless jumping
+      track.addEventListener('transitionend', () => {
+        isTransitioning = false;
+        if (currentIndex === 0) {
+          track.style.transition = 'none';
+          currentIndex = cards.length;
+          track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+        } else if (currentIndex === cards.length + 1) {
+          track.style.transition = 'none';
+          currentIndex = 1;
+          track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+        }
+      });
+
       if (prevBtn) {
         prevBtn.addEventListener('click', () => {
-          if (currentIndex > 0) {
-            currentIndex--;
-          } else {
-            currentIndex = cards.length - 1;
-          }
-          updateCarousel();
+          if (isTransitioning) return;
+          currentIndex--;
+          updateCarousel(true);
           resetAutoPlay();
         });
       }
-      
+
       if (nextBtn) {
         nextBtn.addEventListener('click', () => {
-          if (currentIndex < cards.length - 1) {
-            currentIndex++;
-          } else {
-            currentIndex = 0;
-          }
-          updateCarousel();
+          if (isTransitioning) return;
+          currentIndex++;
+          updateCarousel(true);
           resetAutoPlay();
         });
       }
-      
+
       const startAutoPlay = () => {
         autoPlayInterval = setInterval(() => {
-          currentIndex = (currentIndex + 1) % cards.length;
-          updateCarousel();
+          if (!isTransitioning) {
+            currentIndex++;
+            updateCarousel(true);
+          }
         }, 5000);
       };
-      
+
       const resetAutoPlay = () => {
         clearInterval(autoPlayInterval);
         startAutoPlay();
       };
-      
+
       startAutoPlay();
     });
   }
@@ -263,14 +299,14 @@ class LexIconUI {
   // Form validation
   initForms() {
     const forms = document.querySelectorAll('form');
-    
+
     forms.forEach(form => {
       form.addEventListener('submit', (e) => {
         e.preventDefault();
-        
+
         const inputs = form.querySelectorAll('input[required], textarea[required], select[required]');
         let isValid = true;
-        
+
         inputs.forEach(input => {
           if (!input.value.trim()) {
             isValid = false;
@@ -279,13 +315,13 @@ class LexIconUI {
             this.clearError(input);
           }
         });
-        
+
         if (isValid) {
           this.showNotification('Form submitted successfully!', 'success');
           setTimeout(() => form.reset(), 1000);
         }
       });
-      
+
       const inputs = form.querySelectorAll('input, textarea, select');
       inputs.forEach(input => {
         input.addEventListener('input', () => {
@@ -315,13 +351,13 @@ class LexIconUI {
   // Animated Counters
   initCounters() {
     const counters = document.querySelectorAll('[data-target]');
-    
+
     if (counters.length === 0) return;
-    
+
     const observerOptions = {
       threshold: 0.5
     };
-    
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
@@ -330,7 +366,7 @@ class LexIconUI {
         }
       });
     }, observerOptions);
-    
+
     counters.forEach(counter => observer.observe(counter));
   }
 
@@ -339,17 +375,21 @@ class LexIconUI {
     const duration = 2000;
     const increment = target / (duration / 16);
     let current = 0;
-    
+
+    // Check for specific suffixes based on context if needed, but user requested "+" for all.
+    // We can allow data-suffix attribute to override or supplement.
+    const suffix = element.getAttribute('data-suffix') || '+';
+
     const updateCounter = () => {
       current += increment;
       if (current < target) {
-        element.textContent = Math.floor(current);
+        element.textContent = Math.floor(current) + suffix;
         requestAnimationFrame(updateCounter);
       } else {
-        element.textContent = target;
+        element.textContent = target + suffix;
       }
     };
-    
+
     updateCounter();
   }
 
@@ -357,29 +397,29 @@ class LexIconUI {
   initMobileMenu() {
     const toggle = document.getElementById('mobile-menu-toggle');
     const menu = document.getElementById('mobile-menu');
-    
+
     if (toggle && menu) {
       // Initialize menu state - ensure it starts closed
       menu.setAttribute('data-mobile-open', 'false');
       menu.classList.add('hidden');
       menu.classList.remove('show');
-      
+
       // Ensure icon starts as hamburger
       const icon = toggle.querySelector('i');
       if (icon) {
         icon.classList.remove('fa-times');
         icon.classList.add('fa-bars');
       }
-      
+
       // Main toggle handler
       toggle.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopPropagation();
-        
+
         const icon = toggle.querySelector('i');
         // Use data attribute to reliably track menu state
         const isMenuOpen = menu.getAttribute('data-mobile-open') === 'true';
-        
+
         if (isMenuOpen) {
           // Close menu
           this.closeMobileMenu(menu, icon);
@@ -388,7 +428,7 @@ class LexIconUI {
           this.openMobileMenu(menu, icon);
         }
       });
-      
+
       // Close menu when clicking outside
       document.addEventListener('click', (e) => {
         if (!toggle.contains(e.target) && !menu.contains(e.target)) {
@@ -396,7 +436,7 @@ class LexIconUI {
           this.closeMobileMenu(menu, icon);
         }
       });
-      
+
       // Close menu when clicking menu items (except RTL toggle)
       const menuItems = menu.querySelectorAll('a:not(#mobile-language-toggle)');
       menuItems.forEach(item => {
@@ -407,15 +447,15 @@ class LexIconUI {
       });
     }
   }
-  
+
   openMobileMenu(menu, icon) {
     // Ensure menu is shown
     menu.classList.remove('hidden');
     menu.classList.add('show');
-    
+
     // Set data attribute to track state
     menu.setAttribute('data-mobile-open', 'true');
-    
+
     if (icon) {
       // Remove all possible icon classes first
       icon.classList.remove('fa-bars', 'fa-times');
@@ -423,15 +463,15 @@ class LexIconUI {
       icon.classList.add('fa-times');
     }
   }
-  
+
   closeMobileMenu(menu, icon) {
     // Ensure menu is hidden
     menu.classList.remove('show');
     menu.classList.add('hidden');
-    
+
     // Set data attribute to track state
     menu.setAttribute('data-mobile-open', 'false');
-    
+
     if (icon) {
       // Remove all possible icon classes first  
       icon.classList.remove('fa-bars', 'fa-times');
@@ -443,12 +483,12 @@ class LexIconUI {
   // Dynamic Backgrounds
   initDynamicBackgrounds() {
     const heroSections = document.querySelectorAll('[data-bg-images]');
-    
+
     heroSections.forEach(section => {
       try {
         const images = JSON.parse(section.getAttribute('data-bg-images'));
         let currentIndex = 0;
-        
+
         const changeBackground = () => {
           currentIndex = (currentIndex + 1) % images.length;
           const img = section.querySelector('img');
@@ -461,7 +501,7 @@ class LexIconUI {
             }, 1000);
           }
         };
-        
+
         setInterval(changeBackground, 5000);
       } catch (e) {
         console.error('Error parsing bg-images:', e);
@@ -479,7 +519,7 @@ class LexIconUI {
         document.body.style.overflow = 'hidden';
       }
     };
-    
+
     window.closeModal = (modalId) => {
       const modal = document.getElementById(modalId);
       if (modal) {
@@ -488,7 +528,7 @@ class LexIconUI {
         document.body.style.overflow = '';
       }
     };
-    
+
     document.querySelectorAll('[data-modal-close]').forEach(btn => {
       btn.addEventListener('click', () => {
         const modalId = btn.getAttribute('data-modal-close');
@@ -509,14 +549,14 @@ class LexIconUI {
       info: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
       warning: 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)'
     };
-    
+
     const notification = document.createElement('div');
     notification.className = 'fixed top-20 right-5 z-[10000] px-6 py-4 rounded-xl text-white shadow-2xl animate-fade-in-right max-w-md';
     notification.style.background = colors[type] || colors.info;
     notification.textContent = message;
-    
+
     document.body.appendChild(notification);
-    
+
     setTimeout(() => {
       notification.style.animation = 'fadeOutRight 0.5s ease';
       setTimeout(() => notification.remove(), 500);
@@ -529,24 +569,24 @@ class LexIconUI {
       tab.addEventListener('click', () => {
         const tabName = tab.getAttribute('data-tab');
         const container = tab.closest('[data-tabs]');
-        
+
         if (!container) return;
-        
+
         // Remove active from all tabs
         container.querySelectorAll('[data-tab]').forEach(t => {
           t.classList.remove('active', 'border-purple-500', 'text-purple-600', 'bg-purple-50');
           t.classList.add('text-slate-600');
         });
-        
+
         // Add active to clicked tab
         tab.classList.add('active', 'border-purple-500', 'text-purple-600', 'bg-purple-50');
         tab.classList.remove('text-slate-600');
-        
+
         // Hide all contents
         container.querySelectorAll('[data-tab-content]').forEach(content => {
           content.classList.add('hidden');
         });
-        
+
         // Show target content
         const targetContent = container.querySelector(`[data-tab-content="${tabName}"]`);
         if (targetContent) {

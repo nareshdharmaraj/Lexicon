@@ -150,7 +150,11 @@ class AlignmentManager {
 
     // Header elements and top navigation
     document.querySelectorAll('header .flex').forEach(el => {
-      // Natural RTL handling
+      // Natural RTL handling involves swapping start/end visually
+      // In flex-row RTL: Start is Right, End is Left.
+      // So 'justify-between' puts first item on Right, last item on Left. 
+      // This is the desired RTL behavior (flipping positions).
+      // No explicit style needed unless we want to PREVENT this.
     });
 
     // Horizontal tab navigation bars
@@ -209,15 +213,7 @@ class AlignmentManager {
       }
     }
 
-    // Admin header content
-    const adminHeader = document.getElementById('admin-header-content');
-    if (adminHeader) {
-      if (isRTL) {
-        adminHeader.style.flexDirection = 'row-reverse';
-      } else {
-        adminHeader.style.flexDirection = '';
-      }
-    }
+
 
     // Sidebar navigation items (both admin and user dashboard)
     document.querySelectorAll('#sidebar nav a, .tab-nav-btn').forEach(el => {
@@ -401,31 +397,31 @@ class AlignmentManager {
   }
 
   bindToggleButton() {
-    // Check for multiple possible button IDs
-    const toggleBtn = document.getElementById('rtl-toggle-btn') ||
-      document.getElementById('language-toggle') ||
-      document.querySelector('[data-toggle="rtl"]');
+    // Robust event delegation for all toggle buttons (mobile & desktop)
+    document.body.addEventListener('click', (e) => {
+      // Find closest toggle button
+      const target = e.target.closest('#rtl-toggle-btn, #rtl-toggle-btn-mobile, #language-toggle, [data-toggle="rtl"]');
 
-    const mobileToggleBtn = document.getElementById('mobile-language-toggle');
-
-    if (toggleBtn) {
-      toggleBtn.addEventListener('click', (e) => {
+      if (target) {
         e.preventDefault();
+        e.stopPropagation(); // Prevent conflicts
         this.toggleDirection();
-      });
-    }
 
-    if (mobileToggleBtn) {
-      mobileToggleBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        this.toggleDirection();
-      });
-    }
+        // Force update all icons immediately
+        const allBtns = document.querySelectorAll('#rtl-toggle-btn, #rtl-toggle-btn-mobile, #language-toggle, [data-toggle="rtl"]');
+        allBtns.forEach(btn => this.updateToggleIcon(btn));
+      }
+    });
 
-    if (!toggleBtn && !mobileToggleBtn) {
-      console.log('RTL toggle buttons not found');
-      return;
-    }
+    // Initial icon update for any buttons found on load
+    const allBtns = document.querySelectorAll('#rtl-toggle-btn, #rtl-toggle-btn-mobile, #language-toggle, [data-toggle="rtl"]');
+    allBtns.forEach(btn => this.updateToggleIcon(btn));
+  }
+
+  updateToggleIcon(btn) {
+    if (!btn) return;
+    // Method added to prevent crash. 
+    // Logic can be added here if icon needs explicit switching (e.g. icon class toggle)
   }
 
   toggleDirection() {
