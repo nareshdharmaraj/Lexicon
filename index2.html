@@ -873,17 +873,21 @@
                         </div>
                         <h3 class="text-2xl font-bold text-white mb-4">Proven Track Record</h3>
                         <p class="text-slate-300 mb-6">
-                            With a 94% success rate and over $2.5B recovered for clients, our results speak louder than
+                            With a <span class="font-bold text-white" data-target="94" data-suffix="%">0%</span> success
+                            rate and over <span class="font-bold text-white" data-target="2.5" data-suffix="B"
+                                data-prefix="$">$0</span> recovered for clients, our results speak louder than
                             words. We don't just practice law—we master it.
                         </p>
                         <div class="space-y-2">
                             <div class="flex items-center text-slate-400 text-sm">
                                 <i class="fas fa-check-circle text-amber-500 mr-3"></i>
-                                <span>5000+ cases won</span>
+                                <span><span class="font-bold text-white" data-target="5000" data-suffix="+">0</span>
+                                    cases won</span>
                             </div>
                             <div class="flex items-center text-slate-400 text-sm">
                                 <i class="fas fa-check-circle text-amber-500 mr-3"></i>
-                                <span>40+ years experience</span>
+                                <span><span class="font-bold text-white" data-target="40" data-suffix="+">0</span> years
+                                    experience</span>
                             </div>
                         </div>
                     </div>
@@ -1173,57 +1177,9 @@
     <script src="js/rtl-toggle.js?v=2"></script>
 
     <script>
-        // Animated Counter Function
-        function animateCounter(element, target, suffix = '', prefix = '', duration = 3000) {
-            let start = 0;
-            const increment = target / (duration / 16);
-            const timer = setInterval(() => {
-                start += increment;
-                if (start >= target) {
-                    element.textContent = prefix + target.toFixed(target < 10 ? 1 : 0) + suffix;
-                    clearInterval(timer);
-                } else {
-                    element.textContent = prefix + start.toFixed(target < 10 ? 1 : 0) + (start >= target * 0.8 ? suffix : '');
-                }
-            }, 16);
-        }
-
         // Initialize counters when page loads
         document.addEventListener('DOMContentLoaded', function () {
-            // Hero section counters
-            const counters = document.querySelectorAll('.animate-counter');
-
-            // Intersection Observer for triggering animations when in view
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        const element = entry.target;
-                        const target = parseFloat(element.getAttribute('data-target'));
-                        const suffix = element.getAttribute('data-suffix') || '';
-                        const prefix = element.textContent.includes('$') ? '$' : '';
-
-                        if (suffix === '%') {
-                            animateCounter(element, target, '%', prefix);
-                        } else if (suffix === 'B+') {
-                            animateCounter(element, target, 'B+', prefix);
-                        } else {
-                            animateCounter(element, target, suffix, prefix);
-                        }
-
-                        observer.unobserve(element);
-                    }
-                });
-            }, { threshold: 0.5 });
-
-            counters.forEach(counter => {
-                observer.observe(counter);
-            });
-
-            // Stats section counters
-            const statNumbers = document.querySelectorAll('.stat-number');
-            statNumbers.forEach(stat => {
-                observer.observe(stat);
-            });
+            // Counters are now handled by LexIconUI in main.js via data-target attributes
 
             // Initialize RTL/LTR manager
             if (typeof AlignmentManager !== 'undefined') {

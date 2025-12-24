@@ -128,7 +128,7 @@
                 background: white;
                 border-bottom: 1px solid #e2e8f0;
                 display: flex !important;
-                justify-content: flex-start;
+                justify-content: space-between;
                 align-items: center;
                 box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
             }
@@ -377,7 +377,8 @@
             .glass,
             .bg-white {
                 max-width: none !important;
-                overflow-x: auto !important;
+                width: 100% !important;
+                max-width: 100% !important;
                 box-sizing: border-box !important;
             }
 
@@ -749,7 +750,7 @@
                 height: 60px !important;
                 display: flex !important;
                 align-items: center !important;
-                justify-content: flex-start !important;
+                justify-content: space-between !important;
             }
 
             .mobile-sidebar-toggle {
@@ -927,7 +928,8 @@
 
                     <!-- Stats Cards -->
                     <div class="grid md:grid-cols-3 gap-6 mb-8">
-                        <div class="glass rounded-xl p-6 border border-white/20 hover:shadow-2xl transition-shadow">
+                        <div
+                            class="glass rounded-xl p-4 md:p-6 border border-white/20 hover:shadow-2xl transition-shadow min-w-0">
                             <div class="flex items-start justify-between mb-4">
                                 <div class="flex-1 min-w-0">
                                     <p class="text-slate-600 text-sm uppercase tracking-wide mb-2 truncate">Next Hearing
@@ -944,7 +946,8 @@
                             <p class="text-slate-600 text-sm">09:00 AM - Courtroom 5B</p>
                         </div>
 
-                        <div class="glass rounded-xl p-6 border border-white/20 hover:shadow-2xl transition-shadow">
+                        <div
+                            class="glass rounded-xl p-4 md:p-6 border border-white/20 hover:shadow-2xl transition-shadow min-w-0">
                             <div class="flex items-start justify-between mb-4">
                                 <div class="flex-1 min-w-0">
                                     <p class="text-slate-600 text-sm uppercase tracking-wide mb-2 truncate">Case Status
@@ -961,7 +964,8 @@
                             <p class="text-slate-600 text-sm">Deposition Phase</p>
                         </div>
 
-                        <div class="glass rounded-xl p-6 border border-white/20 hover:shadow-2xl transition-shadow">
+                        <div
+                            class="glass rounded-xl p-4 md:p-6 border border-white/20 hover:shadow-2xl transition-shadow min-w-0">
                             <div class="flex items-start justify-between mb-4">
                                 <div class="flex-1 min-w-0">
                                     <p class="text-slate-600 text-sm uppercase tracking-wide mb-2 truncate">Days Active
@@ -981,14 +985,14 @@
 
                     <!-- Charts Row -->
                     <div class="grid lg:grid-cols-2 gap-6 mb-8">
-                        <div class="bg-white rounded-xl shadow-lg p-6 no-rtl">
+                        <div class="bg-white rounded-xl shadow-lg p-4 md:p-6 no-rtl min-w-0">
                             <h3 class="text-xl font-bold text-slate-900 mb-4">Case Activity</h3>
                             <div style="max-height: 250px;">
                                 <canvas id="activityChart"></canvas>
                             </div>
                         </div>
 
-                        <div class="bg-white rounded-xl shadow-lg p-6 no-rtl">
+                        <div class="bg-white rounded-xl shadow-lg p-4 md:p-6 no-rtl min-w-0">
                             <h3 class="text-xl font-bold text-slate-900 mb-4">Time Distribution</h3>
                             <div style="max-height: 250px;">
                                 <canvas id="timeChart"></canvas>

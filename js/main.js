@@ -371,22 +371,21 @@ class LexIconUI {
   }
 
   animateCounter(element) {
-    const target = parseInt(element.getAttribute('data-target'));
+    const target = parseFloat(element.getAttribute('data-target'));
     const duration = 2000;
     const increment = target / (duration / 16);
     let current = 0;
 
-    // Check for specific suffixes based on context if needed, but user requested "+" for all.
-    // We can allow data-suffix attribute to override or supplement.
     const suffix = element.getAttribute('data-suffix') || '+';
+    const prefix = element.getAttribute('data-prefix') || '';
 
     const updateCounter = () => {
       current += increment;
       if (current < target) {
-        element.textContent = Math.floor(current) + suffix;
+        element.textContent = prefix + (target % 1 !== 0 ? current.toFixed(1) : Math.floor(current)) + suffix;
         requestAnimationFrame(updateCounter);
       } else {
-        element.textContent = target + suffix;
+        element.textContent = prefix + (target % 1 !== 0 ? target.toFixed(1) : target) + suffix;
       }
     };
 
