@@ -169,6 +169,68 @@
             margin-right: auto;
         }
 
+        /* KPI Card specific RTL support */
+        .kpi-card-wrapper {
+            position: relative;
+        }
+
+        .kpi-card-icon {
+            position: absolute;
+            top: 0.75rem;
+            /* top-3 */
+            right: 0.75rem;
+            /* right-3 */
+            left: auto;
+        }
+
+        @media (min-width: 768px) {
+            .kpi-card-icon {
+                top: 1.5rem;
+                /* top-6 */
+                right: 1.5rem;
+                /* right-6 */
+            }
+        }
+
+        .kpi-card-content {
+            padding-right: 2.5rem;
+            /* enough to clear the icon */
+            padding-left: 0;
+            text-align: left;
+            /* Force left alignment in LTR */
+        }
+
+        @media (min-width: 768px) {
+            .kpi-card-content {
+                padding-right: 3.5rem;
+            }
+        }
+
+        /* RTL Overrides for KPI Cards */
+        [dir="rtl"] .kpi-card-icon {
+            right: auto;
+            left: 0.75rem;
+        }
+
+        @media (min-width: 768px) {
+            [dir="rtl"] .kpi-card-icon {
+                left: 1.5rem;
+            }
+        }
+
+        [dir="rtl"] .kpi-card-content {
+            padding-right: 0;
+            padding-left: 2.5rem;
+            text-align: right;
+            /* Force right alignment in RTL */
+        }
+
+        @media (min-width: 768px) {
+            [dir="rtl"] .kpi-card-content {
+                padding-left: 3.5rem;
+            }
+        }
+
         /* Desktop sidebar styles */
         @media (min-width: 769px) {
             #sidebar {
@@ -515,78 +577,86 @@
             <div class="p-4 md:p-8">
                 <!-- KPI Cards -->
                 <!-- KPI Cards -->
-                <div class="admin-grid grid md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-6 md:mb-8">
-                    <div class="glass-dark p-4 md:p-6 rounded-lg min-w-0">
-                        <div class="flex items-start justify-between mb-4">
-                            <div class="flex-1 min-w-0">
-                                <p class="text-slate-400 text-sm uppercase tracking-wide mb-2 truncate">Billable Hours
-                                </p>
-                                <h3 class="text-2xl md:text-4xl font-bold text-white">142<span
-                                        class="text-xl md:text-2xl">h</span></h3>
-                            </div>
-                            <div
-                                class="w-12 h-12 bg-amber-600 bg-opacity-20 rounded-lg flex items-center justify-center flex-shrink-0 ml-4 rtl:ml-0 rtl:mr-4">
-                                <i class="fas fa-clock text-2xl text-amber-600"></i>
-                            </div>
+                <!-- KPI Cards -->
+                <div class="admin-grid grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6 mb-6 md:mb-8">
+                    <!-- Billable Hours -->
+                    <div
+                        class="glass-dark p-3 md:p-6 rounded-lg min-w-0 flex flex-col justify-between h-full kpi-card-wrapper">
+                        <div class="mb-2 md:mb-4 kpi-card-content">
+                            <p
+                                class="text-slate-400 text-xs md:text-sm uppercase tracking-wide mb-1 md:mb-2 leading-tight">
+                                Billable Hours</p>
+                            <h3 class="text-lg md:text-3xl lg:text-4xl font-bold text-white leading-none">142<span
+                                    class="text-sm md:text-2xl">h</span></h3>
                         </div>
-                        <div class="flex items-center gap-2">
-                            <span class="text-green-400 text-sm font-semibold">
-                                <i class="fas fa-arrow-up mr-1"></i>12%
+                        <div
+                            class="w-8 h-8 md:w-12 md:h-12 bg-amber-600 bg-opacity-20 rounded-lg flex items-center justify-center kpi-card-icon">
+                            <i class="fas fa-clock text-sm md:text-2xl text-amber-600"></i>
+                        </div>
+                        <div class="flex items-center gap-1 md:gap-2 mt-auto flex-wrap">
+                            <span class="text-green-400 text-xs md:text-sm font-semibold whitespace-nowrap">
+                                <i class="fas fa-arrow-up mr-1 min-w-[1em]"></i>12%
                             </span>
-                            <span class="text-slate-400 text-sm">vs last week</span>
+                            <span class="text-slate-400 text-[10px] md:text-sm whitespace-nowrap">vs last week</span>
                         </div>
                     </div>
 
-                    <div class="glass-dark p-4 md:p-6 rounded-lg min-w-0">
-                        <div class="flex items-start justify-between mb-4">
-                            <div class="flex-1 min-w-0">
-                                <p class="text-slate-400 text-sm uppercase tracking-wide mb-2 truncate">Win Rate</p>
-                                <h3 class="text-2xl md:text-4xl font-bold text-white">94<span
-                                        class="text-xl md:text-2xl">%</span></h3>
-                            </div>
-                            <div
-                                class="w-12 h-12 bg-green-600 bg-opacity-20 rounded-lg flex items-center justify-center flex-shrink-0 ml-4 rtl:ml-0 rtl:mr-4">
-                                <i class="fas fa-trophy text-2xl text-green-400"></i>
-                            </div>
+                    <!-- Win Rate -->
+                    <div
+                        class="glass-dark p-3 md:p-6 rounded-lg min-w-0 flex flex-col justify-between h-full kpi-card-wrapper">
+                        <div class="mb-2 md:mb-4 kpi-card-content">
+                            <p
+                                class="text-slate-400 text-xs md:text-sm uppercase tracking-wide mb-1 md:mb-2 leading-tight">
+                                Win Rate</p>
+                            <h3 class="text-lg md:text-3xl lg:text-4xl font-bold text-white leading-none">94<span
+                                    class="text-sm md:text-2xl">%</span></h3>
                         </div>
-                        <div class="flex items-center gap-2">
-                            <span class="text-green-400 text-sm font-semibold">
-                                <i class="fas fa-check mr-1"></i>Excellent
+                        <div
+                            class="w-8 h-8 md:w-12 md:h-12 bg-green-600 bg-opacity-20 rounded-lg flex items-center justify-center kpi-card-icon">
+                            <i class="fas fa-trophy text-sm md:text-2xl text-green-400"></i>
+                        </div>
+                        <div class="flex items-center gap-1 md:gap-2 mt-auto flex-wrap">
+                            <span class="text-green-400 text-xs md:text-sm font-semibold whitespace-nowrap">
+                                <i class="fas fa-check mr-1 min-w-[1em]"></i>Excellent
                             </span>
-                            <span class="text-slate-400 text-sm">47/50 cases</span>
+                            <span class="text-slate-400 text-[10px] md:text-sm whitespace-nowrap">47/50 cases</span>
                         </div>
                     </div>
 
-                    <div class="glass-dark p-4 md:p-6 rounded-lg min-w-0">
-                        <div class="flex items-start justify-between mb-4">
-                            <div class="flex-1 min-w-0">
-                                <p class="text-slate-400 text-sm uppercase tracking-wide mb-2 truncate">Pending Invoices
-                                </p>
-                                <h3 class="text-2xl md:text-4xl font-bold text-white">$450K</h3>
-                            </div>
-                            <div
-                                class="w-12 h-12 bg-blue-600 bg-opacity-20 rounded-lg flex items-center justify-center flex-shrink-0 ml-4 rtl:ml-0 rtl:mr-4">
-                                <i class="fas fa-file-invoice-dollar text-2xl text-blue-400"></i>
-                            </div>
+                    <!-- Pending Invoices -->
+                    <div
+                        class="glass-dark p-3 md:p-6 rounded-lg min-w-0 flex flex-col justify-between h-full kpi-card-wrapper">
+                        <div class="mb-2 md:mb-4 kpi-card-content">
+                            <p
+                                class="text-slate-400 text-xs md:text-sm uppercase tracking-wide mb-1 md:mb-2 leading-tight">
+                                Pending Invoices</p>
+                            <h3 class="text-lg md:text-3xl lg:text-4xl font-bold text-white leading-none">$450K</h3>
                         </div>
-                        <div class="flex items-center gap-2">
-                            <span class="text-slate-400 text-sm">8 invoices outstanding</span>
+                        <div
+                            class="w-8 h-8 md:w-12 md:h-12 bg-blue-600 bg-opacity-20 rounded-lg flex items-center justify-center kpi-card-icon">
+                            <i class="fas fa-file-invoice-dollar text-sm md:text-2xl text-blue-400"></i>
+                        </div>
+                        <div class="flex items-center gap-1 md:gap-2 mt-auto flex-wrap">
+                            <span class="text-slate-400 text-[10px] md:text-sm">8 invoices outstanding</span>
                         </div>
                     </div>
 
-                    <div class="glass-dark p-4 md:p-6 rounded-lg min-w-0">
-                        <div class="flex items-start justify-between mb-4">
-                            <div class="flex-1 min-w-0">
-                                <p class="text-slate-400 text-sm uppercase tracking-wide mb-2 truncate">Active Cases</p>
-                                <h3 class="text-2xl md:text-4xl font-bold text-white">12</h3>
-                            </div>
-                            <div
-                                class="w-12 h-12 bg-purple-600 bg-opacity-20 rounded-lg flex items-center justify-center flex-shrink-0 ml-4 rtl:ml-0 rtl:mr-4">
-                                <i class="fas fa-briefcase text-2xl text-purple-400"></i>
-                            </div>
+                    <!-- Active Cases -->
+                    <div
+                        class="glass-dark p-3 md:p-6 rounded-lg min-w-0 flex flex-col justify-between h-full kpi-card-wrapper">
+                        <div class="mb-2 md:mb-4 kpi-card-content">
+                            <p
+                                class="text-slate-400 text-xs md:text-sm uppercase tracking-wide mb-1 md:mb-2 leading-tight">
+                                Active Cases</p>
+                            <h3 class="text-lg md:text-3xl lg:text-4xl font-bold text-white leading-none">12</h3>
                         </div>
-                        <div class="flex items-center gap-2">
-                            <span class="text-amber-400 text-sm font-semibold">3 trials this week</span>
+                        <div
+                            class="w-8 h-8 md:w-12 md:h-12 bg-purple-600 bg-opacity-20 rounded-lg flex items-center justify-center kpi-card-icon">
+                            <i class="fas fa-briefcase text-sm md:text-2xl text-purple-400"></i>
+                        </div>
+                        <div class="flex items-center gap-1 md:gap-2 mt-auto flex-wrap">
+                            <span class="text-amber-400 text-xs md:text-sm font-semibold whitespace-nowrap">3 trials
+                                this week</span>
                         </div>
                     </div>
                 </div>
