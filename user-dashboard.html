@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Client Portal - LexIcon</title>
 
@@ -77,7 +78,7 @@
         }
 
         .tab-button.active {
-            border-bottom-color: #6366f1;
+            border-bottom-color: #4338ca;
             color: #1e293b;
         }
 
@@ -90,12 +91,12 @@
         }
 
         .settings-tab-button.active {
-            border-bottom-color: #6366f1;
+            border-bottom-color: #4338ca;
             color: #1e293b;
         }
 
         .gradient-text {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #4f46e5 0%, #312e81 100%);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -107,7 +108,7 @@
         }
 
         /* Mobile Responsive Layout - Admin Dashboard Style */
-        @media (max-width: 768px) {
+        @media (max-width: 767px) {
 
             body,
             html {
@@ -236,7 +237,7 @@
             }
 
             .mobile-hamburger:hover span {
-                background-color: #6366f1;
+                background-color: #4338ca;
             }
 
             /* Mobile font size adjustments */
@@ -301,7 +302,7 @@
             }
         }
 
-        @media (min-width: 769px) {
+        @media (min-width: 768px) {
             .mobile-header {
                 display: none !important;
             }
@@ -311,7 +312,7 @@
             }
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 767px) {
             .mobile-header {
                 display: flex !important;
             }
@@ -322,7 +323,7 @@
         }
 
         /* Additional Mobile Styling - Updated for overlay */
-        @media (max-width: 768px) {
+        @media (max-width: 767px) {
             .main-content {
                 padding-top: 0 !important;
                 margin-top: 0 !important;
@@ -472,7 +473,7 @@
 
 
         /* Mobile responsive grid */
-        @media (max-width: 768px) {
+        @media (max-width: 767px) {
             .dashboard-grid {
                 grid-template-columns: 1fr !important;
             }
@@ -507,8 +508,8 @@
 
         /* Tab Highlights and Active States */
         [dir="rtl"] .border-indigo-500 {
-            border-left: 2px solid #6366f1 !important;
-            border-bottom: 2px solid #6366f1 !important;
+            border-left: 2px solid #4338ca !important;
+            border-bottom: 2px solid #4338ca !important;
             border-right: none !important;
         }
 
@@ -658,7 +659,7 @@
         }
 
         /* Desktop RTL positioning - Force sidebar to right */
-        @media (min-width: 769px) {
+        @media (min-width: 768px) {
             [dir="rtl"] #sidebar {
                 position: relative !important;
                 order: 2 !important;
@@ -712,7 +713,7 @@
         }
 
         /* Mobile sidebar improvements - consolidated */
-        @media (max-width: 768px) {
+        @media (max-width: 767px) {
             [dir="rtl"] .mobile-sidebar-overlay {
                 right: auto !important;
                 left: auto !important;
@@ -730,7 +731,7 @@
             /* Reduced from 264px for desktop */
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 767px) {
 
             /* Sidebar completely hidden on mobile - no width allocation */
             .desktop-sidebar {
@@ -771,7 +772,7 @@
     <div class="flex h-screen overflow-hidden" id="main-container">
         <!-- Mobile Header -->
         <div class="mobile-header flex items-center justify-between md:hidden">
-            <button class="mobile-sidebar-toggle p-2 text-slate-600 hover:text-indigo-600 rounded-lg hover:bg-slate-50">
+            <button class="mobile-sidebar-toggle p-2 text-slate-600 hover:text-indigo-600 rounded-xl hover:bg-slate-50">
                 <div class="mobile-hamburger">
                     <span></span>
                     <span></span>
@@ -799,16 +800,16 @@
         <aside id="sidebar" class="w-60 bg-white border-r border-slate-200 flex-shrink-0 desktop-sidebar">
             <div class="p-6 border-b border-slate-200">
                 <div class="flex items-center justify-between">
-                    <div class="flex items-center gap-3">
+                    <a href="index.html" class="flex items-center gap-3 group">
                         <div
-                            class="w-10 h-10 rounded-lg bg-gradient-to-br from-indigo-600 to-purple-600 flex items-center justify-center no-rtl">
+                            class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-600 to-indigo-600 flex items-center justify-center no-rtl group-hover:scale-110 transition-transform">
                             <i class="fas fa-balance-scale text-white text-lg"></i>
                         </div>
                         <h2 class="text-2xl font-bold gradient-text"
-                            style="font-family: 'Playfair Display', serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                            style="font-family: 'Playfair Display', serif; background: linear-gradient(135deg, #4f46e5 0%, #312e81 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
                             LexIcon
                         </h2>
-                    </div>
+                    </a>
                     <button class="mobile-sidebar-close md:hidden p-1 text-slate-400 hover:text-slate-600"
                         onclick="closeMobileSidebar()">
                         <i class="fas fa-times text-lg"></i>
@@ -819,28 +820,28 @@
 
             <nav class="p-4 sidebar-nav">
                 <a href="#"
-                    class="flex items-center gap-3 px-4 py-3 text-amber-600 bg-amber-50 rounded-lg mb-2 font-semibold">
+                    class="flex items-center gap-3 px-4 py-3 text-indigo-600 bg-indigo-50 rounded-xl mb-2 font-semibold">
                     <i class="fas fa-briefcase"></i>
                     <span>My Case</span>
                 </a>
-                <a href="#" class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-50 rounded-lg mb-2">
+                <a href="#" class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-50 rounded-xl mb-2">
                     <i class="fas fa-file-invoice-dollar"></i>
                     <span>Billing</span>
                 </a>
-                <a href="#" class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-50 rounded-lg mb-2">
+                <a href="#" class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-50 rounded-xl mb-2">
                     <i class="fas fa-comments"></i>
                     <span>Messages</span>
                     <span class="ml-auto bg-red-500 text-white text-xs rounded-full px-2 py-1">3</span>
                 </a>
-                <a href="#" class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-50 rounded-lg mb-2">
+                <a href="#" class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-50 rounded-xl mb-2">
                     <i class="fas fa-folder"></i>
                     <span>Documents</span>
                 </a>
-                <a href="#" class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-50 rounded-lg mb-2">
+                <a href="#" class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-50 rounded-xl mb-2">
                     <i class="fas fa-calendar-alt"></i>
                     <span>Appointments</span>
                 </a>
-                <a href="#" class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-50 rounded-lg mb-2">
+                <a href="#" class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-50 rounded-xl mb-2">
                     <i class="fas fa-cog"></i>
                     <span>Settings</span>
                 </a>
@@ -848,7 +849,7 @@
 
             <div class="absolute bottom-0 w-60 p-4 border-t border-slate-200">
                 <a href="login.html"
-                    class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-50 rounded-lg">
+                    class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-50 rounded-xl">
                     <i class="fas fa-sign-out-alt"></i>
                     <span>Logout</span>
                 </a>
@@ -860,10 +861,11 @@
             <!-- Top Bar -->
             <header class="bg-white border-b border-slate-200 px-4 md:px-8 py-4 hidden md:block">
                 <div class="flex items-center justify-between w-full" id="user-header-content">
-                    <div class="flex-1">
-                        <h1 class="text-lg md:text-2xl font-bold text-slate-900 leading-tight">Welcome Back, Mr. Wayne
+                    <div class="flex-1 min-w-0">
+                        <h1
+                            class="text-lg md:text-2xl font-bold text-slate-900 leading-tight whitespace-nowrap truncate">
+                            Welcome
                         </h1>
-                        <p class="text-slate-600 text-xs md:text-sm hidden md:block">Here's an overview of your case</p>
                     </div>
                     <div class="flex items-center gap-2 md:gap-4 flex-shrink-0">
                         <button id="rtl-toggle-btn" class="text-slate-600 hover:text-indigo-600 transition-colors"
@@ -876,7 +878,7 @@
                                 class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">5</span>
                         </button>
                         <div class="hidden md:flex items-center gap-3 no-rtl">
-                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=100"
+                            <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=100"
                                 alt="Profile" class="w-10 h-10 rounded-full">
                             <div>
                                 <div class="font-semibold text-slate-900">Bruce Wayne</div>
@@ -884,7 +886,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
             </header>
 
             <div class="p-4 md:p-8">
@@ -917,7 +918,7 @@
                 <!-- Tab Content: Overview -->
                 <div class="tab-content active" data-tab="overview">
                     <!-- Alert Banner -->
-                    <div class="bg-green-50 border-l-4 border-green-500 p-4 mb-8 rounded-lg flex items-start gap-4">
+                    <div class="bg-green-50 border-l-4 border-green-500 p-4 mb-8 rounded-xl flex items-start gap-4">
                         <i class="fas fa-check-circle text-2xl text-green-500 mt-1"></i>
                         <div>
                             <h3 class="font-bold text-green-900 mb-1">Good Morning, Mr. Wayne</h3>
@@ -927,7 +928,7 @@
                     </div>
 
                     <!-- Stats Cards -->
-                    <div class="grid md:grid-cols-3 gap-6 mb-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
                         <div
                             class="glass rounded-xl p-4 md:p-6 border border-white/20 hover:shadow-2xl transition-shadow min-w-0">
                             <div class="flex items-start justify-between mb-4">
@@ -935,11 +936,11 @@
                                     <p class="text-slate-600 text-sm uppercase tracking-wide mb-2 truncate">Next Hearing
                                     </p>
                                     <h3 class="text-2xl md:text-3xl font-bold gradient-text"
-                                        style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                                        style="background: linear-gradient(135deg, #4f46e5 0%, #312e81 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
                                         Tomorrow</h3>
                                 </div>
                                 <div
-                                    class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg flex-shrink-0 ml-4 rtl:ml-0 rtl:mr-4">
+                                    class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg flex-shrink-0 ml-4 rtl:ml-0 rtl:mr-4">
                                     <i class="fas fa-calendar-check text-2xl text-white"></i>
                                 </div>
                             </div>
@@ -953,11 +954,11 @@
                                     <p class="text-slate-600 text-sm uppercase tracking-wide mb-2 truncate">Case Status
                                     </p>
                                     <h3 class="text-2xl md:text-3xl font-bold gradient-text"
-                                        style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                                        style="background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
                                         Active</h3>
                                 </div>
                                 <div
-                                    class="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-xl flex items-center justify-center shadow-lg flex-shrink-0 ml-4 rtl:ml-0 rtl:mr-4">
+                                    class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-cyan-600 rounded-xl flex items-center justify-center shadow-lg flex-shrink-0 ml-4 rtl:ml-0 rtl:mr-4">
                                     <i class="fas fa-briefcase text-2xl text-white"></i>
                                 </div>
                             </div>
@@ -971,7 +972,7 @@
                                     <p class="text-slate-600 text-sm uppercase tracking-wide mb-2 truncate">Days Active
                                     </p>
                                     <h3 class="text-2xl md:text-3xl font-bold gradient-text" data-target="87"
-                                        style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                                        style="background: linear-gradient(135deg, #4338ca 0%, #312e81 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
                                         0</h3>
                                 </div>
                                 <div
@@ -1017,30 +1018,30 @@
                             <div>
                                 <div class="flex justify-between mb-2">
                                     <span class="text-sm font-semibold text-slate-700">Deposition Prep</span>
-                                    <span class="text-sm font-bold text-blue-600">75%</span>
+                                    <span class="text-sm font-bold text-indigo-600">75%</span>
                                 </div>
                                 <div class="h-3 bg-slate-200 rounded-full overflow-hidden">
-                                    <div class="h-full bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full animate-slideInLeft"
+                                    <div class="h-full bg-gradient-to-r from-indigo-500 to-indigo-500 rounded-full animate-slideInLeft"
                                         style="width: 75%; animation-delay: 0.2s;"></div>
                                 </div>
                             </div>
                             <div>
                                 <div class="flex justify-between mb-2">
                                     <span class="text-sm font-semibold text-slate-700">Document Review</span>
-                                    <span class="text-sm font-bold text-purple-600">60%</span>
+                                    <span class="text-sm font-bold text-indigo-600">60%</span>
                                 </div>
                                 <div class="h-3 bg-slate-200 rounded-full overflow-hidden">
-                                    <div class="h-full bg-gradient-to-r from-purple-500 to-pink-400 rounded-full animate-slideInLeft"
+                                    <div class="h-full bg-gradient-to-r from-indigo-500 to-pink-400 rounded-full animate-slideInLeft"
                                         style="width: 60%; animation-delay: 0.4s;"></div>
                                 </div>
                             </div>
                             <div>
                                 <div class="flex justify-between mb-2">
                                     <span class="text-sm font-semibold text-slate-700">Trial Preparation</span>
-                                    <span class="text-sm font-bold text-orange-600">30%</span>
+                                    <span class="text-sm font-bold text-indigo-600">30%</span>
                                 </div>
                                 <div class="h-3 bg-slate-200 rounded-full overflow-hidden">
-                                    <div class="h-full bg-gradient-to-r from-orange-500 to-amber-400 rounded-full animate-slideInLeft"
+                                    <div class="h-full bg-gradient-to-r from-indigo-500 to-indigo-400 rounded-full animate-slideInLeft"
                                         style="width: 30%; animation-delay: 0.6s;"></div>
                                 </div>
                             </div>
@@ -1051,7 +1052,7 @@
                 <!-- Tab Content: Timeline -->
                 <div class="tab-content" data-tab="timeline" style="display: none;">
                     <!-- Case Timeline -->
-                    <div class="bg-white rounded-lg shadow-lg p-8 mb-8">
+                    <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
                         <h2 class="text-2xl font-bold text-slate-900 mb-6"
                             style="font-family: 'Playfair Display', serif;">Case Progress</h2>
 
@@ -1076,8 +1077,8 @@
                                 <div class="progress-step-circle">
                                     <i class="fas fa-gavel"></i>
                                 </div>
-                                <div class="text-sm font-semibold text-amber-700 mt-2">Deposition</div>
-                                <div class="text-xs text-amber-600">In Progress</div>
+                                <div class="text-sm font-semibold text-indigo-700 mt-2">Deposition</div>
+                                <div class="text-xs text-indigo-600">In Progress</div>
                             </div>
 
                             <div class="progress-step">
@@ -1099,15 +1100,15 @@
                     </div>
 
                     <!-- Stats Cards -->
-                    <div class="grid md:grid-cols-3 gap-6 mb-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
                         <div class="premium-card p-6">
                             <div class="flex items-start justify-between mb-4">
                                 <div>
                                     <p class="text-slate-600 text-sm uppercase tracking-wide mb-2">Next Hearing</p>
                                     <h3 class="text-3xl font-bold text-slate-900">Tomorrow</h3>
                                 </div>
-                                <div class="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center">
-                                    <i class="fas fa-calendar-check text-2xl text-amber-600"></i>
+                                <div class="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center">
+                                    <i class="fas fa-calendar-check text-2xl text-indigo-600"></i>
                                 </div>
                             </div>
                             <p class="text-slate-600 text-sm">December 5, 2025 at 09:00 AM</p>
@@ -1119,8 +1120,8 @@
                                     <p class="text-slate-600 text-sm uppercase tracking-wide mb-2">Days Since Filing</p>
                                     <h3 class="text-3xl font-bold text-slate-900">142</h3>
                                 </div>
-                                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                                    <i class="fas fa-hourglass-half text-2xl text-blue-600"></i>
+                                <div class="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center">
+                                    <i class="fas fa-hourglass-half text-2xl text-indigo-600"></i>
                                 </div>
                             </div>
                             <p class="text-slate-600 text-sm">Filed on July 15, 2025</p>
@@ -1132,7 +1133,7 @@
                                     <p class="text-slate-600 text-sm uppercase tracking-wide mb-2">Case Status</p>
                                     <h3 class="text-xl font-bold text-green-600">On Track</h3>
                                 </div>
-                                <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+                                <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
                                     <i class="fas fa-chart-line text-2xl text-green-600"></i>
                                 </div>
                             </div>
@@ -1144,11 +1145,11 @@
                 <!-- Tab Content: Documents -->
                 <div class="tab-content" data-tab="documents" style="display: none;">
                     <!-- Recent Documents -->
-                    <div class="bg-white rounded-lg shadow-lg p-8 mb-8">
+                    <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
                         <div class="flex items-center justify-between mb-6">
                             <h2 class="text-2xl font-bold text-slate-900"
                                 style="font-family: 'Playfair Display', serif;">Recent Documents</h2>
-                            <button class="text-amber-600 hover:text-amber-700 font-semibold text-sm">
+                            <button class="text-indigo-600 hover:text-indigo-700 font-semibold text-sm">
                                 View All <i class="fas fa-arrow-right ml-1"></i>
                             </button>
                         </div>
@@ -1176,10 +1177,10 @@
                                         <td class="py-4 px-4 text-slate-600">Legal Filing</td>
                                         <td class="py-4 px-4 text-slate-600">Dec 1, 2025</td>
                                         <td class="py-4 px-4 text-right">
-                                            <button class="text-amber-600 hover:text-amber-700 mx-1">
+                                            <button class="text-indigo-600 hover:text-indigo-700 mx-1">
                                                 <i class="fas fa-eye"></i>
                                             </button>
-                                            <button class="text-amber-600 hover:text-amber-700 mx-1">
+                                            <button class="text-indigo-600 hover:text-indigo-700 mx-1">
                                                 <i class="fas fa-download"></i>
                                             </button>
                                         </td>
@@ -1187,7 +1188,7 @@
                                     <tr class="hover:bg-slate-50">
                                         <td class="py-4 px-4">
                                             <div class="flex items-center gap-3">
-                                                <i class="fas fa-file-word text-2xl text-blue-500"></i>
+                                                <i class="fas fa-file-word text-2xl text-indigo-500"></i>
                                                 <span
                                                     class="font-semibold text-slate-900">Settlement_Draft_v2.docx</span>
                                             </div>
@@ -1195,10 +1196,10 @@
                                         <td class="py-4 px-4 text-slate-600">Agreement</td>
                                         <td class="py-4 px-4 text-slate-600">Nov 28, 2025</td>
                                         <td class="py-4 px-4 text-right">
-                                            <button class="text-amber-600 hover:text-amber-700 mx-1">
+                                            <button class="text-indigo-600 hover:text-indigo-700 mx-1">
                                                 <i class="fas fa-eye"></i>
                                             </button>
-                                            <button class="text-amber-600 hover:text-amber-700 mx-1">
+                                            <button class="text-indigo-600 hover:text-indigo-700 mx-1">
                                                 <i class="fas fa-download"></i>
                                             </button>
                                         </td>
@@ -1214,10 +1215,10 @@
                                         <td class="py-4 px-4 text-slate-600">Evidence</td>
                                         <td class="py-4 px-4 text-slate-600">Nov 22, 2025</td>
                                         <td class="py-4 px-4 text-right">
-                                            <button class="text-amber-600 hover:text-amber-700 mx-1">
+                                            <button class="text-indigo-600 hover:text-indigo-700 mx-1">
                                                 <i class="fas fa-eye"></i>
                                             </button>
-                                            <button class="text-amber-600 hover:text-amber-700 mx-1">
+                                            <button class="text-indigo-600 hover:text-indigo-700 mx-1">
                                                 <i class="fas fa-download"></i>
                                             </button>
                                         </td>
@@ -1231,39 +1232,39 @@
                 <!-- Tab Content: Team -->
                 <div class="tab-content" data-tab="team" style="display: none;">
                     <!-- Your Legal Team -->
-                    <div class="bg-white rounded-lg shadow-lg p-8">
+                    <div class="bg-white rounded-xl shadow-lg p-8">
                         <h2 class="text-2xl font-bold text-slate-900 mb-6"
                             style="font-family: 'Playfair Display', serif;">Your Legal Team</h2>
 
                         <div class="grid md:grid-cols-2 gap-6">
-                            <div class="flex items-center gap-4 p-4 border border-slate-200 rounded-lg">
-                                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=100"
+                            <div class="flex items-center gap-4 p-4 border border-slate-200 rounded-xl">
+                                <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=100"
                                     alt="Attorney" class="w-16 h-16 rounded-full">
                                 <div>
                                     <h3 class="font-bold text-slate-900 text-lg">Alexander Specter</h3>
-                                    <p class="text-amber-600 font-semibold text-sm">Lead Attorney</p>
+                                    <p class="text-indigo-600 font-semibold text-sm">Lead Attorney</p>
                                     <div class="flex gap-3 mt-2">
-                                        <a href="#" class="text-slate-600 hover:text-amber-600">
+                                        <a href="#" class="text-slate-600 hover:text-indigo-600">
                                             <i class="fas fa-envelope"></i>
                                         </a>
-                                        <a href="#" class="text-slate-600 hover:text-amber-600">
+                                        <a href="#" class="text-slate-600 hover:text-indigo-600">
                                             <i class="fas fa-phone"></i>
                                         </a>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="flex items-center gap-4 p-4 border border-slate-200 rounded-lg">
-                                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=100"
+                            <div class="flex items-center gap-4 p-4 border border-slate-200 rounded-xl">
+                                <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=100"
                                     alt="Paralegal" class="w-16 h-16 rounded-full">
                                 <div>
                                     <h3 class="font-bold text-slate-900 text-lg">Sarah Martinez</h3>
-                                    <p class="text-amber-600 font-semibold text-sm">Case Manager</p>
+                                    <p class="text-indigo-600 font-semibold text-sm">Case Manager</p>
                                     <div class="flex gap-3 mt-2">
-                                        <a href="#" class="text-slate-600 hover:text-amber-600">
+                                        <a href="#" class="text-slate-600 hover:text-indigo-600">
                                             <i class="fas fa-envelope"></i>
                                         </a>
-                                        <a href="#" class="text-slate-600 hover:text-amber-600">
+                                        <a href="#" class="text-slate-600 hover:text-indigo-600">
                                             <i class="fas fa-phone"></i>
                                         </a>
                                     </div>
@@ -1276,16 +1277,16 @@
                 <!-- Tab Content: Billing -->
                 <div class="tab-content" data-tab="billing" style="display: none;">
                     <!-- Outstanding Balance -->
-                    <div class="glass rounded-xl p-6 border border-amber-200 mb-6">
+                    <div class="glass rounded-xl p-6 border border-indigo-200 mb-6">
                         <div class="flex items-center justify-between">
                             <div>
                                 <p class="text-slate-600 text-sm uppercase tracking-wide mb-2">Outstanding Balance</p>
                                 <h3 class="text-4xl font-bold gradient-text"
-                                    style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                                    style="background: linear-gradient(135deg, #4f46e5 0%, #312e81 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
                                     $12,450.00</h3>
                             </div>
                             <button
-                                class="bg-gradient-to-r from-amber-600 to-orange-600 text-white px-6 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all hover:scale-105">
+                                class="bg-gradient-to-r from-indigo-600 to-indigo-600 text-white px-6 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all hover:scale-105">
                                 <i class="fas fa-credit-card mr-2"></i>Make Payment
                             </button>
                         </div>
@@ -1317,12 +1318,12 @@
                                         <td class="py-4 px-4 font-semibold text-slate-900">$4,850.00</td>
                                         <td class="py-4 px-4">
                                             <span
-                                                class="px-3 py-1 bg-amber-100 text-amber-700 rounded-full text-xs font-semibold">Pending</span>
+                                                class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-xs font-semibold">Pending</span>
                                         </td>
                                         <td class="py-4 px-4 text-right">
-                                            <button class="text-amber-600 hover:text-amber-700 mx-1"><i
+                                            <button class="text-indigo-600 hover:text-indigo-700 mx-1"><i
                                                     class="fas fa-download"></i></button>
-                                            <button class="text-amber-600 hover:text-amber-700 mx-1"><i
+                                            <button class="text-indigo-600 hover:text-indigo-700 mx-1"><i
                                                     class="fas fa-credit-card"></i></button>
                                         </td>
                                     </tr>
@@ -1333,12 +1334,12 @@
                                         <td class="py-4 px-4 font-semibold text-slate-900">$7,600.00</td>
                                         <td class="py-4 px-4">
                                             <span
-                                                class="px-3 py-1 bg-amber-100 text-amber-700 rounded-full text-xs font-semibold">Pending</span>
+                                                class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-xs font-semibold">Pending</span>
                                         </td>
                                         <td class="py-4 px-4 text-right">
-                                            <button class="text-amber-600 hover:text-amber-700 mx-1"><i
+                                            <button class="text-indigo-600 hover:text-indigo-700 mx-1"><i
                                                     class="fas fa-download"></i></button>
-                                            <button class="text-amber-600 hover:text-amber-700 mx-1"><i
+                                            <button class="text-indigo-600 hover:text-indigo-700 mx-1"><i
                                                     class="fas fa-credit-card"></i></button>
                                         </td>
                                     </tr>
@@ -1352,7 +1353,7 @@
                                                 class="px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full text-xs font-semibold">Paid</span>
                                         </td>
                                         <td class="py-4 px-4 text-right">
-                                            <button class="text-amber-600 hover:text-amber-700 mx-1"><i
+                                            <button class="text-indigo-600 hover:text-indigo-700 mx-1"><i
                                                     class="fas fa-download"></i></button>
                                             <button class="text-slate-400 cursor-not-allowed mx-1"><i
                                                     class="fas fa-check-circle"></i></button>
@@ -1368,7 +1369,7 @@
                                                 class="px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full text-xs font-semibold">Paid</span>
                                         </td>
                                         <td class="py-4 px-4 text-right">
-                                            <button class="text-amber-600 hover:text-amber-700 mx-1"><i
+                                            <button class="text-indigo-600 hover:text-indigo-700 mx-1"><i
                                                     class="fas fa-download"></i></button>
                                             <button class="text-slate-400 cursor-not-allowed mx-1"><i
                                                     class="fas fa-check-circle"></i></button>
@@ -1383,24 +1384,24 @@
                     <div class="bg-white rounded-xl shadow-lg p-6">
                         <div class="flex items-center justify-between mb-4">
                             <h3 class="text-xl font-bold text-slate-900">Payment Methods</h3>
-                            <button class="text-amber-600 hover:text-amber-700 font-semibold text-sm">
+                            <button class="text-indigo-600 hover:text-indigo-700 font-semibold text-sm">
                                 <i class="fas fa-plus mr-1"></i>Add New
                             </button>
                         </div>
                         <div class="grid md:grid-cols-2 gap-4">
                             <div
-                                class="border-2 border-amber-300 rounded-lg p-4 bg-gradient-to-br from-amber-50 to-orange-50">
+                                class="border-2 border-indigo-300 rounded-xl p-4 bg-gradient-to-br from-indigo-50 to-indigo-50">
                                 <div class="flex items-center justify-between mb-3">
-                                    <i class="fab fa-cc-visa text-3xl text-blue-600"></i>
+                                    <i class="fab fa-cc-visa text-3xl text-indigo-600"></i>
                                     <span
                                         class="px-2 py-1 bg-emerald-100 text-emerald-700 rounded text-xs font-semibold">Primary</span>
                                 </div>
                                 <p class="text-slate-900 font-semibold">Visa •••• 4242</p>
                                 <p class="text-slate-600 text-sm">Expires 12/2026</p>
                             </div>
-                            <div class="border border-slate-200 rounded-lg p-4">
+                            <div class="border border-slate-200 rounded-xl p-4">
                                 <div class="flex items-center justify-between mb-3">
-                                    <i class="fab fa-cc-mastercard text-3xl text-orange-600"></i>
+                                    <i class="fab fa-cc-mastercard text-3xl text-indigo-600"></i>
                                     <button class="text-slate-400 hover:text-slate-600"><i
                                             class="fas fa-ellipsis-v"></i></button>
                                 </div>
@@ -1421,9 +1422,9 @@
                             </div>
                             <div class="divide-y divide-slate-200 max-h-[600px] overflow-y-auto">
                                 <div
-                                    class="p-4 hover:bg-slate-50 cursor-pointer border-l-4 border-amber-600 bg-amber-50">
+                                    class="p-4 hover:bg-slate-50 cursor-pointer border-l-4 border-indigo-600 bg-indigo-50">
                                     <div class="flex items-start gap-3">
-                                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=50"
+                                        <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=50"
                                             alt="Attorney" class="w-10 h-10 rounded-full">
                                         <div class="flex-1">
                                             <div class="flex items-center justify-between">
@@ -1433,13 +1434,13 @@
                                             <p class="text-sm text-slate-600 truncate">Deposition scheduled for tomorrow
                                                 morning...</p>
                                             <span
-                                                class="inline-block mt-1 px-2 py-0.5 bg-amber-600 text-white rounded-full text-xs">New</span>
+                                                class="inline-block mt-1 px-2 py-0.5 bg-indigo-600 text-white rounded-full text-xs">New</span>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="p-4 hover:bg-slate-50 cursor-pointer">
                                     <div class="flex items-start gap-3">
-                                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=50"
+                                        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=50"
                                             alt="Case Manager" class="w-10 h-10 rounded-full">
                                         <div class="flex-1">
                                             <div class="flex items-center justify-between">
@@ -1452,7 +1453,7 @@
                                 </div>
                                 <div class="p-4 hover:bg-slate-50 cursor-pointer">
                                     <div class="flex items-start gap-3">
-                                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=50"
+                                        <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=50"
                                             alt="Attorney" class="w-10 h-10 rounded-full">
                                         <div class="flex-1">
                                             <div class="flex items-center justify-between">
@@ -1467,7 +1468,7 @@
                                 <div class="p-4 hover:bg-slate-50 cursor-pointer">
                                     <div class="flex items-start gap-3">
                                         <div
-                                            class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center text-white font-bold">
+                                            class="w-10 h-10 rounded-full bg-gradient-to-br from-indigo-500 to-indigo-600 flex items-center justify-center text-white font-bold">
                                             LS</div>
                                         <div class="flex-1">
                                             <div class="flex items-center justify-between">
@@ -1486,7 +1487,7 @@
                         <div class="lg:col-span-2 bg-white rounded-xl shadow-lg flex flex-col">
                             <div class="p-4 border-b border-slate-200 flex items-center justify-between">
                                 <div class="flex items-center gap-3">
-                                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=50"
+                                    <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=50"
                                         alt="Attorney" class="w-10 h-10 rounded-full">
                                     <div>
                                         <h4 class="font-semibold text-slate-900">Alexander Specter</h4>
@@ -1499,10 +1500,10 @@
 
                             <div class="flex-1 p-6 space-y-4 overflow-y-auto max-h-[450px]">
                                 <div class="flex gap-3">
-                                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=40"
+                                    <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=40"
                                         alt="Attorney" class="w-8 h-8 rounded-full">
                                     <div class="flex-1">
-                                        <div class="bg-slate-100 rounded-lg p-3 max-w-md">
+                                        <div class="bg-slate-100 rounded-xl p-3 max-w-md">
                                             <p class="text-sm text-slate-900">Good afternoon! I wanted to update you on
                                                 the deposition scheduled for tomorrow at 9:00 AM. Please review the
                                                 attached preparation materials.</p>
@@ -1514,22 +1515,22 @@
                                 <div class="flex gap-3 justify-end">
                                     <div class="flex-1 flex flex-col items-end">
                                         <div
-                                            class="bg-gradient-to-r from-amber-500 to-orange-500 text-white rounded-lg p-3 max-w-md">
+                                            class="bg-gradient-to-r from-indigo-500 to-indigo-500 text-white rounded-xl p-3 max-w-md">
                                             <p class="text-sm">Thank you for the update. I've reviewed the materials.
                                                 Should I bring any additional documents?</p>
                                         </div>
                                         <span class="text-xs text-slate-500 mt-1">Today at 3:15 PM</span>
                                     </div>
                                     <div
-                                        class="w-8 h-8 rounded-full bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center text-white font-bold text-sm">
+                                        class="w-8 h-8 rounded-full bg-gradient-to-br from-indigo-500 to-indigo-600 flex items-center justify-center text-white font-bold text-sm">
                                         JD</div>
                                 </div>
 
                                 <div class="flex gap-3">
-                                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=40"
+                                    <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=40"
                                         alt="Attorney" class="w-8 h-8 rounded-full">
                                     <div class="flex-1">
-                                        <div class="bg-slate-100 rounded-lg p-3 max-w-md">
+                                        <div class="bg-slate-100 rounded-xl p-3 max-w-md">
                                             <p class="text-sm text-slate-900">Just the photo ID and any notes you'd like
                                                 to reference. We'll go over everything 30 minutes before the deposition
                                                 starts.</p>
@@ -1542,9 +1543,9 @@
                             <div class="p-4 border-t border-slate-200">
                                 <div class="flex gap-3">
                                     <input type="text" placeholder="Type your message..."
-                                        class="flex-1 px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:border-amber-600">
+                                        class="flex-1 px-4 py-2 border border-slate-300 rounded-xl focus:outline-none focus:border-indigo-600">
                                     <button
-                                        class="px-4 py-2 bg-gradient-to-r from-amber-600 to-orange-600 text-white rounded-lg font-semibold hover:shadow-lg transition-all">
+                                        class="px-4 py-2 bg-gradient-to-r from-indigo-600 to-indigo-600 text-white rounded-xl font-semibold hover:shadow-lg transition-all">
                                         <i class="fas fa-paper-plane"></i>
                                     </button>
                                 </div>
@@ -1561,28 +1562,28 @@
                             <h3 class="text-lg font-bold text-slate-900 mb-4">Categories</h3>
                             <div class="space-y-2">
                                 <button
-                                    class="w-full text-left px-4 py-2 bg-amber-50 text-amber-700 rounded-lg font-semibold hover:bg-amber-100 transition-colors">
+                                    class="w-full text-left px-4 py-2 bg-indigo-50 text-indigo-700 rounded-xl font-semibold hover:bg-indigo-100 transition-colors">
                                     <i class="fas fa-folder mr-2"></i>All Documents (24)
                                 </button>
                                 <button
-                                    class="w-full text-left px-4 py-2 text-slate-600 rounded-lg hover:bg-slate-50 transition-colors">
+                                    class="w-full text-left px-4 py-2 text-slate-600 rounded-xl hover:bg-slate-50 transition-colors">
                                     <i class="fas fa-file-pdf mr-2"></i>Legal Filings (8)
                                 </button>
                                 <button
-                                    class="w-full text-left px-4 py-2 text-slate-600 rounded-lg hover:bg-slate-50 transition-colors">
+                                    class="w-full text-left px-4 py-2 text-slate-600 rounded-xl hover:bg-slate-50 transition-colors">
                                     <i class="fas fa-file-contract mr-2"></i>Agreements (5)
                                 </button>
                                 <button
-                                    class="w-full text-left px-4 py-2 text-slate-600 rounded-lg hover:bg-slate-50 transition-colors">
+                                    class="w-full text-left px-4 py-2 text-slate-600 rounded-xl hover:bg-slate-50 transition-colors">
                                     <i class="fas fa-file-alt mr-2"></i>Evidence (7)
                                 </button>
                                 <button
-                                    class="w-full text-left px-4 py-2 text-slate-600 rounded-lg hover:bg-slate-50 transition-colors">
+                                    class="w-full text-left px-4 py-2 text-slate-600 rounded-xl hover:bg-slate-50 transition-colors">
                                     <i class="fas fa-file-invoice mr-2"></i>Billing (4)
                                 </button>
                             </div>
                             <button
-                                class="w-full mt-6 px-4 py-2 bg-gradient-to-r from-amber-600 to-orange-600 text-white rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all">
+                                class="w-full mt-6 px-4 py-2 bg-gradient-to-r from-indigo-600 to-indigo-600 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all">
                                 <i class="fas fa-upload mr-2"></i>Upload Document
                             </button>
                         </div>
@@ -1594,17 +1595,17 @@
                                     <h3 class="text-xl font-bold text-slate-900">All Documents</h3>
                                     <div class="flex gap-2">
                                         <button
-                                            class="px-3 py-2 text-amber-600 border border-amber-300 rounded-lg hover:bg-amber-50"><i
+                                            class="px-3 py-2 text-indigo-600 border border-indigo-300 rounded-xl hover:bg-indigo-50"><i
                                                 class="fas fa-th"></i></button>
                                         <button
-                                            class="px-3 py-2 text-slate-600 border border-slate-300 rounded-lg hover:bg-slate-50"><i
+                                            class="px-3 py-2 text-slate-600 border border-slate-300 rounded-xl hover:bg-slate-50"><i
                                                 class="fas fa-list"></i></button>
                                     </div>
                                 </div>
 
                                 <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-4">
                                     <div
-                                        class="border border-slate-200 rounded-lg p-4 hover:shadow-lg transition-shadow cursor-pointer">
+                                        class="border border-slate-200 rounded-xl p-4 hover:shadow-lg transition-shadow cursor-pointer">
                                         <div class="flex items-center justify-between mb-3">
                                             <i class="fas fa-file-pdf text-4xl text-red-500"></i>
                                             <button class="text-slate-400 hover:text-slate-600"><i
@@ -1618,15 +1619,15 @@
                                                 class="flex-1 px-2 py-1 text-xs bg-slate-100 text-slate-600 rounded hover:bg-slate-200"><i
                                                     class="fas fa-eye mr-1"></i>View</button>
                                             <button
-                                                class="flex-1 px-2 py-1 text-xs bg-amber-100 text-amber-700 rounded hover:bg-amber-200"><i
+                                                class="flex-1 px-2 py-1 text-xs bg-indigo-100 text-indigo-700 rounded hover:bg-indigo-200"><i
                                                     class="fas fa-download mr-1"></i>Download</button>
                                         </div>
                                     </div>
 
                                     <div
-                                        class="border border-slate-200 rounded-lg p-4 hover:shadow-lg transition-shadow cursor-pointer">
+                                        class="border border-slate-200 rounded-xl p-4 hover:shadow-lg transition-shadow cursor-pointer">
                                         <div class="flex items-center justify-between mb-3">
-                                            <i class="fas fa-file-word text-4xl text-blue-500"></i>
+                                            <i class="fas fa-file-word text-4xl text-indigo-500"></i>
                                             <button class="text-slate-400 hover:text-slate-600"><i
                                                     class="fas fa-ellipsis-v"></i></button>
                                         </div>
@@ -1638,15 +1639,15 @@
                                                 class="flex-1 px-2 py-1 text-xs bg-slate-100 text-slate-600 rounded hover:bg-slate-200"><i
                                                     class="fas fa-eye mr-1"></i>View</button>
                                             <button
-                                                class="flex-1 px-2 py-1 text-xs bg-amber-100 text-amber-700 rounded hover:bg-amber-200"><i
+                                                class="flex-1 px-2 py-1 text-xs bg-indigo-100 text-indigo-700 rounded hover:bg-indigo-200"><i
                                                     class="fas fa-download mr-1"></i>Download</button>
                                         </div>
                                     </div>
 
                                     <div
-                                        class="border border-slate-200 rounded-lg p-4 hover:shadow-lg transition-shadow cursor-pointer">
+                                        class="border border-slate-200 rounded-xl p-4 hover:shadow-lg transition-shadow cursor-pointer">
                                         <div class="flex items-center justify-between mb-3">
-                                            <i class="fas fa-file-archive text-4xl text-amber-500"></i>
+                                            <i class="fas fa-file-archive text-4xl text-indigo-500"></i>
                                             <button class="text-slate-400 hover:text-slate-600"><i
                                                     class="fas fa-ellipsis-v"></i></button>
                                         </div>
@@ -1658,13 +1659,13 @@
                                                 class="flex-1 px-2 py-1 text-xs bg-slate-100 text-slate-600 rounded hover:bg-slate-200"><i
                                                     class="fas fa-eye mr-1"></i>View</button>
                                             <button
-                                                class="flex-1 px-2 py-1 text-xs bg-amber-100 text-amber-700 rounded hover:bg-amber-200"><i
+                                                class="flex-1 px-2 py-1 text-xs bg-indigo-100 text-indigo-700 rounded hover:bg-indigo-200"><i
                                                     class="fas fa-download mr-1"></i>Download</button>
                                         </div>
                                     </div>
 
                                     <div
-                                        class="border border-slate-200 rounded-lg p-4 hover:shadow-lg transition-shadow cursor-pointer">
+                                        class="border border-slate-200 rounded-xl p-4 hover:shadow-lg transition-shadow cursor-pointer">
                                         <div class="flex items-center justify-between mb-3">
                                             <i class="fas fa-file-contract text-4xl text-green-500"></i>
                                             <button class="text-slate-400 hover:text-slate-600"><i
@@ -1678,15 +1679,15 @@
                                                 class="flex-1 px-2 py-1 text-xs bg-slate-100 text-slate-600 rounded hover:bg-slate-200"><i
                                                     class="fas fa-eye mr-1"></i>View</button>
                                             <button
-                                                class="flex-1 px-2 py-1 text-xs bg-amber-100 text-amber-700 rounded hover:bg-amber-200"><i
+                                                class="flex-1 px-2 py-1 text-xs bg-indigo-100 text-indigo-700 rounded hover:bg-indigo-200"><i
                                                     class="fas fa-download mr-1"></i>Download</button>
                                         </div>
                                     </div>
 
                                     <div
-                                        class="border border-slate-200 rounded-lg p-4 hover:shadow-lg transition-shadow cursor-pointer">
+                                        class="border border-slate-200 rounded-xl p-4 hover:shadow-lg transition-shadow cursor-pointer">
                                         <div class="flex items-center justify-between mb-3">
-                                            <i class="fas fa-file-image text-4xl text-purple-500"></i>
+                                            <i class="fas fa-file-image text-4xl text-indigo-500"></i>
                                             <button class="text-slate-400 hover:text-slate-600"><i
                                                     class="fas fa-ellipsis-v"></i></button>
                                         </div>
@@ -1698,13 +1699,13 @@
                                                 class="flex-1 px-2 py-1 text-xs bg-slate-100 text-slate-600 rounded hover:bg-slate-200"><i
                                                     class="fas fa-eye mr-1"></i>View</button>
                                             <button
-                                                class="flex-1 px-2 py-1 text-xs bg-amber-100 text-amber-700 rounded hover:bg-amber-200"><i
+                                                class="flex-1 px-2 py-1 text-xs bg-indigo-100 text-indigo-700 rounded hover:bg-indigo-200"><i
                                                     class="fas fa-download mr-1"></i>Download</button>
                                         </div>
                                     </div>
 
                                     <div
-                                        class="border border-slate-200 rounded-lg p-4 hover:shadow-lg transition-shadow cursor-pointer">
+                                        class="border border-slate-200 rounded-xl p-4 hover:shadow-lg transition-shadow cursor-pointer">
                                         <div class="flex items-center justify-between mb-3">
                                             <i class="fas fa-file-excel text-4xl text-emerald-500"></i>
                                             <button class="text-slate-400 hover:text-slate-600"><i
@@ -1718,7 +1719,7 @@
                                                 class="flex-1 px-2 py-1 text-xs bg-slate-100 text-slate-600 rounded hover:bg-slate-200"><i
                                                     class="fas fa-eye mr-1"></i>View</button>
                                             <button
-                                                class="flex-1 px-2 py-1 text-xs bg-amber-100 text-amber-700 rounded hover:bg-amber-200"><i
+                                                class="flex-1 px-2 py-1 text-xs bg-indigo-100 text-indigo-700 rounded hover:bg-indigo-200"><i
                                                     class="fas fa-download mr-1"></i>Download</button>
                                         </div>
                                     </div>
@@ -1735,64 +1736,65 @@
                         <div class="flex items-center justify-between mb-6">
                             <h3 class="text-xl font-bold text-slate-900">Upcoming Appointments</h3>
                             <button
-                                class="px-4 py-2 bg-gradient-to-r from-amber-600 to-orange-600 text-white rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all">
+                                class="px-4 py-2 bg-gradient-to-r from-indigo-600 to-indigo-600 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all">
                                 <i class="fas fa-plus mr-2"></i>Schedule New
                             </button>
                         </div>
 
                         <div class="space-y-4">
-                            <div class="border-l-4 border-amber-600 bg-amber-50 rounded-lg p-4">
+                            <div class="border-l-4 border-indigo-600 bg-indigo-50 rounded-xl p-4">
                                 <div class="flex items-start justify-between">
                                     <div>
                                         <h4 class="font-bold text-slate-900 text-lg mb-1">Deposition Hearing</h4>
                                         <p class="text-slate-600 text-sm mb-2">with Alexander Specter</p>
                                         <div class="flex items-center gap-4 text-sm text-slate-600">
-                                            <span><i class="fas fa-calendar mr-2 text-amber-600"></i>Tomorrow, Dec 5,
+                                            <span><i class="fas fa-calendar mr-2 text-indigo-600"></i>Tomorrow, Dec 5,
                                                 2025</span>
-                                            <span><i class="fas fa-clock mr-2 text-amber-600"></i>09:00 AM - 11:00
+                                            <span><i class="fas fa-clock mr-2 text-indigo-600"></i>09:00 AM - 11:00
                                                 AM</span>
-                                            <span><i class="fas fa-map-marker-alt mr-2 text-amber-600"></i>Court Room
+                                            <span><i class="fas fa-map-marker-alt mr-2 text-indigo-600"></i>Court Room
                                                 3B</span>
                                         </div>
                                     </div>
-                                    <button class="text-amber-600 hover:text-amber-700"><i
+                                    <button class="text-indigo-600 hover:text-indigo-700"><i
                                             class="fas fa-ellipsis-v"></i></button>
                                 </div>
                             </div>
 
-                            <div class="border-l-4 border-blue-600 bg-blue-50 rounded-lg p-4">
+                            <div class="border-l-4 border-indigo-600 bg-indigo-50 rounded-xl p-4">
                                 <div class="flex items-start justify-between">
                                     <div>
                                         <h4 class="font-bold text-slate-900 text-lg mb-1">Strategy Meeting</h4>
                                         <p class="text-slate-600 text-sm mb-2">with Alexander Specter & Sarah Martinez
                                         </p>
                                         <div class="flex items-center gap-4 text-sm text-slate-600">
-                                            <span><i class="fas fa-calendar mr-2 text-blue-600"></i>Dec 8, 2025</span>
-                                            <span><i class="fas fa-clock mr-2 text-blue-600"></i>02:00 PM - 03:30
+                                            <span><i class="fas fa-calendar mr-2 text-indigo-600"></i>Dec 8, 2025</span>
+                                            <span><i class="fas fa-clock mr-2 text-indigo-600"></i>02:00 PM - 03:30
                                                 PM</span>
-                                            <span><i class="fas fa-video mr-2 text-blue-600"></i>Video Conference</span>
+                                            <span><i class="fas fa-video mr-2 text-indigo-600"></i>Video
+                                                Conference</span>
                                         </div>
                                     </div>
-                                    <button class="text-blue-600 hover:text-blue-700"><i
+                                    <button class="text-indigo-600 hover:text-indigo-700"><i
                                             class="fas fa-ellipsis-v"></i></button>
                                 </div>
                             </div>
 
-                            <div class="border-l-4 border-purple-600 bg-purple-50 rounded-lg p-4">
+                            <div class="border-l-4 border-indigo-600 bg-indigo-50 rounded-xl p-4">
                                 <div class="flex items-start justify-between">
                                     <div>
                                         <h4 class="font-bold text-slate-900 text-lg mb-1">Document Review Session</h4>
                                         <p class="text-slate-600 text-sm mb-2">with Sarah Martinez</p>
                                         <div class="flex items-center gap-4 text-sm text-slate-600">
-                                            <span><i class="fas fa-calendar mr-2 text-purple-600"></i>Dec 12,
+                                            <span><i class="fas fa-calendar mr-2 text-indigo-600"></i>Dec 12,
                                                 2025</span>
-                                            <span><i class="fas fa-clock mr-2 text-purple-600"></i>10:00 AM - 12:00
+                                            <span><i class="fas fa-clock mr-2 text-indigo-600"></i>10:00 AM - 12:00
                                                 PM</span>
-                                            <span><i class="fas fa-map-marker-alt mr-2 text-purple-600"></i>Office -
+                                            <span><i class="fas fa-map-marker-alt mr-2 text-indigo-600"></i>Office -
                                                 Conference Room A</span>
                                         </div>
                                     </div>
-                                    <button class="text-purple-600 hover:text-purple-700"><i
+                                    <button class="text-indigo-600 hover:text-indigo-700"><i
                                             class="fas fa-ellipsis-v"></i></button>
                                 </div>
                             </div>
@@ -1803,7 +1805,7 @@
                     <div class="bg-white rounded-xl shadow-lg p-6">
                         <h3 class="text-xl font-bold text-slate-900 mb-6">Past Appointments</h3>
                         <div class="space-y-3">
-                            <div class="border border-slate-200 rounded-lg p-4 opacity-75">
+                            <div class="border border-slate-200 rounded-xl p-4 opacity-75">
                                 <div class="flex items-center justify-between">
                                     <div>
                                         <h4 class="font-semibold text-slate-900">Case Consultation</h4>
@@ -1813,7 +1815,7 @@
                                         class="px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full text-xs font-semibold">Completed</span>
                                 </div>
                             </div>
-                            <div class="border border-slate-200 rounded-lg p-4 opacity-75">
+                            <div class="border border-slate-200 rounded-xl p-4 opacity-75">
                                 <div class="flex items-center justify-between">
                                     <div>
                                         <h4 class="font-semibold text-slate-900">Discovery Phase Review</h4>
@@ -1823,7 +1825,7 @@
                                         class="px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full text-xs font-semibold">Completed</span>
                                 </div>
                             </div>
-                            <div class="border border-slate-200 rounded-lg p-4 opacity-75">
+                            <div class="border border-slate-200 rounded-xl p-4 opacity-75">
                                 <div class="flex items-center justify-between">
                                     <div>
                                         <h4 class="font-semibold text-slate-900">Initial Consultation</h4>
@@ -1877,35 +1879,35 @@
                                             <label class="block text-sm font-semibold text-slate-700 mb-2">First
                                                 Name</label>
                                             <input type="text" value="John"
-                                                class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:border-amber-600">
+                                                class="w-full px-4 py-2 border border-slate-300 rounded-xl focus:outline-none focus:border-indigo-600">
                                         </div>
                                         <div>
                                             <label class="block text-sm font-semibold text-slate-700 mb-2">Last
                                                 Name</label>
                                             <input type="text" value="Doe"
-                                                class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:border-amber-600">
+                                                class="w-full px-4 py-2 border border-slate-300 rounded-xl focus:outline-none focus:border-indigo-600">
                                         </div>
                                     </div>
                                     <div>
                                         <label class="block text-sm font-semibold text-slate-700 mb-2">Email
                                             Address</label>
                                         <input type="email" value="john.doe@email.com"
-                                            class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:border-amber-600">
+                                            class="w-full px-4 py-2 border border-slate-300 rounded-xl focus:outline-none focus:border-indigo-600">
                                     </div>
                                     <div>
                                         <label class="block text-sm font-semibold text-slate-700 mb-2">Phone
                                             Number</label>
                                         <input type="tel" value="+1 (555) 123-4567"
-                                            class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:border-amber-600">
+                                            class="w-full px-4 py-2 border border-slate-300 rounded-xl focus:outline-none focus:border-indigo-600">
                                     </div>
                                     <div>
                                         <label class="block text-sm font-semibold text-slate-700 mb-2">Address</label>
                                         <textarea rows="3"
-                                            class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:border-amber-600">123 Main Street
+                                            class="w-full px-4 py-2 border border-slate-300 rounded-xl focus:outline-none focus:border-indigo-600">123 Main Street
 New York, NY 10001</textarea>
                                     </div>
                                     <button
-                                        class="px-6 py-2 bg-gradient-to-r from-amber-600 to-orange-600 text-white rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all">
+                                        class="px-6 py-2 bg-gradient-to-r from-indigo-600 to-indigo-600 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all">
                                         Save Changes
                                     </button>
                                 </div>
@@ -1918,7 +1920,7 @@ New York, NY 10001</textarea>
                                 <h3 class="text-xl font-bold text-slate-900 mb-6">Notification Preferences</h3>
                                 <div class="space-y-4">
                                     <div
-                                        class="flex items-center justify-between p-4 border border-slate-200 rounded-lg">
+                                        class="flex items-center justify-between p-4 border border-slate-200 rounded-xl">
                                         <div>
                                             <h4 class="font-semibold text-slate-900">Email Notifications</h4>
                                             <p class="text-sm text-slate-600">Receive updates via email</p>
@@ -1926,12 +1928,12 @@ New York, NY 10001</textarea>
                                         <label class="relative inline-flex items-center cursor-pointer">
                                             <input type="checkbox" checked class="sr-only peer">
                                             <div
-                                                class="w-11 h-6 bg-slate-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-amber-600">
+                                                class="w-11 h-6 bg-slate-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-indigo-600">
                                             </div>
                                         </label>
                                     </div>
                                     <div
-                                        class="flex items-center justify-between p-4 border border-slate-200 rounded-lg">
+                                        class="flex items-center justify-between p-4 border border-slate-200 rounded-xl">
                                         <div>
                                             <h4 class="font-semibold text-slate-900">SMS Notifications</h4>
                                             <p class="text-sm text-slate-600">Receive text message alerts</p>
@@ -1939,12 +1941,12 @@ New York, NY 10001</textarea>
                                         <label class="relative inline-flex items-center cursor-pointer">
                                             <input type="checkbox" checked class="sr-only peer">
                                             <div
-                                                class="w-11 h-6 bg-slate-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-amber-600">
+                                                class="w-11 h-6 bg-slate-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-indigo-600">
                                             </div>
                                         </label>
                                     </div>
                                     <div
-                                        class="flex items-center justify-between p-4 border border-slate-200 rounded-lg">
+                                        class="flex items-center justify-between p-4 border border-slate-200 rounded-xl">
                                         <div>
                                             <h4 class="font-semibold text-slate-900">Case Updates</h4>
                                             <p class="text-sm text-slate-600">Notifications about case progress</p>
@@ -1952,7 +1954,7 @@ New York, NY 10001</textarea>
                                         <label class="relative inline-flex items-center cursor-pointer">
                                             <input type="checkbox" checked class="sr-only peer">
                                             <div
-                                                class="w-11 h-6 bg-slate-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-amber-600">
+                                                class="w-11 h-6 bg-slate-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-indigo-600">
                                             </div>
                                         </label>
                                     </div>
@@ -1969,22 +1971,22 @@ New York, NY 10001</textarea>
                                         <label class="block text-sm font-semibold text-slate-700 mb-2">Current
                                             Password</label>
                                         <input type="password"
-                                            class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:border-amber-600">
+                                            class="w-full px-4 py-2 border border-slate-300 rounded-xl focus:outline-none focus:border-indigo-600">
                                     </div>
                                     <div>
                                         <label class="block text-sm font-semibold text-slate-700 mb-2">New
                                             Password</label>
                                         <input type="password"
-                                            class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:border-amber-600">
+                                            class="w-full px-4 py-2 border border-slate-300 rounded-xl focus:outline-none focus:border-indigo-600">
                                     </div>
                                     <div>
                                         <label class="block text-sm font-semibold text-slate-700 mb-2">Confirm New
                                             Password</label>
                                         <input type="password"
-                                            class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:border-amber-600">
+                                            class="w-full px-4 py-2 border border-slate-300 rounded-xl focus:outline-none focus:border-indigo-600">
                                     </div>
                                     <button
-                                        class="px-6 py-2 bg-gradient-to-r from-amber-600 to-orange-600 text-white rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all">
+                                        class="px-6 py-2 bg-gradient-to-r from-indigo-600 to-indigo-600 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all">
                                         Update Password
                                     </button>
                                 </div>
@@ -1996,49 +1998,49 @@ New York, NY 10001</textarea>
                             <div class="bg-white rounded-xl shadow-lg p-6">
                                 <h3 class="text-xl font-bold text-slate-900 mb-6">Billing Preferences</h3>
                                 <div class="space-y-4">
-                                    <div class="border border-slate-200 rounded-lg p-4">
+                                    <div class="border border-slate-200 rounded-xl p-4">
                                         <h4 class="font-semibold text-slate-900 mb-2">Auto-Pay Settings</h4>
                                         <label class="flex items-center gap-3">
                                             <input type="checkbox"
-                                                class="w-4 h-4 text-amber-600 border-slate-300 rounded focus:ring-amber-500">
+                                                class="w-4 h-4 text-indigo-600 border-slate-300 rounded focus:ring-indigo-500">
                                             <span class="text-slate-700">Enable automatic payment for invoices</span>
                                         </label>
                                     </div>
-                                    <div class="border border-slate-200 rounded-lg p-4">
+                                    <div class="border border-slate-200 rounded-xl p-4">
                                         <h4 class="font-semibold text-slate-900 mb-2">Invoice Delivery</h4>
                                         <div class="space-y-2">
                                             <label class="flex items-center gap-3">
                                                 <input type="radio" name="invoice-delivery" value="email" checked
-                                                    class="w-4 h-4 text-amber-600 border-slate-300 focus:ring-amber-500">
+                                                    class="w-4 h-4 text-indigo-600 border-slate-300 focus:ring-indigo-500">
                                                 <span class="text-slate-700">Email delivery</span>
                                             </label>
                                             <label class="flex items-center gap-3">
                                                 <input type="radio" name="invoice-delivery" value="postal"
-                                                    class="w-4 h-4 text-amber-600 border-slate-300 focus:ring-amber-500">
+                                                    class="w-4 h-4 text-indigo-600 border-slate-300 focus:ring-indigo-500">
                                                 <span class="text-slate-700">Postal mail delivery</span>
                                             </label>
                                             <label class="flex items-center gap-3">
                                                 <input type="radio" name="invoice-delivery" value="both"
-                                                    class="w-4 h-4 text-amber-600 border-slate-300 focus:ring-amber-500">
+                                                    class="w-4 h-4 text-indigo-600 border-slate-300 focus:ring-indigo-500">
                                                 <span class="text-slate-700">Both email and postal</span>
                                             </label>
                                         </div>
                                     </div>
-                                    <div class="border border-slate-200 rounded-lg p-4">
+                                    <div class="border border-slate-200 rounded-xl p-4">
                                         <h4 class="font-semibold text-slate-900 mb-2">Billing Address</h4>
                                         <div class="space-y-3">
                                             <input type="text" placeholder="Street Address"
-                                                class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:border-amber-600">
+                                                class="w-full px-4 py-2 border border-slate-300 rounded-xl focus:outline-none focus:border-indigo-600">
                                             <div class="grid grid-cols-2 gap-3">
                                                 <input type="text" placeholder="City"
-                                                    class="px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:border-amber-600">
+                                                    class="px-4 py-2 border border-slate-300 rounded-xl focus:outline-none focus:border-indigo-600">
                                                 <input type="text" placeholder="ZIP Code"
-                                                    class="px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:border-amber-600">
+                                                    class="px-4 py-2 border border-slate-300 rounded-xl focus:outline-none focus:border-indigo-600">
                                             </div>
                                         </div>
                                     </div>
                                     <button
-                                        class="px-6 py-2 bg-gradient-to-r from-amber-600 to-orange-600 text-white rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all">
+                                        class="px-6 py-2 bg-gradient-to-r from-indigo-600 to-indigo-600 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all">
                                         Save Billing Settings
                                     </button>
                                 </div>
@@ -2087,8 +2089,8 @@ New York, NY 10001</textarea>
                         datasets: [{
                             label: 'Case Activity',
                             data: [12, 19, 15, 25, 22, 30],
-                            borderColor: 'rgba(102, 126, 234, 1)',
-                            backgroundColor: 'rgba(102, 126, 234, 0.1)',
+                            borderColor: 'rgba(79, 70, 229, 1)',
+                            backgroundColor: 'rgba(79, 70, 229, 0.1)',
                             tension: 0.4,
                             fill: true
                         }]
@@ -2116,10 +2118,10 @@ New York, NY 10001</textarea>
                         datasets: [{
                             data: [30, 25, 20, 25],
                             backgroundColor: [
-                                'rgba(102, 126, 234, 0.8)',
-                                'rgba(75, 192, 192, 0.8)',
+                                'rgba(79, 70, 229, 0.8)',
+                                'rgba(245, 158, 11, 0.8)',
                                 'rgba(255, 159, 64, 0.8)',
-                                'rgba(153, 102, 255, 0.8)'
+                                'rgba(99, 102, 241, 0.8)'
                             ],
                             borderWidth: 0
                         }]
@@ -2193,11 +2195,11 @@ New York, NY 10001</textarea>
 
                         // Update active sidebar link
                         sidebarLinks.forEach(l => {
-                            l.classList.remove('text-amber-600', 'bg-amber-50', 'font-semibold');
+                            l.classList.remove('text-indigo-600', 'bg-indigo-50', 'font-semibold');
                             l.classList.add('text-slate-600', 'hover:bg-slate-50');
                         });
                         this.classList.remove('text-slate-600', 'hover:bg-slate-50');
-                        this.classList.add('text-amber-600', 'bg-amber-50', 'font-semibold');
+                        this.classList.add('text-indigo-600', 'bg-indigo-50', 'font-semibold');
 
                         // Show/hide sub-tabs for My Case sections only
                         const subTabsContainer = document.getElementById('mycase-subtabs');

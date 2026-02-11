@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LexIcon - Professional Legal Services</title>
 
@@ -71,31 +72,31 @@
         }
 
         ::-webkit-scrollbar-thumb {
-            background: linear-gradient(180deg, #667eea 0%, #764ba2 50%, #4facfe 100%);
+            background: linear-gradient(180deg, #4f46e5 0%, #312e81 50%, #4f46e5 100%);
             border-radius: 10px;
             border: 2px solid #1e293b;
             animation: scrollGlow 2s ease-in-out infinite alternate;
         }
 
         ::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(180deg, #4facfe 0%, #00f2fe 50%, #667eea 100%);
-            box-shadow: 0 0 10px rgba(79, 172, 254, 0.5);
+            background: linear-gradient(180deg, #4f46e5 0%, #6366f1 50%, #4f46e5 100%);
+            box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
         }
 
         @keyframes scrollGlow {
             0% {
-                box-shadow: 0 0 5px rgba(102, 126, 234, 0.3);
+                box-shadow: 0 0 5px rgba(79, 70, 229, 0.3);
             }
 
             100% {
-                box-shadow: 0 0 15px rgba(79, 172, 254, 0.6);
+                box-shadow: 0 0 15px rgba(99, 102, 241, 0.6);
             }
         }
 
         /* Firefox */
         html {
             scrollbar-width: thin;
-            scrollbar-color: #667eea #1e293b;
+            scrollbar-color: #4f46e5 #1e293b;
         }
 
         /* Percentage Animation */
@@ -125,12 +126,12 @@
         }
 
         #mobile-language-toggle:hover {
-            background: rgba(217, 119, 6, 0.1);
-            border-color: #d97706;
+            background: rgba(99, 102, 241, 0.1);
+            border-color: #3730a3;
         }
 
         #mobile-language-toggle i {
-            color: #d97706;
+            color: #3730a3;
         }
 
         /* Mobile RTL Button */
@@ -143,12 +144,12 @@
         }
 
         #mobile-language-toggle:hover {
-            background: rgba(217, 119, 6, 0.1);
-            border-color: #d97706;
+            background: rgba(99, 102, 241, 0.1);
+            border-color: #3730a3;
         }
 
         #mobile-language-toggle i {
-            color: #d97706;
+            color: #3730a3;
         }
 
         /* Mobile responsive fonts */
@@ -269,11 +270,11 @@
                 width: 100%;
                 font-size: 0.9rem !important;
                 padding: 0.75rem 1rem !important;
-                background: rgba(217, 119, 6, 0.1) !important;
-                border: 1px solid rgba(217, 119, 6, 0.3) !important;
+                background: rgba(99, 102, 241, 0.1) !important;
+                border: 1px solid rgba(99, 102, 241, 0.3) !important;
                 border-radius: 0.5rem;
                 margin: 0.5rem 0 !important;
-                color: #d97706 !important;
+                color: #3730a3 !important;
             }
         }
 
@@ -292,7 +293,7 @@
     </style>
 </head>
 
-<body class="bg-gradient-to-br from-slate-50 via-purple-50 to-blue-50 min-h-screen">
+<body class="bg-gradient-to-br from-slate-50 via-indigo-50 to-indigo-50 min-h-screen">
 
     <!-- Navigation -->
     <nav class="navbar fixed w-full top-0 z-50 transition-all duration-300">
@@ -303,9 +304,9 @@
                     <a href="index.html" class="text-2xl md:text-3xl font-bold text-white flex items-center gap-2 group"
                         style="font-family: 'Playfair Display', serif;">
                         <i
-                            class="fas fa-balance-scale text-cyan-300 group-hover:rotate-12 transition-transform duration-300"></i>
+                            class="fas fa-balance-scale text-indigo-400 group-hover:rotate-12 transition-transform duration-300"></i>
                         <span class="gradient-text"
-                            style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">LexIcon</span>
+                            style="background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">LexIcon</span>
                     </a>
                 </div>
 
@@ -313,53 +314,53 @@
                 <div class="hidden md:flex items-center space-x-8">
                     <div class="relative dropdown">
                         <button
-                            class="text-white hover:text-cyan-300 transition-all duration-300 uppercase tracking-wide text-sm font-semibold flex items-center gap-1">
+                            class="text-white hover:text-indigo-400 transition-all duration-300 uppercase tracking-wide text-sm font-semibold flex items-center gap-1">
                             Home
                             <i class="fas fa-chevron-down text-xs"></i>
                         </button>
                         <div class="dropdown-menu">
                             <a href="index.html"
-                                class="block px-4 py-3 text-white hover:text-amber-600 hover:bg-slate-800 transition-colors">
+                                class="block px-4 py-3 text-white hover:text-indigo-600 hover:bg-slate-800 transition-colors">
                                 <i class="fas fa-home mr-2"></i>
                                 Home 1
                             </a>
                             <a href="index2.html"
-                                class="block px-4 py-3 text-white hover:text-amber-600 hover:bg-slate-800 transition-colors">
+                                class="block px-4 py-3 text-white hover:text-indigo-600 hover:bg-slate-800 transition-colors">
                                 <i class="fas fa-star mr-2"></i>
                                 Home 2
                             </a>
                         </div>
                     </div>
                     <a id="nav-about" href="about.html"
-                        class="text-white hover:text-cyan-300 transition-all duration-300 uppercase tracking-wide text-sm font-semibold">
+                        class="text-white hover:text-indigo-400 transition-all duration-300 uppercase tracking-wide text-sm font-semibold">
                         About
                     </a>
                     <a id="nav-services" href="services.html"
-                        class="text-white hover:text-cyan-300 transition-all duration-300 uppercase tracking-wide text-sm font-semibold">
+                        class="text-white hover:text-indigo-400 transition-all duration-300 uppercase tracking-wide text-sm font-semibold">
                         Services
                     </a>
                     <a id="nav-team" href="team.html"
-                        class="text-white hover:text-cyan-300 transition-all duration-300 uppercase tracking-wide text-sm font-semibold">
+                        class="text-white hover:text-indigo-400 transition-all duration-300 uppercase tracking-wide text-sm font-semibold">
                         Team
                     </a>
                     <a id="nav-contact" href="contact.html"
-                        class="text-white hover:text-cyan-300 transition-all duration-300 uppercase tracking-wide text-sm font-semibold">
+                        class="text-white hover:text-indigo-400 transition-all duration-300 uppercase tracking-wide text-sm font-semibold">
                         Contact
                     </a>
                     <div class="relative dropdown">
                         <button
-                            class="text-white hover:text-cyan-300 transition-all duration-300 uppercase tracking-wide text-sm font-semibold flex items-center gap-1">
+                            class="text-white hover:text-indigo-400 transition-all duration-300 uppercase tracking-wide text-sm font-semibold flex items-center gap-1">
                             Dashboard
                             <i class="fas fa-chevron-down text-xs"></i>
                         </button>
                         <div class="dropdown-menu">
                             <a href="user-dashboard.html"
-                                class="block px-4 py-3 text-white hover:text-amber-600 hover:bg-slate-800 transition-colors">
+                                class="block px-4 py-3 text-white hover:text-indigo-600 hover:bg-slate-800 transition-colors">
                                 <i class="fas fa-user mr-2"></i>
                                 Client Dashboard
                             </a>
                             <a href="admin-dashboard.html"
-                                class="block px-4 py-3 text-white hover:text-amber-600 hover:bg-slate-800 transition-colors">
+                                class="block px-4 py-3 text-white hover:text-indigo-600 hover:bg-slate-800 transition-colors">
                                 <i class="fas fa-shield-alt mr-2"></i>
                                 Admin Dashboard
                             </a>
@@ -371,17 +372,17 @@
                 <div class="hidden md:flex items-center space-x-4">
                     <a href="coming-soon.html" id="nav-case-eval" class="btn-gradient text-sm inline-block">Case
                         Evaluation</a>
-                    <a href="login.html" class="text-white hover:text-cyan-300 transition-all duration-300">
+                    <a href="login.html" class="text-white hover:text-indigo-400 transition-all duration-300">
                         <i id="nav-login" class="fas fa-user text-xl" title="Login"></i>
                     </a>
                     <button id="theme-toggle"
-                        class="text-white hover:text-cyan-300 transition-all duration-300 relative group">
+                        class="text-white hover:text-indigo-400 transition-all duration-300 relative group">
                         <i class="fas fa-moon text-xl" title="Toggle Theme"></i>
                         <span
                             class="absolute top-full right-0 mt-2 px-3 py-1 bg-gray-900 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">Dark/Light</span>
                     </button>
                     <button id="language-toggle"
-                        class="text-white hover:text-cyan-300 transition-all duration-300 relative group">
+                        class="text-white hover:text-indigo-400 transition-all duration-300 relative group">
                         <i class="fas fa-globe text-xl" title="Toggle Text Direction (LTR/RTL)"></i>
                         <span
                             class="absolute top-full right-0 mt-2 px-3 py-1 bg-gray-900 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">RTL/LTR</span>
@@ -398,38 +399,38 @@
             <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
                 <div class="border-b border-slate-700 mb-2 pb-2">
                     <div class="text-slate-500 text-xs uppercase tracking-wide mb-2 px-4">Home Pages</div>
-                    <a href="index.html" class="block py-2 text-slate-300 hover:text-amber-600 mobile-nav-item">
+                    <a href="index.html" class="block py-2 text-slate-300 hover:text-indigo-600 mobile-nav-item">
                         <i class="fas fa-home mr-2"></i>Home 1
                     </a>
-                    <a href="index2.html" class="block py-2 text-slate-300 hover:text-amber-600 mobile-nav-item">
+                    <a href="index2.html" class="block py-2 text-slate-300 hover:text-indigo-600 mobile-nav-item">
                         <i class="fas fa-star mr-2"></i>Home 2
                     </a>
                 </div>
-                <a href="about.html" class="block py-2 text-slate-300 hover:text-amber-600 mobile-nav-item">About</a>
+                <a href="about.html" class="block py-2 text-slate-300 hover:text-indigo-600 mobile-nav-item">About</a>
                 <a href="services.html"
-                    class="block py-2 text-slate-300 hover:text-amber-600 mobile-nav-item">Services</a>
-                <a href="team.html" class="block py-2 text-slate-300 hover:text-amber-600 mobile-nav-item">Team</a>
+                    class="block py-2 text-slate-300 hover:text-indigo-600 mobile-nav-item">Services</a>
+                <a href="team.html" class="block py-2 text-slate-300 hover:text-indigo-600 mobile-nav-item">Team</a>
                 <a href="contact.html"
-                    class="block py-2 text-slate-300 hover:text-amber-600 mobile-nav-item">Contact</a>
+                    class="block py-2 text-slate-300 hover:text-indigo-600 mobile-nav-item">Contact</a>
                 <div class="border-t border-slate-700 mt-2 pt-2">
                     <div class="text-slate-500 text-xs uppercase tracking-wide mb-2 px-4">Dashboards</div>
                     <a href="user-dashboard.html"
-                        class="block py-2 text-slate-300 hover:text-amber-600 mobile-nav-item">
+                        class="block py-2 text-slate-300 hover:text-indigo-600 mobile-nav-item">
                         <i class="fas fa-user mr-2"></i>Client Dashboard
                     </a>
                     <a href="admin-dashboard.html"
-                        class="block py-2 text-slate-300 hover:text-amber-600 mobile-nav-item">
+                        class="block py-2 text-slate-300 hover:text-indigo-600 mobile-nav-item">
                         <i class="fas fa-shield-alt mr-2"></i>Admin Dashboard
                     </a>
                 </div>
-                <a href="login.html" class="block py-2 text-slate-300 hover:text-amber-600 mobile-nav-item">Login</a>
+                <a href="login.html" class="block py-2 text-slate-300 hover:text-indigo-600 mobile-nav-item">Login</a>
                 <div class="border-t border-slate-700 mt-2 pt-2">
                     <button id="mobile-theme-toggle"
-                        class="w-full text-left py-2 text-slate-300 hover:text-amber-600 transition-all duration-300">
+                        class="w-full text-left py-2 text-slate-300 hover:text-indigo-600 transition-all duration-300">
                         <i class="fas fa-moon mr-2"></i>Dark/Light Mode
                     </button>
                     <button id="mobile-language-toggle"
-                        class="w-full text-left py-2 text-slate-300 hover:text-amber-600 transition-all duration-300">
+                        class="w-full text-left py-2 text-slate-300 hover:text-indigo-600 transition-all duration-300">
                         <i class="fas fa-globe mr-2"></i>RTL/LTR Toggle
                     </button>
                 </div>
@@ -440,7 +441,7 @@
     <!-- Hero Section - Business Authority Layout -->
     <section class="relative min-h-[80vh] flex items-center overflow-hidden">
         <!-- Gradient Background -->
-        <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-indigo-900 to-purple-900"></div>
+        <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-indigo-900 to-indigo-900"></div>
 
         <!-- Hero Image Overlay - Increased Transparency -->
         <div class="absolute inset-0 opacity-15">
@@ -454,20 +455,20 @@
                 class="absolute top-20 left-10 w-96 h-96 bg-indigo-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob">
             </div>
             <div
-                class="absolute top-40 right-10 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-2000">
+                class="absolute top-40 right-10 w-96 h-96 bg-indigo-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-2000">
             </div>
             <div
-                class="absolute bottom-20 left-1/2 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-4000">
+                class="absolute bottom-20 left-1/2 w-96 h-96 bg-indigo-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-4000">
             </div>
         </div>
 
-        <div class="relative w-full max-w-[95%] max-w-screen-2xl mx-auto px-6 py-20">
+        <div class="relative w-full max-w-[95%] max-w-screen-2xl mx-auto px-6 pt-32 pb-20">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <!-- Left Content -->
                 <div class="text-white space-y-8 animate-fade-in-left">
                     <div
                         class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20">
-                        <i class="fas fa-award text-amber-400"></i>
+                        <i class="fas fa-award text-indigo-400"></i>
                         <span class="text-sm font-medium">Award-Winning Legal Excellence Since 1985</span>
                     </div>
 
@@ -486,14 +487,14 @@
                     <div class="grid grid-cols-3 gap-4 py-6 border-t border-b border-white/20">
                         <div>
                             <div class="text-3xl font-bold gradient-text animate-counter" data-target="94"
-                                style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                                style="background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
                                 0%</div>
                             <div class="text-sm text-slate-400 mt-1">Win Rate</div>
                         </div>
                         <div>
                             <div class="text-3xl font-bold gradient-text animate-counter" data-target="2.5"
                                 data-suffix="B+"
-                                style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                                style="background: linear-gradient(135deg, #4338ca 0%, #312e81 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
                                 $0</div>
                             <div class="text-sm text-slate-400 mt-1">Recovered</div>
                         </div>
@@ -508,7 +509,7 @@
 
                     <div class="flex gap-4 flex-wrap">
                         <a href="booking.html"
-                            class="bg-amber-600 hover:bg-amber-700 text-white font-semibold px-8 py-4 text-lg rounded-xl transition-all duration-300 hover:scale-105 inline-flex items-center">
+                            class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-8 py-4 text-lg rounded-xl transition-all duration-300 hover:scale-105 inline-flex items-center">
                             <i class="fas fa-calendar-alt mr-2"></i>
                             Schedule Consultation
                         </a>
@@ -523,10 +524,10 @@
                 <div class="hidden lg:block animate-fade-in-right">
                     <div class="relative">
                         <!-- Main Card -->
-                        <div class="glass rounded-2xl p-8 border border-white/20 backdrop-blur-xl shadow-2xl">
+                        <div class="glass rounded-xl p-8 border border-white/20 backdrop-blur-xl shadow-2xl">
                             <div class="flex items-center gap-4 mb-6">
                                 <div
-                                    class="w-16 h-16 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center">
+                                    class="w-16 h-16 rounded-full bg-gradient-to-br from-indigo-500 to-indigo-600 flex items-center justify-center">
                                     <i class="fas fa-balance-scale text-2xl text-white"></i>
                                 </div>
                                 <div>
@@ -550,20 +551,20 @@
                                 <div>
                                     <div class="flex justify-between text-sm mb-2">
                                         <span class="text-slate-300">IP Protection</span>
-                                        <span class="text-blue-400 font-semibold">88%</span>
+                                        <span class="text-indigo-400 font-semibold">88%</span>
                                     </div>
                                     <div class="h-2 bg-slate-700 rounded-full overflow-hidden">
-                                        <div class="h-full bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full"
+                                        <div class="h-full bg-gradient-to-r from-indigo-500 to-indigo-500 rounded-full"
                                             style="width: 88%; animation: slideInLeft 1.8s ease-out;"></div>
                                     </div>
                                 </div>
                                 <div>
                                     <div class="flex justify-between text-sm mb-2">
                                         <span class="text-slate-300">M&A Advisory</span>
-                                        <span class="text-purple-400 font-semibold">96%</span>
+                                        <span class="text-indigo-400 font-semibold">96%</span>
                                     </div>
                                     <div class="h-2 bg-slate-700 rounded-full overflow-hidden">
-                                        <div class="h-full bg-gradient-to-r from-purple-500 to-pink-400 rounded-full"
+                                        <div class="h-full bg-gradient-to-r from-indigo-500 to-pink-400 rounded-full"
                                             style="width: 96%; animation: slideInLeft 2.1s ease-out;"></div>
                                     </div>
                                 </div>
@@ -578,12 +579,12 @@
                                         <span class="text-white text-sm">$45M settlement - Tech IP dispute</span>
                                     </div>
                                     <div class="flex items-center gap-3">
-                                        <div class="w-2 h-2 bg-blue-400 rounded-full animate-pulse"
+                                        <div class="w-2 h-2 bg-indigo-400 rounded-full animate-pulse"
                                             style="animation-delay: 0.3s;"></div>
                                         <span class="text-white text-sm">Fortune 500 merger approved</span>
                                     </div>
                                     <div class="flex items-center gap-3">
-                                        <div class="w-2 h-2 bg-purple-400 rounded-full animate-pulse"
+                                        <div class="w-2 h-2 bg-indigo-400 rounded-full animate-pulse"
                                             style="animation-delay: 0.6s;"></div>
                                         <span class="text-white text-sm">Class action defense - Full dismissal</span>
                                     </div>
@@ -596,7 +597,7 @@
                             class="absolute -top-4 -right-4 glass rounded-xl p-4 border border-white/20 backdrop-blur-xl shadow-xl animate-float">
                             <div class="text-center">
                                 <div class="text-3xl font-bold gradient-text"
-                                    style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                                    style="background: linear-gradient(135deg, #4338ca 0%, #312e81 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
                                     38+</div>
                                 <div class="text-xs text-slate-300 mt-1">Years<br>Excellence</div>
                             </div>
@@ -612,27 +613,27 @@
         <div class="max-w-[95%] max-w-screen-2xl mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
                 <div data-aos="zoom-in" data-aos-delay="100" class="card-hover">
-                    <div class="glass p-8 rounded-2xl">
+                    <div class="glass p-8 rounded-xl">
                         <div class="stat-number gradient-text" data-target="5"
-                            style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                            style="background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
                             0</div>
                         <div class="text-white text-lg uppercase tracking-wider mt-2 font-semibold">Billion+ Recovered
                         </div>
                     </div>
                 </div>
                 <div data-aos="zoom-in" data-aos-delay="200" class="card-hover">
-                    <div class="glass p-8 rounded-2xl">
+                    <div class="glass p-8 rounded-xl">
                         <div class="stat-number gradient-text" data-target="98"
-                            style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                            style="background: linear-gradient(135deg, #4338ca 0%, #312e81 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
                             0</div>
                         <div class="text-white text-lg uppercase tracking-wider mt-2 font-semibold">% Trial Success Rate
                         </div>
                     </div>
                 </div>
                 <div data-aos="zoom-in" data-aos-delay="300" class="card-hover">
-                    <div class="glass p-8 rounded-2xl">
+                    <div class="glass p-8 rounded-xl">
                         <div class="text-5xl md:text-6xl font-bold gradient-text"
-                            style="background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                            style="background: linear-gradient(135deg, #4338ca 0%, #3730a3 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
                             Top 100</div>
                         <div class="text-white text-lg uppercase tracking-wider mt-2 font-semibold">Global Law Firms
                         </div>
@@ -647,7 +648,7 @@
         <div class="max-w-[95%] max-w-screen-2xl mx-auto px-6">
             <div class="text-center mb-16 animate-fade-in-up">
                 <h2 class="text-5xl font-bold mb-4 gradient-text"
-                    style="font-family: 'Playfair Display', serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                    style="font-family: 'Playfair Display', serif; background: linear-gradient(135deg, #4f46e5 0%, #312e81 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
                     Our Practice Areas</h2>
                 <p class="text-xl text-slate-700">Comprehensive legal solutions for complex challenges</p>
             </div>
@@ -655,12 +656,12 @@
             <div class="carousel-container relative" data-aos="fade-up" data-aos-delay="100">
                 <div class="carousel-track flex gap-8">
                     <!-- Card 1 -->
-                    <div class="carousel-card glass p-8 min-w-[350px] rounded-2xl card-hover">
+                    <div class="carousel-card glass p-8 rounded-xl card-hover">
                         <div class="h-48 rounded-xl mb-6 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=600"
+                            <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=600"
                                 alt="Corporate Litigation" class="w-full h-full object-cover">
                             <div
-                                class="absolute inset-0 bg-gradient-to-br from-purple-600/80 to-blue-600/80 flex items-center justify-center">
+                                class="absolute inset-0 bg-gradient-to-br from-indigo-600/80 to-indigo-600/80 flex items-center justify-center">
                                 <i class="fas fa-building text-6xl text-white"></i>
                             </div>
                         </div>
@@ -669,19 +670,19 @@
                         <p class="text-slate-700 mb-6">High-stakes disputes involving mergers, acquisitions, and
                             corporate governance.</p>
                         <a href="services.html"
-                            class="inline-flex items-center text-purple-600 font-semibold hover:text-purple-700 uppercase tracking-wide text-sm transition-all duration-300 group">
+                            class="inline-flex items-center text-indigo-600 font-semibold hover:text-indigo-700 uppercase tracking-wide text-sm transition-all duration-300 group">
                             Learn More <i
                                 class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform"></i>
                         </a>
                     </div>
 
                     <!-- Card 2 -->
-                    <div class="carousel-card glass p-8 min-w-[350px] rounded-2xl card-hover">
+                    <div class="carousel-card glass p-8 rounded-xl card-hover">
                         <div class="h-48 rounded-xl mb-6 overflow-hidden relative">
                             <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=600"
                                 alt="White Collar Defense" class="w-full h-full object-cover">
                             <div
-                                class="absolute inset-0 bg-gradient-to-br from-indigo-600/80 to-purple-600/80 flex items-center justify-center">
+                                class="absolute inset-0 bg-gradient-to-br from-indigo-600/80 to-indigo-600/80 flex items-center justify-center">
                                 <i class="fas fa-shield-halved text-6xl text-white"></i>
                             </div>
                         </div>
@@ -690,19 +691,19 @@
                         <p class="text-slate-700 mb-6">Discreet representation for executives facing regulatory
                             investigations.</p>
                         <a href="services.html#white-collar-defense"
-                            class="inline-flex items-center text-purple-600 font-semibold hover:text-purple-700 uppercase tracking-wide text-sm transition-all duration-300 group">
+                            class="inline-flex items-center text-indigo-600 font-semibold hover:text-indigo-700 uppercase tracking-wide text-sm transition-all duration-300 group">
                             Learn More <i
                                 class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform"></i>
                         </a>
                     </div>
 
                     <!-- Card 3 -->
-                    <div class="carousel-card glass p-8 min-w-[350px] rounded-2xl card-hover">
+                    <div class="carousel-card glass p-8 rounded-xl card-hover">
                         <div class="h-48 rounded-xl mb-6 overflow-hidden relative">
                             <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=600"
                                 alt="Intellectual Property" class="w-full h-full object-cover">
                             <div
-                                class="absolute inset-0 bg-gradient-to-br from-blue-600/80 to-cyan-600/80 flex items-center justify-center">
+                                class="absolute inset-0 bg-gradient-to-br from-indigo-600/80 to-cyan-600/80 flex items-center justify-center">
                                 <i class="fas fa-lightbulb text-6xl text-white"></i>
                             </div>
                         </div>
@@ -711,19 +712,19 @@
                         <p class="text-slate-700 mb-6">Protecting your innovations, patents, and trademarks in a digital
                             age.</p>
                         <a href="services.html#intellectual-property"
-                            class="inline-flex items-center text-purple-600 font-semibold hover:text-purple-700 uppercase tracking-wide text-sm transition-all duration-300 group">
+                            class="inline-flex items-center text-indigo-600 font-semibold hover:text-indigo-700 uppercase tracking-wide text-sm transition-all duration-300 group">
                             Learn More <i
                                 class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform"></i>
                         </a>
                     </div>
 
                     <!-- Card 4 -->
-                    <div class="carousel-card glass p-8 min-w-[350px] rounded-2xl card-hover">
+                    <div class="carousel-card glass p-8 rounded-xl card-hover">
                         <div class="h-48 rounded-xl mb-6 overflow-hidden relative">
                             <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=600"
                                 alt="Mergers & Acquisitions" class="w-full h-full object-cover">
                             <div
-                                class="absolute inset-0 bg-gradient-to-br from-pink-600/80 to-purple-600/80 flex items-center justify-center">
+                                class="absolute inset-0 bg-gradient-to-br from-pink-600/80 to-indigo-600/80 flex items-center justify-center">
                                 <i class="fas fa-handshake text-6xl text-white"></i>
                             </div>
                         </div>
@@ -731,7 +732,7 @@
                             style="font-family: 'Playfair Display', serif;">Mergers & Acquisitions</h3>
                         <p class="text-slate-700 mb-6">Navigating complex cross-border transactions with precision.</p>
                         <a href="services.html#mergers-acquisitions"
-                            class="inline-flex items-center text-purple-600 font-semibold hover:text-purple-700 uppercase tracking-wide text-sm transition-all duration-300 group">
+                            class="inline-flex items-center text-indigo-600 font-semibold hover:text-indigo-700 uppercase tracking-wide text-sm transition-all duration-300 group">
                             Learn More <i
                                 class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform"></i>
                         </a>
@@ -741,11 +742,11 @@
                 <!-- Carousel Navigation -->
                 <div class="flex justify-center gap-4 mt-8">
                     <button
-                        class="carousel-prev w-14 h-14 rounded-full glass text-purple-600 hover:scale-110 transition-all duration-300 font-bold">
+                        class="carousel-prev w-14 h-14 rounded-full glass text-indigo-600 hover:scale-110 transition-all duration-300 font-bold">
                         <i class="fas fa-chevron-left text-xl"></i>
                     </button>
                     <button
-                        class="carousel-next w-14 h-14 rounded-full glass text-purple-600 hover:scale-110 transition-all duration-300 font-bold">
+                        class="carousel-next w-14 h-14 rounded-full glass text-indigo-600 hover:scale-110 transition-all duration-300 font-bold">
                         <i class="fas fa-chevron-right text-xl"></i>
                     </button>
                 </div>
@@ -756,20 +757,20 @@
     <!-- Why Choose Us -->
     <section class="py-20 relative overflow-hidden">
         <!-- Gradient Background -->
-        <div class="absolute inset-0 bg-gradient-to-br from-white via-purple-50 to-blue-50"></div>
+        <div class="absolute inset-0 bg-gradient-to-br from-white via-indigo-50 to-indigo-50"></div>
 
         <div class="max-w-[95%] max-w-screen-2xl mx-auto px-6 relative z-10">
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div class="animate-fade-in-left">
-                    <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+                    <div class="relative rounded-xl overflow-hidden shadow-2xl">
                         <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1000"
                             alt="Legal Excellence" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-gradient-to-tr from-purple-600/30 to-transparent"></div>
+                        <div class="absolute inset-0 bg-gradient-to-tr from-indigo-600/30 to-transparent"></div>
                     </div>
                 </div>
                 <div class="animate-fade-in-right">
                     <h2 class="text-5xl font-bold mb-6 gradient-text"
-                        style="font-family: 'Playfair Display', serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                        style="font-family: 'Playfair Display', serif; background: linear-gradient(135deg, #4f46e5 0%, #312e81 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
                         Excellence in Every Case
                     </h2>
                     <p class="text-xl text-slate-700 mb-8">
@@ -779,7 +780,7 @@
                     <div class="space-y-6">
                         <div class="flex items-start gap-4 p-4 rounded-xl glass card-hover">
                             <div class="w-12 h-12 rounded-full flex items-center justify-center"
-                                style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                                style="background: linear-gradient(135deg, #4f46e5 0%, #312e81 100%);">
                                 <i class="fas fa-check text-xl text-white"></i>
                             </div>
                             <div>
@@ -790,7 +791,7 @@
                         </div>
                         <div class="flex items-start gap-4 p-4 rounded-xl glass card-hover">
                             <div class="w-12 h-12 rounded-full flex items-center justify-center"
-                                style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                                style="background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%);">
                                 <i class="fas fa-check text-xl text-white"></i>
                             </div>
                             <div>
@@ -801,7 +802,7 @@
                         </div>
                         <div class="flex items-start gap-4 p-4 rounded-xl glass card-hover">
                             <div class="w-12 h-12 rounded-full flex items-center justify-center"
-                                style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                                style="background: linear-gradient(135deg, #4338ca 0%, #312e81 100%);">
                                 <i class="fas fa-check text-xl text-white"></i>
                             </div>
                             <div>
@@ -819,7 +820,7 @@
     <!-- CTA Section -->
     <section class="py-20 relative overflow-hidden">
         <!-- Gradient Background -->
-        <div class="absolute inset-0" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+        <div class="absolute inset-0" style="background: linear-gradient(135deg, #4f46e5 0%, #312e81 100%);"></div>
 
         <!-- Animated Elements -->
         <div class="absolute inset-0">
@@ -827,7 +828,7 @@
                 class="absolute top-10 right-10 w-64 h-64 bg-white rounded-full mix-blend-overlay filter blur-xl opacity-20 animate-blob">
             </div>
             <div
-                class="absolute bottom-10 left-10 w-64 h-64 bg-cyan-300 rounded-full mix-blend-overlay filter blur-xl opacity-20 animate-blob animation-delay-2000">
+                class="absolute bottom-10 left-10 w-64 h-64 bg-indigo-400 rounded-full mix-blend-overlay filter blur-xl opacity-20 animate-blob animation-delay-2000">
             </div>
         </div>
 
@@ -839,7 +840,7 @@
                 Schedule a confidential consultation with one of our senior partners today.
             </p>
             <a href="booking.html"
-                class="bg-amber-600 hover:bg-amber-700 text-white font-semibold px-8 py-4 text-lg rounded-xl transition-all duration-300 hover:scale-110 inline-flex items-center">
+                class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-8 py-4 text-lg rounded-xl transition-all duration-300 hover:scale-110 inline-flex items-center">
                 <i class="fas fa-calendar-check mr-2"></i>
                 Book Your Consultation
             </a>
@@ -853,7 +854,7 @@
                 <h2 class="text-5xl font-bold text-white mb-6" style="font-family: 'Playfair Display', serif;"
                     data-aos="fade-up">
                     Why Choose <span class="gradient-text"
-                        style="background: linear-gradient(135deg, #d4af37 0%, #f4e5a1 50%, #d4af37 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">LexIcon</span>
+                        style="background: linear-gradient(135deg, #4f46e5 0%, #f4e5a1 50%, #4f46e5 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">LexIcon</span>
                 </h2>
                 <p class="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed" data-aos="fade-up"
                     data-aos-delay="100">
@@ -866,9 +867,9 @@
                 <!-- Feature 1 -->
                 <div class="group" data-aos="fade-up" data-aos-delay="100">
                     <div
-                        class="bg-slate-950/70 backdrop-blur-lg border border-slate-700 rounded-xl p-8 h-full hover:border-amber-600 transition-all duration-300 hover:transform hover:translateY(-5px)">
+                        class="bg-slate-950/70 backdrop-blur-lg border border-slate-700 rounded-xl p-8 h-full hover:border-indigo-600 transition-all duration-300 hover:transform hover:translateY(-5px)">
                         <div
-                            class="w-16 h-16 bg-gradient-to-br from-amber-600 to-amber-500 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                            class="w-16 h-16 bg-gradient-to-br from-indigo-600 to-indigo-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                             <i class="fas fa-trophy text-white text-2xl"></i>
                         </div>
                         <h3 class="text-2xl font-bold text-white mb-4">Proven Track Record</h3>
@@ -880,12 +881,12 @@
                         </p>
                         <div class="space-y-2">
                             <div class="flex items-center text-slate-400 text-sm">
-                                <i class="fas fa-check-circle text-amber-500 mr-3"></i>
+                                <i class="fas fa-check-circle text-indigo-500 mr-3"></i>
                                 <span><span class="font-bold text-white" data-target="5000" data-suffix="+">0</span>
                                     cases won</span>
                             </div>
                             <div class="flex items-center text-slate-400 text-sm">
-                                <i class="fas fa-check-circle text-amber-500 mr-3"></i>
+                                <i class="fas fa-check-circle text-indigo-500 mr-3"></i>
                                 <span><span class="font-bold text-white" data-target="40" data-suffix="+">0</span> years
                                     experience</span>
                             </div>
@@ -896,9 +897,9 @@
                 <!-- Feature 2 -->
                 <div class="group" data-aos="fade-up" data-aos-delay="200">
                     <div
-                        class="bg-slate-950/70 backdrop-blur-lg border border-slate-700 rounded-xl p-8 h-full hover:border-amber-600 transition-all duration-300 hover:transform hover:translateY(-5px)">
+                        class="bg-slate-950/70 backdrop-blur-lg border border-slate-700 rounded-xl p-8 h-full hover:border-indigo-600 transition-all duration-300 hover:transform hover:translateY(-5px)">
                         <div
-                            class="w-16 h-16 bg-gradient-to-br from-amber-600 to-amber-500 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                            class="w-16 h-16 bg-gradient-to-br from-indigo-600 to-indigo-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                             <i class="fas fa-users text-white text-2xl"></i>
                         </div>
                         <h3 class="text-2xl font-bold text-white mb-4">Elite Legal Team</h3>
@@ -908,11 +909,11 @@
                         </p>
                         <div class="space-y-2">
                             <div class="flex items-center text-slate-400 text-sm">
-                                <i class="fas fa-check-circle text-amber-500 mr-3"></i>
+                                <i class="fas fa-check-circle text-indigo-500 mr-3"></i>
                                 <span>Ivy League educated</span>
                             </div>
                             <div class="flex items-center text-slate-400 text-sm">
-                                <i class="fas fa-check-circle text-amber-500 mr-3"></i>
+                                <i class="fas fa-check-circle text-indigo-500 mr-3"></i>
                                 <span>Board certified specialists</span>
                             </div>
                         </div>
@@ -922,9 +923,9 @@
                 <!-- Feature 3 -->
                 <div class="group" data-aos="fade-up" data-aos-delay="300">
                     <div
-                        class="bg-slate-950/70 backdrop-blur-lg border border-slate-700 rounded-xl p-8 h-full hover:border-amber-600 transition-all duration-300 hover:transform hover:translateY(-5px)">
+                        class="bg-slate-950/70 backdrop-blur-lg border border-slate-700 rounded-xl p-8 h-full hover:border-indigo-600 transition-all duration-300 hover:transform hover:translateY(-5px)">
                         <div
-                            class="w-16 h-16 bg-gradient-to-br from-amber-600 to-amber-500 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                            class="w-16 h-16 bg-gradient-to-br from-indigo-600 to-indigo-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                             <i class="fas fa-shield-alt text-white text-2xl"></i>
                         </div>
                         <h3 class="text-2xl font-bold text-white mb-4">Client-First Approach</h3>
@@ -934,11 +935,11 @@
                         </p>
                         <div class="space-y-2">
                             <div class="flex items-center text-slate-400 text-sm">
-                                <i class="fas fa-check-circle text-amber-500 mr-3"></i>
+                                <i class="fas fa-check-circle text-indigo-500 mr-3"></i>
                                 <span>24/7 availability</span>
                             </div>
                             <div class="flex items-center text-slate-400 text-sm">
-                                <i class="fas fa-check-circle text-amber-500 mr-3"></i>
+                                <i class="fas fa-check-circle text-indigo-500 mr-3"></i>
                                 <span>Transparent pricing</span>
                             </div>
                         </div>
@@ -956,7 +957,7 @@
                 <h2 class="text-5xl font-bold text-white mb-6" style="font-family: 'Playfair Display', serif;"
                     data-aos="fade-up">
                     Transparent <span class="gradient-text"
-                        style="background: linear-gradient(135deg, #d4af37 0%, #f4e5a1 50%, #d4af37 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Pricing</span>
+                        style="background: linear-gradient(135deg, #4f46e5 0%, #f4e5a1 50%, #4f46e5 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Pricing</span>
                 </h2>
                 <p class="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed" data-aos="fade-up"
                     data-aos-delay="100">
@@ -970,13 +971,13 @@
                 <!-- Consultation -->
                 <div class="group" data-aos="fade-up" data-aos-delay="100">
                     <div
-                        class="bg-slate-950/70 backdrop-blur-lg border border-slate-700 rounded-xl p-8 h-full hover:border-amber-600 transition-all duration-300 hover:transform hover:scale-105 text-center">
+                        class="bg-slate-950/70 backdrop-blur-lg border border-slate-700 rounded-xl p-8 h-full hover:border-indigo-600 transition-all duration-300 hover:transform hover:scale-105 text-center">
                         <div
                             class="w-16 h-16 bg-gradient-to-br from-slate-700 to-slate-600 rounded-full flex items-center justify-center mx-auto mb-6">
                             <i class="fas fa-handshake text-slate-300 text-xl"></i>
                         </div>
                         <h3 class="text-2xl font-bold text-white mb-4">Initial Consultation</h3>
-                        <div class="text-4xl font-bold text-amber-600 mb-4">FREE</div>
+                        <div class="text-4xl font-bold text-indigo-600 mb-4">FREE</div>
                         <p class="text-slate-300 mb-6">Comprehensive case evaluation with senior partner</p>
                         <ul class="text-slate-400 text-sm space-y-2 mb-6">
                             <li>• 60-minute consultation</li>
@@ -994,17 +995,17 @@
                 <!-- Standard Rates -->
                 <div class="group" data-aos="fade-up" data-aos-delay="200">
                     <div
-                        class="bg-slate-950/70 backdrop-blur-lg border-2 border-amber-600 rounded-xl p-8 h-full hover:transform hover:scale-105 transition-all duration-300 text-center relative">
+                        class="bg-slate-950/70 backdrop-blur-lg border-2 border-indigo-600 rounded-xl p-8 h-full hover:transform hover:scale-105 transition-all duration-300 text-center relative">
                         <div
-                            class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-amber-600 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                            class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-indigo-600 text-white px-4 py-2 rounded-full text-sm font-semibold">
                             MOST POPULAR
                         </div>
                         <div
-                            class="w-16 h-16 bg-gradient-to-br from-amber-600 to-amber-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                            class="w-16 h-16 bg-gradient-to-br from-indigo-600 to-indigo-500 rounded-full flex items-center justify-center mx-auto mb-6">
                             <i class="fas fa-balance-scale text-white text-xl"></i>
                         </div>
                         <h3 class="text-2xl font-bold text-white mb-4">Standard Representation</h3>
-                        <div class="text-4xl font-bold text-amber-600 mb-2">$750</div>
+                        <div class="text-4xl font-bold text-indigo-600 mb-2">$750</div>
                         <div class="text-slate-400 mb-6">per hour</div>
                         <p class="text-slate-300 mb-6">Comprehensive legal representation for complex matters</p>
                         <ul class="text-slate-400 text-sm space-y-2 mb-6">
@@ -1022,13 +1023,13 @@
                 <!-- Premium Service -->
                 <div class="group" data-aos="fade-up" data-aos-delay="300">
                     <div
-                        class="bg-slate-950/70 backdrop-blur-lg border border-slate-700 rounded-xl p-8 h-full hover:border-amber-600 transition-all duration-300 hover:transform hover:scale-105 text-center">
+                        class="bg-slate-950/70 backdrop-blur-lg border border-slate-700 rounded-xl p-8 h-full hover:border-indigo-600 transition-all duration-300 hover:transform hover:scale-105 text-center">
                         <div
-                            class="w-16 h-16 bg-gradient-to-br from-amber-600 to-amber-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                            class="w-16 h-16 bg-gradient-to-br from-indigo-600 to-indigo-500 rounded-full flex items-center justify-center mx-auto mb-6">
                             <i class="fas fa-crown text-white text-xl"></i>
                         </div>
                         <h3 class="text-2xl font-bold text-white mb-4">Premium Service</h3>
-                        <div class="text-4xl font-bold text-amber-600 mb-2">$1,200</div>
+                        <div class="text-4xl font-bold text-indigo-600 mb-2">$1,200</div>
                         <div class="text-slate-400 mb-6">per hour</div>
                         <p class="text-slate-300 mb-6">White-glove service for high-stakes matters</p>
                         <ul class="text-slate-400 text-sm space-y-2 mb-6">
@@ -1038,7 +1039,7 @@
                             <li>• Concierge services</li>
                         </ul>
                         <a href="coming-soon.html"
-                            class="btn-outline w-full inline-block px-6 py-3 border-2 border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-slate-900 transition-all">
+                            class="btn-outline w-full inline-block px-6 py-3 border-2 border-indigo-600 text-indigo-600 hover:bg-indigo-600 hover:text-slate-900 transition-all">
                             Contact Us
                         </a>
                     </div>
@@ -1048,31 +1049,31 @@
             <!-- Additional Services -->
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6" data-aos="fade-up">
                 <div
-                    class="bg-slate-900/50 backdrop-blur-lg border border-slate-700 rounded-lg p-6 text-center hover:border-amber-600 transition-colors">
-                    <i class="fas fa-file-contract text-amber-500 text-2xl mb-3"></i>
+                    class="bg-slate-900/50 backdrop-blur-lg border border-slate-700 rounded-xl p-6 text-center hover:border-indigo-600 transition-colors">
+                    <i class="fas fa-file-contract text-indigo-500 text-2xl mb-3"></i>
                     <h4 class="text-white font-semibold mb-2">Contract Review</h4>
-                    <div class="text-amber-600 font-bold">$500</div>
+                    <div class="text-indigo-600 font-bold">$500</div>
                     <div class="text-slate-400 text-sm">flat fee</div>
                 </div>
                 <div
-                    class="bg-slate-900/50 backdrop-blur-lg border border-slate-700 rounded-lg p-6 text-center hover:border-amber-600 transition-colors">
-                    <i class="fas fa-search text-amber-500 text-2xl mb-3"></i>
+                    class="bg-slate-900/50 backdrop-blur-lg border border-slate-700 rounded-xl p-6 text-center hover:border-indigo-600 transition-colors">
+                    <i class="fas fa-search text-indigo-500 text-2xl mb-3"></i>
                     <h4 class="text-white font-semibold mb-2">Legal Research</h4>
-                    <div class="text-amber-600 font-bold">$350</div>
+                    <div class="text-indigo-600 font-bold">$350</div>
                     <div class="text-slate-400 text-sm">per hour</div>
                 </div>
                 <div
-                    class="bg-slate-900/50 backdrop-blur-lg border border-slate-700 rounded-lg p-6 text-center hover:border-amber-600 transition-colors">
-                    <i class="fas fa-comments text-amber-500 text-2xl mb-3"></i>
+                    class="bg-slate-900/50 backdrop-blur-lg border border-slate-700 rounded-xl p-6 text-center hover:border-indigo-600 transition-colors">
+                    <i class="fas fa-comments text-indigo-500 text-2xl mb-3"></i>
                     <h4 class="text-white font-semibold mb-2">Mediation</h4>
-                    <div class="text-amber-600 font-bold">$2,500</div>
+                    <div class="text-indigo-600 font-bold">$2,500</div>
                     <div class="text-slate-400 text-sm">per session</div>
                 </div>
                 <div
-                    class="bg-slate-900/50 backdrop-blur-lg border border-slate-700 rounded-lg p-6 text-center hover:border-amber-600 transition-colors">
-                    <i class="fas fa-phone text-amber-500 text-2xl mb-3"></i>
+                    class="bg-slate-900/50 backdrop-blur-lg border border-slate-700 rounded-xl p-6 text-center hover:border-indigo-600 transition-colors">
+                    <i class="fas fa-phone text-indigo-500 text-2xl mb-3"></i>
                     <h4 class="text-white font-semibold mb-2">Emergency Call</h4>
-                    <div class="text-amber-600 font-bold">$200</div>
+                    <div class="text-indigo-600 font-bold">$200</div>
                     <div class="text-slate-400 text-sm">per 15 min</div>
                 </div>
             </div>
@@ -1083,7 +1084,7 @@
     <footer class="relative bg-slate-950 text-slate-400 py-16">
         <!-- Gradient Accent at Top -->
         <div class="absolute top-0 left-0 right-0 h-1"
-            style="background: linear-gradient(90deg, #667eea 0%, #764ba2 50%, #4facfe 100%);"></div>
+            style="background: linear-gradient(90deg, #4f46e5 0%, #312e81 50%, #4f46e5 100%);"></div>
 
         <div class="max-w-[95%] max-w-screen-2xl mx-auto px-6">
             <div class="grid md:grid-cols-4 gap-12 mb-12">
@@ -1091,23 +1092,22 @@
                 <div>
                     <h3 class="text-2xl font-bold text-white mb-4" style="font-family: 'Playfair Display', serif;">
                         <span class="gradient-text"
-                            style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">LexIcon</span>
-                        Legal
+                            style="background: linear-gradient(135deg, #4f46e5 0%, #312e81 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">LexIcon</span>
                     </h3>
                     <p class="text-slate-500 mb-4">
                         Excellence in legal representation since 1985.
                     </p>
                     <div class="flex gap-4">
                         <a href="#"
-                            class="w-10 h-10 rounded-full glass-dark flex items-center justify-center text-slate-300 hover:text-purple-400 transition-all duration-300 hover:scale-110">
+                            class="w-10 h-10 rounded-full glass-dark flex items-center justify-center text-slate-300 hover:text-indigo-400 transition-all duration-300 hover:scale-110">
                             <i class="fab fa-linkedin"></i>
                         </a>
                         <a href="#"
-                            class="w-10 h-10 rounded-full glass-dark flex items-center justify-center text-slate-300 hover:text-purple-400 transition-all duration-300 hover:scale-110">
+                            class="w-10 h-10 rounded-full glass-dark flex items-center justify-center text-slate-300 hover:text-indigo-400 transition-all duration-300 hover:scale-110">
                             <i class="fab fa-twitter"></i>
                         </a>
                         <a href="#"
-                            class="w-10 h-10 rounded-full glass-dark flex items-center justify-center text-slate-300 hover:text-purple-400 transition-all duration-300 hover:scale-110">
+                            class="w-10 h-10 rounded-full glass-dark flex items-center justify-center text-slate-300 hover:text-indigo-400 transition-all duration-300 hover:scale-110">
                             <i class="fab fa-facebook"></i>
                         </a>
                     </div>
@@ -1117,14 +1117,14 @@
                 <div>
                     <h4 class="text-white font-bold mb-4 uppercase tracking-wider">Quick Links</h4>
                     <ul class="space-y-2">
-                        <li><a href="about.html" class="hover:text-purple-400 transition-colors duration-300">About
+                        <li><a href="about.html" class="hover:text-indigo-400 transition-colors duration-300">About
                                 Us</a></li>
                         <li><a href="services.html"
-                                class="hover:text-purple-400 transition-colors duration-300">Practice Areas</a></li>
-                        <li><a href="team.html" class="hover:text-purple-400 transition-colors duration-300">Our
+                                class="hover:text-indigo-400 transition-colors duration-300">Practice Areas</a></li>
+                        <li><a href="team.html" class="hover:text-indigo-400 transition-colors duration-300">Our
                                 Team</a></li>
                         <li><a href="contact.html"
-                                class="hover:text-purple-400 transition-colors duration-300">Contact</a></li>
+                                class="hover:text-indigo-400 transition-colors duration-300">Contact</a></li>
                     </ul>
                 </div>
 
@@ -1133,12 +1133,12 @@
                     <h4 class="text-white font-bold mb-4 uppercase tracking-wider">Services</h4>
                     <ul class="space-y-2">
                         <li><a href="services.html"
-                                class="hover:text-purple-400 transition-colors duration-300">Corporate Law</a></li>
+                                class="hover:text-indigo-400 transition-colors duration-300">Corporate Law</a></li>
                         <li><a href="services.html"
-                                class="hover:text-purple-400 transition-colors duration-300">Litigation</a></li>
-                        <li><a href="services.html" class="hover:text-purple-400 transition-colors duration-300">IP
+                                class="hover:text-indigo-400 transition-colors duration-300">Litigation</a></li>
+                        <li><a href="services.html" class="hover:text-indigo-400 transition-colors duration-300">IP
                                 Protection</a></li>
-                        <li><a href="services.html" class="hover:text-purple-400 transition-colors duration-300">M&A
+                        <li><a href="services.html" class="hover:text-indigo-400 transition-colors duration-300">M&A
                                 Advisory</a></li>
                     </ul>
                 </div>
@@ -1148,24 +1148,24 @@
                     <h4 class="text-white font-bold mb-4 uppercase tracking-wider">Contact</h4>
                     <ul class="space-y-3">
                         <li class="flex items-start gap-3">
-                            <i class="fas fa-map-marker-alt mt-1 text-amber-600"></i>
+                            <i class="fas fa-map-marker-alt mt-1 text-indigo-600"></i>
                             <span>500 Park Avenue<br>New York, NY 10022</span>
                         </li>
                         <li class="flex items-center gap-3">
-                            <i class="fas fa-phone text-amber-600"></i>
+                            <i class="fas fa-phone text-indigo-600"></i>
                             <span>+1 (212) 555-0100</span>
                         </li>
                         <li class="flex items-center gap-3">
-                            <i class="fas fa-envelope text-amber-600"></i>
-                            <span>info@vanguardlegal.com</span>
+                            <i class="fas fa-envelope text-indigo-600"></i>
+                            <span>info@lexicon.com</span>
                         </li>
                     </ul>
                 </div>
             </div>
 
             <div class="border-t border-slate-800 pt-8 text-center text-slate-500">
-                <p>&copy; 2025 LexIcon. All rights reserved. | <a href="#" class="hover:text-amber-600">Privacy
-                        Policy</a> | <a href="#" class="hover:text-amber-600">Terms of Service</a></p>
+                <p>&copy; 2025 LexIcon. All rights reserved. | <a href="#" class="hover:text-indigo-600">Privacy
+                        Policy</a> | <a href="#" class="hover:text-indigo-600">Terms of Service</a></p>
             </div>
         </div>
     </footer>
@@ -1184,6 +1184,31 @@
             // Initialize RTL/LTR manager
             if (typeof AlignmentManager !== 'undefined') {
                 window.alignmentManager = new AlignmentManager();
+            }
+
+            // Mobile menu toggle functionality
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileMenuToggle && mobileMenu) {
+                mobileMenuToggle.addEventListener('click', function () {
+                    mobileMenu.classList.toggle('show');
+                });
+
+                // Close menu when clicking on a link
+                const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+                mobileMenuLinks.forEach(link => {
+                    link.addEventListener('click', function () {
+                        mobileMenu.classList.remove('show');
+                    });
+                });
+
+                // Close menu when clicking outside
+                document.addEventListener('click', function (event) {
+                    if (!event.target.closest('.navbar')) {
+                        mobileMenu.classList.remove('show');
+                    }
+                });
             }
         });
     </script>

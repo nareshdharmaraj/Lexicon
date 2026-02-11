@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Attorney Portal - LexIcon</title>
 
@@ -232,6 +233,10 @@
         }
 
         /* Desktop sidebar styles */
+        .desktop-header {
+            display: none;
+        }
+
         @media (min-width: 769px) {
             #sidebar {
                 position: relative;
@@ -247,12 +252,14 @@
                 transform: none !important;
             }
 
-            .mobile-header {
-                display: none;
+            .mobile-header,
+            .mobile-sidebar-close,
+            .mobile-sidebar-overlay {
+                display: none !important;
             }
 
-            .mobile-sidebar-overlay {
-                display: none;
+            .desktop-header {
+                display: block;
             }
         }
 
@@ -439,20 +446,20 @@
     </style>
 </head>
 
-<body class="bg-slate-950 dark-mode">
+<body class="bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 dark-mode">
 
     <div id="main-container">
         <!-- Mobile Header -->
-        <div class="mobile-header flex items-center justify-between md:hidden">
-            <button class="mobile-sidebar-toggle p-2 text-white hover:text-amber-400">
+        <div class="mobile-header flex items-center justify-between">
+            <button class="mobile-sidebar-toggle p-2 text-white hover:text-indigo-400">
                 <i class="fas fa-bars text-xl"></i>
             </button>
 
             <div class="flex items-center gap-3">
-                <button id="rtl-toggle-btn-mobile" class="p-2 text-white hover:text-amber-400">
+                <button id="rtl-toggle-btn-mobile" class="p-2 text-white hover:text-indigo-400">
                     <i class="fas fa-globe text-xl"></i>
                 </button>
-                <button class="relative p-2 text-white hover:text-amber-400">
+                <button class="relative p-2 text-white hover:text-indigo-400">
                     <i class="fas fa-bell text-xl"></i>
                     <span
                         class="absolute top-1 right-1 bg-red-500 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">8</span>
@@ -467,18 +474,18 @@
         <aside id="sidebar" class="w-64 bg-slate-900 border-r border-slate-800 flex-shrink-0">
             <div class="p-6 border-b border-slate-800">
                 <div class="flex items-center justify-between">
-                    <div class="flex items-center gap-3">
+                    <a href="index.html" class="flex items-center gap-3 group">
                         <div
-                            class="w-10 h-10 rounded-lg bg-gradient-to-br from-indigo-600 to-purple-600 flex items-center justify-center">
+                            class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-600 to-indigo-600 flex items-center justify-center group-hover:scale-110 transition-transform">
                             <i class="fas fa-balance-scale text-white text-lg"></i>
                         </div>
                         <h2 class="text-2xl font-bold gradient-text"
-                            style="font-family: 'Playfair Display', serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                            style="font-family: 'Playfair Display', serif; background: linear-gradient(135deg, #4f46e5 0%, #312e81 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
                             LexIcon
                         </h2>
-                    </div>
+                    </a>
                     <button
-                        class="mobile-sidebar-close md:hidden p-2 text-slate-400 hover:text-white bg-slate-800 hover:bg-slate-700 rounded-lg transition-all"
+                        class="mobile-sidebar-close p-2 text-slate-400 hover:text-white bg-slate-800 hover:bg-slate-700 rounded-xl transition-all"
                         onclick="closeAdminMobileSidebar()">
                         <i class="fas fa-times text-lg"></i>
                     </button>
@@ -488,44 +495,44 @@
 
             <nav class="p-4 admin-sidebar-nav">
                 <a href="#"
-                    class="tab-nav-btn flex items-center gap-3 px-4 py-3 text-amber-600 bg-slate-800 rounded-lg mb-2 font-semibold"
+                    class="tab-nav-btn flex items-center gap-3 px-4 py-3 text-indigo-600 bg-slate-800 rounded-xl mb-2 font-semibold"
                     data-tab="overview">
                     <i class="fas fa-chart-line"></i>
                     <span>Overview</span>
                 </a>
                 <a href="#"
-                    class="tab-nav-btn flex items-center gap-3 px-4 py-3 text-slate-300 hover:bg-slate-800 rounded-lg mb-2"
+                    class="tab-nav-btn flex items-center gap-3 px-4 py-3 text-slate-300 hover:bg-slate-800 rounded-xl mb-2"
                     data-tab="cases">
                     <i class="fas fa-briefcase"></i>
                     <span>Active Cases</span>
-                    <span class="ml-auto bg-amber-600 text-white text-xs rounded-full px-2 py-1">12</span>
+                    <span class="ml-auto bg-indigo-600 text-white text-xs rounded-full px-2 py-1">12</span>
                 </a>
                 <a href="#"
-                    class="tab-nav-btn flex items-center gap-3 px-4 py-3 text-slate-300 hover:bg-slate-800 rounded-lg mb-2"
+                    class="tab-nav-btn flex items-center gap-3 px-4 py-3 text-slate-300 hover:bg-slate-800 rounded-xl mb-2"
                     data-tab="calendar">
                     <i class="fas fa-calendar-alt"></i>
                     <span>Court Calendar</span>
                 </a>
                 <a href="#"
-                    class="tab-nav-btn flex items-center gap-3 px-4 py-3 text-slate-300 hover:bg-slate-800 rounded-lg mb-2"
+                    class="tab-nav-btn flex items-center gap-3 px-4 py-3 text-slate-300 hover:bg-slate-800 rounded-xl mb-2"
                     data-tab="clients">
                     <i class="fas fa-users"></i>
                     <span>Clients</span>
                 </a>
                 <a href="#"
-                    class="tab-nav-btn flex items-center gap-3 px-4 py-3 text-slate-300 hover:bg-slate-800 rounded-lg mb-2"
+                    class="tab-nav-btn flex items-center gap-3 px-4 py-3 text-slate-300 hover:bg-slate-800 rounded-xl mb-2"
                     data-tab="revenue">
                     <i class="fas fa-dollar-sign"></i>
                     <span>Revenue</span>
                 </a>
                 <a href="#"
-                    class="tab-nav-btn flex items-center gap-3 px-4 py-3 text-slate-300 hover:bg-slate-800 rounded-lg mb-2"
+                    class="tab-nav-btn flex items-center gap-3 px-4 py-3 text-slate-300 hover:bg-slate-800 rounded-xl mb-2"
                     data-tab="documents">
                     <i class="fas fa-file-alt"></i>
                     <span>Documents</span>
                 </a>
                 <a href="#"
-                    class="tab-nav-btn flex items-center gap-3 px-4 py-3 text-slate-300 hover:bg-slate-800 rounded-lg mb-2"
+                    class="tab-nav-btn flex items-center gap-3 px-4 py-3 text-slate-300 hover:bg-slate-800 rounded-xl mb-2"
                     data-tab="settings">
                     <i class="fas fa-cog"></i>
                     <span>Settings</span>
@@ -535,7 +542,7 @@
             <div class="absolute bottom-0 w-64 p-4 border-t border-slate-800">
 
                 <a href="login.html"
-                    class="flex items-center gap-3 px-4 py-3 text-slate-300 hover:bg-slate-800 rounded-lg">
+                    class="flex items-center gap-3 px-4 py-3 text-slate-300 hover:bg-slate-800 rounded-xl">
                     <i class="fas fa-sign-out-alt"></i>
                     <span>Logout</span>
                 </a>
@@ -545,7 +552,7 @@
         <!-- Main Content -->
         <main id="main-content" class="flex-1 overflow-y-auto bg-slate-950 admin-main-content">
             <!-- Top Bar -->
-            <header class="bg-slate-900 border-b border-slate-800 px-4 md:px-8 py-4 hidden md:block">
+            <header class="bg-slate-900 border-b border-slate-800 px-4 md:px-8 py-4 desktop-header">
                 <div class="flex items-center justify-between w-full" id="admin-header-content">
                     <div class="flex-1">
                         <h1 class="text-lg md:text-2xl font-bold text-white leading-tight">Welcome Back, Alexander</h1>
@@ -563,7 +570,7 @@
                                 class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">8</span>
                         </button>
                         <div class="hidden md:flex items-center gap-3">
-                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=100"
+                            <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=100"
                                 alt="Profile" class="w-10 h-10 rounded-full">
                             <div>
                                 <div class="font-semibold text-white">Alexander Specter</div>
@@ -581,7 +588,7 @@
                 <div class="admin-grid grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6 mb-6 md:mb-8">
                     <!-- Billable Hours -->
                     <div
-                        class="glass-dark p-3 md:p-6 rounded-lg min-w-0 flex flex-col justify-between h-full kpi-card-wrapper">
+                        class="glass-dark p-3 md:p-6 rounded-xl min-w-0 flex flex-col justify-between h-full kpi-card-wrapper">
                         <div class="mb-2 md:mb-4 kpi-card-content">
                             <p
                                 class="text-slate-400 text-xs md:text-sm uppercase tracking-wide mb-1 md:mb-2 leading-tight">
@@ -590,8 +597,8 @@
                                     class="text-sm md:text-2xl">h</span></h3>
                         </div>
                         <div
-                            class="w-8 h-8 md:w-12 md:h-12 bg-amber-600 bg-opacity-20 rounded-lg flex items-center justify-center kpi-card-icon">
-                            <i class="fas fa-clock text-sm md:text-2xl text-amber-600"></i>
+                            class="w-8 h-8 md:w-12 md:h-12 bg-indigo-600 bg-opacity-20 rounded-xl flex items-center justify-center kpi-card-icon">
+                            <i class="fas fa-clock text-sm md:text-2xl text-indigo-600"></i>
                         </div>
                         <div class="flex items-center gap-1 md:gap-2 mt-auto flex-wrap">
                             <span class="text-green-400 text-xs md:text-sm font-semibold whitespace-nowrap">
@@ -603,7 +610,7 @@
 
                     <!-- Win Rate -->
                     <div
-                        class="glass-dark p-3 md:p-6 rounded-lg min-w-0 flex flex-col justify-between h-full kpi-card-wrapper">
+                        class="glass-dark p-3 md:p-6 rounded-xl min-w-0 flex flex-col justify-between h-full kpi-card-wrapper">
                         <div class="mb-2 md:mb-4 kpi-card-content">
                             <p
                                 class="text-slate-400 text-xs md:text-sm uppercase tracking-wide mb-1 md:mb-2 leading-tight">
@@ -612,7 +619,7 @@
                                     class="text-sm md:text-2xl">%</span></h3>
                         </div>
                         <div
-                            class="w-8 h-8 md:w-12 md:h-12 bg-green-600 bg-opacity-20 rounded-lg flex items-center justify-center kpi-card-icon">
+                            class="w-8 h-8 md:w-12 md:h-12 bg-green-600 bg-opacity-20 rounded-xl flex items-center justify-center kpi-card-icon">
                             <i class="fas fa-trophy text-sm md:text-2xl text-green-400"></i>
                         </div>
                         <div class="flex items-center gap-1 md:gap-2 mt-auto flex-wrap">
@@ -625,7 +632,7 @@
 
                     <!-- Pending Invoices -->
                     <div
-                        class="glass-dark p-3 md:p-6 rounded-lg min-w-0 flex flex-col justify-between h-full kpi-card-wrapper">
+                        class="glass-dark p-3 md:p-6 rounded-xl min-w-0 flex flex-col justify-between h-full kpi-card-wrapper">
                         <div class="mb-2 md:mb-4 kpi-card-content">
                             <p
                                 class="text-slate-400 text-xs md:text-sm uppercase tracking-wide mb-1 md:mb-2 leading-tight">
@@ -633,8 +640,8 @@
                             <h3 class="text-lg md:text-3xl lg:text-4xl font-bold text-white leading-none">$450K</h3>
                         </div>
                         <div
-                            class="w-8 h-8 md:w-12 md:h-12 bg-blue-600 bg-opacity-20 rounded-lg flex items-center justify-center kpi-card-icon">
-                            <i class="fas fa-file-invoice-dollar text-sm md:text-2xl text-blue-400"></i>
+                            class="w-8 h-8 md:w-12 md:h-12 bg-indigo-600 bg-opacity-20 rounded-xl flex items-center justify-center kpi-card-icon">
+                            <i class="fas fa-file-invoice-dollar text-sm md:text-2xl text-indigo-400"></i>
                         </div>
                         <div class="flex items-center gap-1 md:gap-2 mt-auto flex-wrap">
                             <span class="text-slate-400 text-[10px] md:text-sm">8 invoices outstanding</span>
@@ -643,7 +650,7 @@
 
                     <!-- Active Cases -->
                     <div
-                        class="glass-dark p-3 md:p-6 rounded-lg min-w-0 flex flex-col justify-between h-full kpi-card-wrapper">
+                        class="glass-dark p-3 md:p-6 rounded-xl min-w-0 flex flex-col justify-between h-full kpi-card-wrapper">
                         <div class="mb-2 md:mb-4 kpi-card-content">
                             <p
                                 class="text-slate-400 text-xs md:text-sm uppercase tracking-wide mb-1 md:mb-2 leading-tight">
@@ -651,11 +658,11 @@
                             <h3 class="text-lg md:text-3xl lg:text-4xl font-bold text-white leading-none">12</h3>
                         </div>
                         <div
-                            class="w-8 h-8 md:w-12 md:h-12 bg-purple-600 bg-opacity-20 rounded-lg flex items-center justify-center kpi-card-icon">
-                            <i class="fas fa-briefcase text-sm md:text-2xl text-purple-400"></i>
+                            class="w-8 h-8 md:w-12 md:h-12 bg-indigo-600 bg-opacity-20 rounded-xl flex items-center justify-center kpi-card-icon">
+                            <i class="fas fa-briefcase text-sm md:text-2xl text-indigo-400"></i>
                         </div>
                         <div class="flex items-center gap-1 md:gap-2 mt-auto flex-wrap">
-                            <span class="text-amber-400 text-xs md:text-sm font-semibold whitespace-nowrap">3 trials
+                            <span class="text-indigo-400 text-xs md:text-sm font-semibold whitespace-nowrap">3 trials
                                 this week</span>
                         </div>
                     </div>
@@ -699,20 +706,20 @@
                             <div>
                                 <div class="flex justify-between mb-2">
                                     <span class="text-sm font-semibold text-slate-300">Client Satisfaction</span>
-                                    <span class="text-sm font-bold text-blue-400">96%</span>
+                                    <span class="text-sm font-bold text-indigo-400">96%</span>
                                 </div>
                                 <div class="h-3 bg-slate-800 rounded-full overflow-hidden">
-                                    <div class="h-full bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full animate-slideInLeft"
+                                    <div class="h-full bg-gradient-to-r from-indigo-500 to-indigo-500 rounded-full animate-slideInLeft"
                                         style="width: 96%; animation-delay: 0.2s;"></div>
                                 </div>
                             </div>
                             <div>
                                 <div class="flex justify-between mb-2">
                                     <span class="text-sm font-semibold text-slate-300">Case Closure Rate</span>
-                                    <span class="text-sm font-bold text-purple-400">85%</span>
+                                    <span class="text-sm font-bold text-indigo-400">85%</span>
                                 </div>
                                 <div class="h-3 bg-slate-800 rounded-full overflow-hidden">
-                                    <div class="h-full bg-gradient-to-r from-purple-500 to-pink-400 rounded-full animate-slideInLeft"
+                                    <div class="h-full bg-gradient-to-r from-indigo-500 to-pink-400 rounded-full animate-slideInLeft"
                                         style="width: 85%; animation-delay: 0.4s;"></div>
                                 </div>
                             </div>
@@ -723,11 +730,11 @@
                 <!-- Tab Content: Active Cases -->
                 <div class="tab-content" data-tab="cases" style="display: none;">
                     <!-- The War Room - Active Cases Table -->
-                    <div class="glass-dark rounded-lg p-8 mb-8">
+                    <div class="glass-dark rounded-xl p-8 mb-8">
                         <div class="flex items-center justify-between mb-6">
                             <h2 class="text-3xl font-bold text-white" style="font-family: 'Playfair Display', serif;">
                                 The War Room</h2>
-                            <button class="btn-gold text-sm">
+                            <button class="btn-indigo text-sm">
                                 <i class="fas fa-plus mr-2"></i>New Case
                             </button>
                         </div>
@@ -761,10 +768,10 @@
                                         </td>
                                         <td class="py-4 px-4 text-slate-300">File Motion to Dismiss</td>
                                         <td class="py-4 px-4 text-right">
-                                            <button class="text-amber-600 hover:text-amber-400 mx-1">
+                                            <button class="text-indigo-600 hover:text-indigo-400 mx-1">
                                                 <i class="fas fa-eye"></i>
                                             </button>
-                                            <button class="text-amber-600 hover:text-amber-400 mx-1">
+                                            <button class="text-indigo-600 hover:text-indigo-400 mx-1">
                                                 <i class="fas fa-edit"></i>
                                             </button>
                                         </td>
@@ -782,10 +789,10 @@
                                         </td>
                                         <td class="py-4 px-4 text-slate-300">Discovery Phase</td>
                                         <td class="py-4 px-4 text-right">
-                                            <button class="text-amber-600 hover:text-amber-400 mx-1">
+                                            <button class="text-indigo-600 hover:text-indigo-400 mx-1">
                                                 <i class="fas fa-eye"></i>
                                             </button>
-                                            <button class="text-amber-600 hover:text-amber-400 mx-1">
+                                            <button class="text-indigo-600 hover:text-indigo-400 mx-1">
                                                 <i class="fas fa-edit"></i>
                                             </button>
                                         </td>
@@ -802,10 +809,10 @@
                                         </td>
                                         <td class="py-4 px-4 text-slate-300">Finalize Agreement</td>
                                         <td class="py-4 px-4 text-right">
-                                            <button class="text-amber-600 hover:text-amber-400 mx-1">
+                                            <button class="text-indigo-600 hover:text-indigo-400 mx-1">
                                                 <i class="fas fa-eye"></i>
                                             </button>
-                                            <button class="text-amber-600 hover:text-amber-400 mx-1">
+                                            <button class="text-indigo-600 hover:text-indigo-400 mx-1">
                                                 <i class="fas fa-edit"></i>
                                             </button>
                                         </td>
@@ -822,10 +829,10 @@
                                         </td>
                                         <td class="py-4 px-4 text-slate-300">Respond to Subpoena</td>
                                         <td class="py-4 px-4 text-right">
-                                            <button class="text-amber-600 hover:text-amber-400 mx-1">
+                                            <button class="text-indigo-600 hover:text-indigo-400 mx-1">
                                                 <i class="fas fa-eye"></i>
                                             </button>
-                                            <button class="text-amber-600 hover:text-amber-400 mx-1">
+                                            <button class="text-indigo-600 hover:text-indigo-400 mx-1">
                                                 <i class="fas fa-edit"></i>
                                             </button>
                                         </td>
@@ -864,7 +871,7 @@
                                     <span class="text-white font-semibold">$1.8M</span>
                                 </div>
                                 <div class="w-full bg-slate-800 rounded-full h-3">
-                                    <div class="bg-gradient-to-r from-amber-600 to-orange-500 h-3 rounded-full animate-slideInLeft"
+                                    <div class="bg-gradient-to-r from-indigo-600 to-indigo-500 h-3 rounded-full animate-slideInLeft"
                                         style="width: 60%"></div>
                                 </div>
                             </div>
@@ -874,7 +881,7 @@
                                     <span class="text-white font-semibold">$2.1M</span>
                                 </div>
                                 <div class="w-full bg-slate-800 rounded-full h-3">
-                                    <div class="bg-gradient-to-r from-amber-600 to-orange-500 h-3 rounded-full animate-slideInLeft"
+                                    <div class="bg-gradient-to-r from-indigo-600 to-indigo-500 h-3 rounded-full animate-slideInLeft"
                                         style="width: 70%; animation-delay: 0.2s;"></div>
                                 </div>
                             </div>
@@ -884,7 +891,7 @@
                                     <span class="text-white font-semibold">$2.3M</span>
                                 </div>
                                 <div class="w-full bg-slate-800 rounded-full h-3">
-                                    <div class="bg-gradient-to-r from-amber-600 to-orange-500 h-3 rounded-full animate-slideInLeft"
+                                    <div class="bg-gradient-to-r from-indigo-600 to-indigo-500 h-3 rounded-full animate-slideInLeft"
                                         style="width: 77%; animation-delay: 0.4s;"></div>
                                 </div>
                             </div>
@@ -907,13 +914,13 @@
 
                     <div class="grid md:grid-cols-3 gap-8">
                         <!-- Court Calendar -->
-                        <div class="glass-dark rounded-lg p-6 md:col-span-2">
+                        <div class="glass-dark rounded-xl p-6 md:col-span-2">
                             <h3 class="text-2xl font-bold text-white mb-6"
                                 style="font-family: 'Playfair Display', serif;">Court Calendar</h3>
 
                             <div class="space-y-4">
                                 <div
-                                    class="flex items-start gap-4 p-4 bg-slate-900 rounded-lg border-l-4 border-red-500">
+                                    class="flex items-start gap-4 p-4 bg-slate-900 rounded-xl border-l-4 border-red-500">
                                     <div class="text-center">
                                         <div class="text-3xl font-bold text-white">05</div>
                                         <div class="text-xs text-slate-400 uppercase">Dec</div>
@@ -929,7 +936,7 @@
                                 </div>
 
                                 <div
-                                    class="flex items-start gap-4 p-4 bg-slate-900 rounded-lg border-l-4 border-amber-600">
+                                    class="flex items-start gap-4 p-4 bg-slate-900 rounded-xl border-l-4 border-indigo-600">
                                     <div class="text-center">
                                         <div class="text-3xl font-bold text-white">08</div>
                                         <div class="text-xs text-slate-400 uppercase">Dec</div>
@@ -937,7 +944,7 @@
                                     <div class="flex-1">
                                         <div class="flex items-center justify-between mb-2">
                                             <h4 class="font-bold text-white">Lunch with Judge Judy</h4>
-                                            <span class="text-amber-400 text-sm font-semibold">This Week</span>
+                                            <span class="text-indigo-400 text-sm font-semibold">This Week</span>
                                         </div>
                                         <p class="text-slate-400 text-sm mb-2">The Oak Room, 12:30 PM</p>
                                         <p class="text-slate-500 text-xs">Informal discussion</p>
@@ -945,7 +952,7 @@
                                 </div>
 
                                 <div
-                                    class="flex items-start gap-4 p-4 bg-slate-900 rounded-lg border-l-4 border-blue-500">
+                                    class="flex items-start gap-4 p-4 bg-slate-900 rounded-xl border-l-4 border-indigo-500">
                                     <div class="text-center">
                                         <div class="text-3xl font-bold text-white">12</div>
                                         <div class="text-xs text-slate-400 uppercase">Dec</div>
@@ -953,7 +960,7 @@
                                     <div class="flex-1">
                                         <div class="flex items-center justify-between mb-2">
                                             <h4 class="font-bold text-white">Deposition - Client X</h4>
-                                            <span class="text-blue-400 text-sm font-semibold">Next Week</span>
+                                            <span class="text-indigo-400 text-sm font-semibold">Next Week</span>
                                         </div>
                                         <p class="text-slate-400 text-sm mb-2">Conference Room A, 02:00 PM</p>
                                         <p class="text-slate-500 text-xs">Wayne Enterprises case</p>
@@ -963,12 +970,12 @@
                         </div>
 
                         <!-- Revenue Chart Placeholder -->
-                        <div class="glass-dark rounded-lg p-6">
+                        <div class="glass-dark rounded-xl p-6">
                             <h3 class="text-xl font-bold text-white mb-6"
                                 style="font-family: 'Playfair Display', serif;">Revenue (YTD)</h3>
 
                             <div class="text-center mb-6">
-                                <div class="text-4xl font-bold text-amber-600 mb-2">$8.4M</div>
+                                <div class="text-4xl font-bold text-indigo-600 mb-2">$8.4M</div>
                                 <div class="text-slate-400 text-sm">+23% vs 2024</div>
                             </div>
 
@@ -979,7 +986,7 @@
                                         <span class="text-white font-semibold">$1.8M</span>
                                     </div>
                                     <div class="w-full bg-slate-800 rounded-full h-2">
-                                        <div class="bg-amber-600 h-2 rounded-full" style="width: 60%"></div>
+                                        <div class="bg-indigo-600 h-2 rounded-full" style="width: 60%"></div>
                                     </div>
                                 </div>
                                 <div>
@@ -988,7 +995,7 @@
                                         <span class="text-white font-semibold">$2.1M</span>
                                     </div>
                                     <div class="w-full bg-slate-800 rounded-full h-2">
-                                        <div class="bg-amber-600 h-2 rounded-full" style="width: 70%"></div>
+                                        <div class="bg-indigo-600 h-2 rounded-full" style="width: 70%"></div>
                                     </div>
                                 </div>
                                 <div>
@@ -997,7 +1004,7 @@
                                         <span class="text-white font-semibold">$2.3M</span>
                                     </div>
                                     <div class="w-full bg-slate-800 rounded-full h-2">
-                                        <div class="bg-amber-600 h-2 rounded-full" style="width: 77%"></div>
+                                        <div class="bg-indigo-600 h-2 rounded-full" style="width: 77%"></div>
                                     </div>
                                 </div>
                                 <div>
@@ -1023,8 +1030,8 @@
                                 <h3 class="text-xl font-bold text-white">Client Portfolio</h3>
                                 <div class="flex items-center gap-2">
                                     <input type="text" placeholder="Search clients..."
-                                        class="bg-slate-800 text-white placeholder-slate-400 px-3 py-2 rounded-lg border border-slate-700 focus:border-indigo-500 text-sm">
-                                    <button class="btn-gold text-sm">
+                                        class="bg-slate-800 text-white placeholder-slate-400 px-3 py-2 rounded-xl border border-slate-700 focus:border-indigo-500 text-sm">
+                                    <button class="btn-indigo text-sm">
                                         <i class="fas fa-plus mr-2"></i>Add Client
                                     </button>
                                 </div>
@@ -1032,8 +1039,8 @@
 
                             <div class="space-y-4">
                                 <div
-                                    class="flex items-center gap-4 p-4 bg-slate-900 rounded-lg border border-slate-800 hover:border-slate-700 transition-colors">
-                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100"
+                                    class="flex items-center gap-4 p-4 bg-slate-900 rounded-xl border border-slate-800 hover:border-slate-700 transition-colors">
+                                    <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=100"
                                         alt="Client" class="w-12 h-12 rounded-full">
                                     <div class="flex-1">
                                         <div class="flex items-center justify-between">
@@ -1042,7 +1049,7 @@
                                         </div>
                                         <p class="text-slate-400 text-sm">Bruce Wayne • CEO</p>
                                         <div class="flex items-center gap-4 mt-2">
-                                            <span class="text-amber-400 text-xs">3 Active Cases</span>
+                                            <span class="text-indigo-400 text-xs">3 Active Cases</span>
                                             <span class="text-slate-400 text-xs">$2.4M Billings</span>
                                         </div>
                                     </div>
@@ -1052,17 +1059,17 @@
                                 </div>
 
                                 <div
-                                    class="flex items-center gap-4 p-4 bg-slate-900 rounded-lg border border-slate-800 hover:border-slate-700 transition-colors">
+                                    class="flex items-center gap-4 p-4 bg-slate-900 rounded-xl border border-slate-800 hover:border-slate-700 transition-colors">
                                     <img src="https://images.unsplash.com/photo-1494790108755-2616b612b714?q=80&w=100"
                                         alt="Client" class="w-12 h-12 rounded-full">
                                     <div class="flex-1">
                                         <div class="flex items-center justify-between">
                                             <h4 class="text-white font-semibold">Stark Industries</h4>
-                                            <span class="text-blue-400 text-sm font-semibold">Pending</span>
+                                            <span class="text-indigo-400 text-sm font-semibold">Pending</span>
                                         </div>
                                         <p class="text-slate-400 text-sm">Tony Stark • CTO</p>
                                         <div class="flex items-center gap-4 mt-2">
-                                            <span class="text-amber-400 text-xs">1 Active Case</span>
+                                            <span class="text-indigo-400 text-xs">1 Active Case</span>
                                             <span class="text-slate-400 text-xs">$850K Billings</span>
                                         </div>
                                     </div>
@@ -1072,8 +1079,8 @@
                                 </div>
 
                                 <div
-                                    class="flex items-center gap-4 p-4 bg-slate-900 rounded-lg border border-slate-800 hover:border-slate-700 transition-colors">
-                                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=100"
+                                    class="flex items-center gap-4 p-4 bg-slate-900 rounded-xl border border-slate-800 hover:border-slate-700 transition-colors">
+                                    <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=100"
                                         alt="Client" class="w-12 h-12 rounded-full">
                                     <div class="flex-1">
                                         <div class="flex items-center justify-between">
@@ -1092,7 +1099,7 @@
                                 </div>
 
                                 <div
-                                    class="flex items-center gap-4 p-4 bg-slate-900 rounded-lg border border-slate-800 hover:border-slate-700 transition-colors">
+                                    class="flex items-center gap-4 p-4 bg-slate-900 rounded-xl border border-slate-800 hover:border-slate-700 transition-colors">
                                     <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=100"
                                         alt="Client" class="w-12 h-12 rounded-full">
                                     <div class="flex-1">
@@ -1128,11 +1135,11 @@
                                     </div>
                                     <div class="flex items-center justify-between">
                                         <span class="text-slate-400">New This Month</span>
-                                        <span class="text-blue-400 font-semibold">8</span>
+                                        <span class="text-indigo-400 font-semibold">8</span>
                                     </div>
                                     <div class="flex items-center justify-between">
                                         <span class="text-slate-400">Retention Rate</span>
-                                        <span class="text-amber-400 font-semibold">94%</span>
+                                        <span class="text-indigo-400 font-semibold">94%</span>
                                     </div>
                                 </div>
                             </div>
@@ -1146,7 +1153,7 @@
                                             <span class="text-white">65%</span>
                                         </div>
                                         <div class="w-full bg-slate-800 rounded-full h-2">
-                                            <div class="bg-amber-600 h-2 rounded-full" style="width: 65%"></div>
+                                            <div class="bg-indigo-600 h-2 rounded-full" style="width: 65%"></div>
                                         </div>
                                     </div>
                                     <div>
@@ -1155,7 +1162,7 @@
                                             <span class="text-white">25%</span>
                                         </div>
                                         <div class="w-full bg-slate-800 rounded-full h-2">
-                                            <div class="bg-blue-600 h-2 rounded-full" style="width: 25%"></div>
+                                            <div class="bg-indigo-600 h-2 rounded-full" style="width: 25%"></div>
                                         </div>
                                     </div>
                                     <div>
@@ -1180,8 +1187,8 @@
                         <div class="glass-dark rounded-xl p-6">
                             <h3 class="text-xl font-bold text-white mb-6">Revenue Overview</h3>
                             <div class="space-y-6">
-                                <div class="text-center p-6 bg-slate-900 rounded-lg">
-                                    <div class="text-4xl font-bold text-amber-600 mb-2">$8.4M</div>
+                                <div class="text-center p-6 bg-slate-900 rounded-xl">
+                                    <div class="text-4xl font-bold text-indigo-600 mb-2">$8.4M</div>
                                     <div class="text-slate-400 text-sm">Total Revenue 2025</div>
                                     <div class="text-green-400 text-sm mt-2">
                                         <i class="fas fa-arrow-up mr-1"></i>+23% vs 2024
@@ -1189,11 +1196,11 @@
                                 </div>
 
                                 <div class="grid grid-cols-2 gap-4">
-                                    <div class="text-center p-4 bg-slate-900 rounded-lg">
+                                    <div class="text-center p-4 bg-slate-900 rounded-xl">
                                         <div class="text-2xl font-bold text-white mb-1">$450K</div>
                                         <div class="text-slate-400 text-xs">Pending Invoices</div>
                                     </div>
-                                    <div class="text-center p-4 bg-slate-900 rounded-lg">
+                                    <div class="text-center p-4 bg-slate-900 rounded-xl">
                                         <div class="text-2xl font-bold text-white mb-1">$125K</div>
                                         <div class="text-slate-400 text-xs">This Month</div>
                                     </div>
@@ -1206,7 +1213,7 @@
                             <h3 class="text-xl font-bold text-white mb-6">Payment Status</h3>
                             <div class="space-y-4">
                                 <div
-                                    class="flex items-center justify-between p-4 bg-green-600 bg-opacity-10 border border-green-600 border-opacity-30 rounded-lg">
+                                    class="flex items-center justify-between p-4 bg-green-600 bg-opacity-10 border border-green-600 border-opacity-30 rounded-xl">
                                     <div>
                                         <div class="text-white font-semibold">Paid Invoices</div>
                                         <div class="text-green-400 text-sm">25 invoices</div>
@@ -1215,16 +1222,16 @@
                                 </div>
 
                                 <div
-                                    class="flex items-center justify-between p-4 bg-amber-600 bg-opacity-10 border border-amber-600 border-opacity-30 rounded-lg">
+                                    class="flex items-center justify-between p-4 bg-indigo-600 bg-opacity-10 border border-indigo-600 border-opacity-30 rounded-xl">
                                     <div>
                                         <div class="text-white font-semibold">Pending Invoices</div>
-                                        <div class="text-amber-400 text-sm">8 invoices</div>
+                                        <div class="text-indigo-400 text-sm">8 invoices</div>
                                     </div>
-                                    <div class="text-2xl font-bold text-amber-400">$450K</div>
+                                    <div class="text-2xl font-bold text-indigo-400">$450K</div>
                                 </div>
 
                                 <div
-                                    class="flex items-center justify-between p-4 bg-red-600 bg-opacity-10 border border-red-600 border-opacity-30 rounded-lg">
+                                    class="flex items-center justify-between p-4 bg-red-600 bg-opacity-10 border border-red-600 border-opacity-30 rounded-xl">
                                     <div>
                                         <div class="text-white font-semibold">Overdue</div>
                                         <div class="text-red-400 text-sm">2 invoices</div>
@@ -1245,7 +1252,7 @@
                                     <span class="text-white font-semibold">$3.2M (38%)</span>
                                 </div>
                                 <div class="w-full bg-slate-800 rounded-full h-3">
-                                    <div class="bg-gradient-to-r from-amber-600 to-orange-500 h-3 rounded-full"
+                                    <div class="bg-gradient-to-r from-indigo-600 to-indigo-500 h-3 rounded-full"
                                         style="width: 38%"></div>
                                 </div>
                             </div>
@@ -1255,7 +1262,7 @@
                                     <span class="text-white font-semibold">$2.1M (25%)</span>
                                 </div>
                                 <div class="w-full bg-slate-800 rounded-full h-3">
-                                    <div class="bg-gradient-to-r from-blue-600 to-cyan-500 h-3 rounded-full"
+                                    <div class="bg-gradient-to-r from-indigo-600 to-indigo-600 h-3 rounded-full"
                                         style="width: 25%"></div>
                                 </div>
                             </div>
@@ -1275,7 +1282,7 @@
                                     <span class="text-white font-semibold">$1.3M (16%)</span>
                                 </div>
                                 <div class="w-full bg-slate-800 rounded-full h-3">
-                                    <div class="bg-gradient-to-r from-purple-600 to-pink-500 h-3 rounded-full"
+                                    <div class="bg-gradient-to-r from-indigo-600 to-pink-500 h-3 rounded-full"
                                         style="width: 16%"></div>
                                 </div>
                             </div>
@@ -1291,23 +1298,23 @@
                             <h3 class="text-lg font-bold text-white mb-4">Categories</h3>
                             <div class="space-y-2">
                                 <button
-                                    class="w-full text-left px-3 py-2 bg-amber-600 bg-opacity-20 text-amber-400 rounded-lg">
+                                    class="w-full text-left px-3 py-2 bg-indigo-600 bg-opacity-20 text-indigo-400 rounded-xl">
                                     <i class="fas fa-folder mr-2"></i>All Documents
                                 </button>
                                 <button
-                                    class="w-full text-left px-3 py-2 text-slate-400 hover:text-white hover:bg-slate-800 rounded-lg">
+                                    class="w-full text-left px-3 py-2 text-slate-400 hover:text-white hover:bg-slate-800 rounded-xl">
                                     <i class="fas fa-file-contract mr-2"></i>Contracts
                                 </button>
                                 <button
-                                    class="w-full text-left px-3 py-2 text-slate-400 hover:text-white hover:bg-slate-800 rounded-lg">
+                                    class="w-full text-left px-3 py-2 text-slate-400 hover:text-white hover:bg-slate-800 rounded-xl">
                                     <i class="fas fa-file-alt mr-2"></i>Pleadings
                                 </button>
                                 <button
-                                    class="w-full text-left px-3 py-2 text-slate-400 hover:text-white hover:bg-slate-800 rounded-lg">
+                                    class="w-full text-left px-3 py-2 text-slate-400 hover:text-white hover:bg-slate-800 rounded-xl">
                                     <i class="fas fa-file-pdf mr-2"></i>Evidence
                                 </button>
                                 <button
-                                    class="w-full text-left px-3 py-2 text-slate-400 hover:text-white hover:bg-slate-800 rounded-lg">
+                                    class="w-full text-left px-3 py-2 text-slate-400 hover:text-white hover:bg-slate-800 rounded-xl">
                                     <i class="fas fa-file-signature mr-2"></i>Signed Documents
                                 </button>
                             </div>
@@ -1319,8 +1326,8 @@
                                 <h3 class="text-xl font-bold text-white">Document Library</h3>
                                 <div class="flex items-center gap-2">
                                     <input type="text" placeholder="Search documents..."
-                                        class="bg-slate-800 text-white placeholder-slate-400 px-3 py-2 rounded-lg border border-slate-700 focus:border-indigo-500 text-sm">
-                                    <button class="btn-gold text-sm">
+                                        class="bg-slate-800 text-white placeholder-slate-400 px-3 py-2 rounded-xl border border-slate-700 focus:border-indigo-500 text-sm">
+                                    <button class="btn-indigo text-sm">
                                         <i class="fas fa-upload mr-2"></i>Upload
                                     </button>
                                 </div>
@@ -1328,9 +1335,9 @@
 
                             <div class="space-y-3">
                                 <div
-                                    class="flex items-center gap-4 p-4 bg-slate-900 rounded-lg border border-slate-800 hover:border-slate-700 transition-colors">
+                                    class="flex items-center gap-4 p-4 bg-slate-900 rounded-xl border border-slate-800 hover:border-slate-700 transition-colors">
                                     <div
-                                        class="w-10 h-10 bg-red-600 bg-opacity-20 rounded-lg flex items-center justify-center">
+                                        class="w-10 h-10 bg-red-600 bg-opacity-20 rounded-xl flex items-center justify-center">
                                         <i class="fas fa-file-pdf text-red-400"></i>
                                     </div>
                                     <div class="flex-1">
@@ -1354,10 +1361,10 @@
                                 </div>
 
                                 <div
-                                    class="flex items-center gap-4 p-4 bg-slate-900 rounded-lg border border-slate-800 hover:border-slate-700 transition-colors">
+                                    class="flex items-center gap-4 p-4 bg-slate-900 rounded-xl border border-slate-800 hover:border-slate-700 transition-colors">
                                     <div
-                                        class="w-10 h-10 bg-blue-600 bg-opacity-20 rounded-lg flex items-center justify-center">
-                                        <i class="fas fa-file-word text-blue-400"></i>
+                                        class="w-10 h-10 bg-indigo-600 bg-opacity-20 rounded-xl flex items-center justify-center">
+                                        <i class="fas fa-file-word text-indigo-400"></i>
                                     </div>
                                     <div class="flex-1">
                                         <div class="flex items-center justify-between">
@@ -1381,9 +1388,9 @@
                                 </div>
 
                                 <div
-                                    class="flex items-center gap-4 p-4 bg-slate-900 rounded-lg border border-slate-800 hover:border-slate-700 transition-colors">
+                                    class="flex items-center gap-4 p-4 bg-slate-900 rounded-xl border border-slate-800 hover:border-slate-700 transition-colors">
                                     <div
-                                        class="w-10 h-10 bg-green-600 bg-opacity-20 rounded-lg flex items-center justify-center">
+                                        class="w-10 h-10 bg-green-600 bg-opacity-20 rounded-xl flex items-center justify-center">
                                         <i class="fas fa-file-excel text-green-400"></i>
                                     </div>
                                     <div class="flex-1">
@@ -1408,10 +1415,10 @@
                                 </div>
 
                                 <div
-                                    class="flex items-center gap-4 p-4 bg-slate-900 rounded-lg border border-slate-800 hover:border-slate-700 transition-colors">
+                                    class="flex items-center gap-4 p-4 bg-slate-900 rounded-xl border border-slate-800 hover:border-slate-700 transition-colors">
                                     <div
-                                        class="w-10 h-10 bg-purple-600 bg-opacity-20 rounded-lg flex items-center justify-center">
-                                        <i class="fas fa-file-signature text-purple-400"></i>
+                                        class="w-10 h-10 bg-indigo-600 bg-opacity-20 rounded-xl flex items-center justify-center">
+                                        <i class="fas fa-file-signature text-indigo-400"></i>
                                     </div>
                                     <div class="flex-1">
                                         <div class="flex items-center justify-between">
@@ -1447,10 +1454,10 @@
                             <h3 class="text-xl font-bold text-white mb-6">Profile Settings</h3>
                             <div class="space-y-6">
                                 <div class="flex items-center gap-4">
-                                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=100"
+                                    <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=100"
                                         alt="Profile" class="w-20 h-20 rounded-full">
                                     <div>
-                                        <button class="btn-gold text-sm mb-2">Change Photo</button>
+                                        <button class="btn-indigo text-sm mb-2">Change Photo</button>
                                         <p class="text-slate-400 text-sm">JPG, GIF or PNG. 1MB max.</p>
                                     </div>
                                 </div>
@@ -1460,35 +1467,35 @@
                                         <label class="block text-slate-300 text-sm font-semibold mb-2">First
                                             Name</label>
                                         <input type="text" value="Alexander"
-                                            class="w-full bg-slate-800 text-white placeholder-slate-400 px-3 py-2 rounded-lg border border-slate-700 focus:border-indigo-500">
+                                            class="w-full bg-slate-800 text-white placeholder-slate-400 px-3 py-2 rounded-xl border border-slate-700 focus:border-indigo-500">
                                     </div>
                                     <div>
                                         <label class="block text-slate-300 text-sm font-semibold mb-2">Last Name</label>
                                         <input type="text" value="Specter"
-                                            class="w-full bg-slate-800 text-white placeholder-slate-400 px-3 py-2 rounded-lg border border-slate-700 focus:border-indigo-500">
+                                            class="w-full bg-slate-800 text-white placeholder-slate-400 px-3 py-2 rounded-xl border border-slate-700 focus:border-indigo-500">
                                     </div>
                                 </div>
 
                                 <div>
                                     <label class="block text-slate-300 text-sm font-semibold mb-2">Email</label>
                                     <input type="email" value="alexander@lexicon.law"
-                                        class="w-full bg-slate-800 text-white placeholder-slate-400 px-3 py-2 rounded-lg border border-slate-700 focus:border-indigo-500">
+                                        class="w-full bg-slate-800 text-white placeholder-slate-400 px-3 py-2 rounded-xl border border-slate-700 focus:border-indigo-500">
                                 </div>
 
                                 <div>
                                     <label class="block text-slate-300 text-sm font-semibold mb-2">Phone</label>
                                     <input type="tel" value="+1 (555) 123-4567"
-                                        class="w-full bg-slate-800 text-white placeholder-slate-400 px-3 py-2 rounded-lg border border-slate-700 focus:border-indigo-500">
+                                        class="w-full bg-slate-800 text-white placeholder-slate-400 px-3 py-2 rounded-xl border border-slate-700 focus:border-indigo-500">
                                 </div>
 
                                 <div>
                                     <label class="block text-slate-300 text-sm font-semibold mb-2">Bio</label>
                                     <textarea rows="3"
-                                        class="w-full bg-slate-800 text-white placeholder-slate-400 px-3 py-2 rounded-lg border border-slate-700 focus:border-indigo-500"
+                                        class="w-full bg-slate-800 text-white placeholder-slate-400 px-3 py-2 rounded-xl border border-slate-700 focus:border-indigo-500"
                                         placeholder="Tell us about yourself...">Managing Partner with 15+ years of experience in corporate law and criminal defense.</textarea>
                                 </div>
 
-                                <button class="btn-gold">Save Changes</button>
+                                <button class="btn-indigo">Save Changes</button>
                             </div>
                         </div>
 
@@ -1502,22 +1509,22 @@
                                         <label class="flex items-center justify-between">
                                             <span class="text-slate-300">Case Updates</span>
                                             <input type="checkbox" checked
-                                                class="form-checkbox h-5 w-5 text-amber-600 bg-slate-800 border-slate-600 rounded">
+                                                class="form-checkbox h-5 w-5 text-indigo-600 bg-slate-800 border-slate-600 rounded">
                                         </label>
                                         <label class="flex items-center justify-between">
                                             <span class="text-slate-300">Court Reminders</span>
                                             <input type="checkbox" checked
-                                                class="form-checkbox h-5 w-5 text-amber-600 bg-slate-800 border-slate-600 rounded">
+                                                class="form-checkbox h-5 w-5 text-indigo-600 bg-slate-800 border-slate-600 rounded">
                                         </label>
                                         <label class="flex items-center justify-between">
                                             <span class="text-slate-300">Payment Notifications</span>
                                             <input type="checkbox"
-                                                class="form-checkbox h-5 w-5 text-amber-600 bg-slate-800 border-slate-600 rounded">
+                                                class="form-checkbox h-5 w-5 text-indigo-600 bg-slate-800 border-slate-600 rounded">
                                         </label>
                                         <label class="flex items-center justify-between">
                                             <span class="text-slate-300">Weekly Reports</span>
                                             <input type="checkbox" checked
-                                                class="form-checkbox h-5 w-5 text-amber-600 bg-slate-800 border-slate-600 rounded">
+                                                class="form-checkbox h-5 w-5 text-indigo-600 bg-slate-800 border-slate-600 rounded">
                                         </label>
                                     </div>
                                 </div>
@@ -1529,22 +1536,22 @@
                                             <label class="block text-slate-300 text-sm font-semibold mb-2">Current
                                                 Password</label>
                                             <input type="password"
-                                                class="w-full bg-slate-800 text-white placeholder-slate-400 px-3 py-2 rounded-lg border border-slate-700 focus:border-indigo-500">
+                                                class="w-full bg-slate-800 text-white placeholder-slate-400 px-3 py-2 rounded-xl border border-slate-700 focus:border-indigo-500">
                                         </div>
                                         <div>
                                             <label class="block text-slate-300 text-sm font-semibold mb-2">New
                                                 Password</label>
                                             <input type="password"
-                                                class="w-full bg-slate-800 text-white placeholder-slate-400 px-3 py-2 rounded-lg border border-slate-700 focus:border-indigo-500">
+                                                class="w-full bg-slate-800 text-white placeholder-slate-400 px-3 py-2 rounded-xl border border-slate-700 focus:border-indigo-500">
                                         </div>
                                         <div>
                                             <label class="block text-slate-300 text-sm font-semibold mb-2">Confirm New
                                                 Password</label>
                                             <input type="password"
-                                                class="w-full bg-slate-800 text-white placeholder-slate-400 px-3 py-2 rounded-lg border border-slate-700 focus:border-indigo-500">
+                                                class="w-full bg-slate-800 text-white placeholder-slate-400 px-3 py-2 rounded-xl border border-slate-700 focus:border-indigo-500">
                                         </div>
                                         <button
-                                            class="w-full bg-slate-800 hover:bg-slate-700 text-white px-4 py-2 rounded-lg transition-colors">
+                                            class="w-full bg-slate-800 hover:bg-slate-700 text-white px-4 py-2 rounded-xl transition-colors">
                                             Update Password
                                         </button>
                                     </div>
@@ -1552,7 +1559,7 @@
 
                                 <div>
                                     <h4 class="text-white font-semibold mb-4">Two-Factor Authentication</h4>
-                                    <div class="flex items-center justify-between p-4 bg-slate-900 rounded-lg">
+                                    <div class="flex items-center justify-between p-4 bg-slate-900 rounded-xl">
                                         <div>
                                             <div class="text-white font-semibold">SMS Authentication</div>
                                             <div class="text-slate-400 text-sm">+1 (555) ••• -4567</div>
@@ -1604,9 +1611,9 @@
                                     class="aspect-square p-2 text-white text-sm hover:bg-slate-800 rounded cursor-pointer">
                                     3</div>
                                 <div
-                                    class="aspect-square p-2 text-white text-sm bg-amber-600 bg-opacity-20 rounded relative">
+                                    class="aspect-square p-2 text-white text-sm bg-indigo-600 bg-opacity-20 rounded relative">
                                     4
-                                    <div class="w-2 h-2 bg-amber-600 rounded-full absolute bottom-1 right-1"></div>
+                                    <div class="w-2 h-2 bg-indigo-600 rounded-full absolute bottom-1 right-1"></div>
                                 </div>
                                 <div
                                     class="aspect-square p-2 text-white text-sm hover:bg-slate-800 rounded cursor-pointer">
@@ -1632,9 +1639,9 @@
                                     class="aspect-square p-2 text-white text-sm hover:bg-slate-800 rounded cursor-pointer">
                                     11</div>
                                 <div
-                                    class="aspect-square p-2 text-white text-sm bg-blue-600 bg-opacity-20 rounded relative">
+                                    class="aspect-square p-2 text-white text-sm bg-indigo-600 bg-opacity-20 rounded relative">
                                     12
-                                    <div class="w-2 h-2 bg-blue-600 rounded-full absolute bottom-1 right-1"></div>
+                                    <div class="w-2 h-2 bg-indigo-600 rounded-full absolute bottom-1 right-1"></div>
                                 </div>
                                 <div
                                     class="aspect-square p-2 text-white text-sm hover:bg-slate-800 rounded cursor-pointer">
@@ -1703,19 +1710,19 @@
                             <h3 class="text-lg font-bold text-white mb-4">Upcoming Events</h3>
                             <div class="space-y-4">
                                 <div
-                                    class="p-3 bg-amber-600 bg-opacity-10 border border-amber-600 border-opacity-30 rounded-lg">
+                                    class="p-3 bg-indigo-600 bg-opacity-10 border border-indigo-600 border-opacity-30 rounded-xl">
                                     <div class="flex items-start gap-3">
-                                        <div class="w-3 h-3 bg-amber-600 rounded-full mt-1.5"></div>
+                                        <div class="w-3 h-3 bg-indigo-600 rounded-full mt-1.5"></div>
                                         <div class="flex-1">
                                             <div class="text-white font-semibold text-sm">Trial - Jones Case</div>
-                                            <div class="text-amber-400 text-xs">Dec 4, 9:00 AM</div>
+                                            <div class="text-indigo-400 text-xs">Dec 4, 9:00 AM</div>
                                             <div class="text-slate-400 text-xs mt-1">Room 301, Supreme Court</div>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div
-                                    class="p-3 bg-red-600 bg-opacity-10 border border-red-600 border-opacity-30 rounded-lg">
+                                    class="p-3 bg-red-600 bg-opacity-10 border border-red-600 border-opacity-30 rounded-xl">
                                     <div class="flex items-start gap-3">
                                         <div class="w-3 h-3 bg-red-600 rounded-full mt-1.5"></div>
                                         <div class="flex-1">
@@ -1727,19 +1734,19 @@
                                 </div>
 
                                 <div
-                                    class="p-3 bg-blue-600 bg-opacity-10 border border-blue-600 border-opacity-30 rounded-lg">
+                                    class="p-3 bg-indigo-600 bg-opacity-10 border border-indigo-600 border-opacity-30 rounded-xl">
                                     <div class="flex items-start gap-3">
-                                        <div class="w-3 h-3 bg-blue-600 rounded-full mt-1.5"></div>
+                                        <div class="w-3 h-3 bg-indigo-600 rounded-full mt-1.5"></div>
                                         <div class="flex-1">
                                             <div class="text-white font-semibold text-sm">Client Meeting</div>
-                                            <div class="text-blue-400 text-xs">Dec 12, 11:00 AM</div>
+                                            <div class="text-indigo-400 text-xs">Dec 12, 11:00 AM</div>
                                             <div class="text-slate-400 text-xs mt-1">Office - Wayne Enterprises</div>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div
-                                    class="p-3 bg-green-600 bg-opacity-10 border border-green-600 border-opacity-30 rounded-lg">
+                                    class="p-3 bg-green-600 bg-opacity-10 border border-green-600 border-opacity-30 rounded-xl">
                                     <div class="flex items-start gap-3">
                                         <div class="w-3 h-3 bg-green-600 rounded-full mt-1.5"></div>
                                         <div class="flex-1">
@@ -1752,7 +1759,7 @@
                             </div>
 
                             <button
-                                class="w-full mt-4 px-4 py-2 bg-slate-800 hover:bg-slate-700 text-white rounded-lg transition-colors">
+                                class="w-full mt-4 px-4 py-2 bg-slate-800 hover:bg-slate-700 text-white rounded-xl transition-colors">
                                 <i class="fas fa-plus mr-2"></i>Add Event
                             </button>
                         </div>
@@ -1764,13 +1771,13 @@
                     <div class="glass-dark rounded-xl p-6">
                         <div class="flex items-center justify-between mb-6">
                             <h3 class="text-2xl font-bold text-white">Document Management</h3>
-                            <button class="btn-gold text-sm">
+                            <button class="btn-indigo text-sm">
                                 <i class="fas fa-plus mr-2"></i>Upload Document
                             </button>
                         </div>
 
                         <div class="grid lg:grid-cols-4 gap-4 mb-6">
-                            <div class="bg-slate-900 p-4 rounded-lg border border-slate-800">
+                            <div class="bg-slate-900 p-4 rounded-xl border border-slate-800">
                                 <div class="flex items-center gap-3 mb-3">
                                     <i class="fas fa-file-pdf text-2xl text-red-500"></i>
                                     <div>
@@ -1781,9 +1788,9 @@
                                 <div class="text-slate-500 text-xs">2 days ago • 1.2 MB</div>
                             </div>
 
-                            <div class="bg-slate-900 p-4 rounded-lg border border-slate-800">
+                            <div class="bg-slate-900 p-4 rounded-xl border border-slate-800">
                                 <div class="flex items-center gap-3 mb-3">
-                                    <i class="fas fa-file-word text-2xl text-blue-500"></i>
+                                    <i class="fas fa-file-word text-2xl text-indigo-500"></i>
                                     <div>
                                         <div class="text-white font-semibold text-sm">Contract Draft</div>
                                         <div class="text-slate-400 text-xs">Wayne Enterprises</div>
@@ -1792,7 +1799,7 @@
                                 <div class="text-slate-500 text-xs">1 week ago • 856 KB</div>
                             </div>
 
-                            <div class="bg-slate-900 p-4 rounded-lg border border-slate-800">
+                            <div class="bg-slate-900 p-4 rounded-xl border border-slate-800">
                                 <div class="flex items-center gap-3 mb-3">
                                     <i class="fas fa-file-excel text-2xl text-green-500"></i>
                                     <div>
@@ -1803,9 +1810,9 @@
                                 <div class="text-slate-500 text-xs">3 days ago • 2.4 MB</div>
                             </div>
 
-                            <div class="bg-slate-900 p-4 rounded-lg border border-slate-800">
+                            <div class="bg-slate-900 p-4 rounded-xl border border-slate-800">
                                 <div class="flex items-center gap-3 mb-3">
-                                    <i class="fas fa-file-image text-2xl text-purple-500"></i>
+                                    <i class="fas fa-file-image text-2xl text-indigo-500"></i>
                                     <div>
                                         <div class="text-white font-semibold text-sm">Evidence Photos</div>
                                         <div class="text-slate-400 text-xs">Johnson Case</div>
@@ -1831,22 +1838,22 @@
                                 <div>
                                     <label class="block text-sm font-semibold text-slate-300 mb-2">Full Name</label>
                                     <input type="text" value="Alexander Specter"
-                                        class="w-full bg-slate-800 text-white placeholder-slate-400 px-4 py-2 rounded-lg border border-slate-700 focus:border-indigo-500">
+                                        class="w-full bg-slate-800 text-white placeholder-slate-400 px-4 py-2 rounded-xl border border-slate-700 focus:border-indigo-500">
                                 </div>
                                 <div>
                                     <label class="block text-sm font-semibold text-slate-300 mb-2">Email</label>
                                     <input type="email" value="alexander@lexicon.law"
-                                        class="w-full bg-slate-800 text-white placeholder-slate-400 px-4 py-2 rounded-lg border border-slate-700 focus:border-indigo-500">
+                                        class="w-full bg-slate-800 text-white placeholder-slate-400 px-4 py-2 rounded-xl border border-slate-700 focus:border-indigo-500">
                                 </div>
                                 <div>
                                     <label class="block text-sm font-semibold text-slate-300 mb-2">Position</label>
                                     <input type="text" value="Managing Partner"
-                                        class="w-full bg-slate-800 text-white placeholder-slate-400 px-4 py-2 rounded-lg border border-slate-700 focus:border-indigo-500">
+                                        class="w-full bg-slate-800 text-white placeholder-slate-400 px-4 py-2 rounded-xl border border-slate-700 focus:border-indigo-500">
                                 </div>
                                 <div>
                                     <label class="block text-sm font-semibold text-slate-300 mb-2">Bar Number</label>
                                     <input type="text" value="NY-123456"
-                                        class="w-full bg-slate-800 text-white placeholder-slate-400 px-4 py-2 rounded-lg border border-slate-700 focus:border-indigo-500">
+                                        class="w-full bg-slate-800 text-white placeholder-slate-400 px-4 py-2 rounded-xl border border-slate-700 focus:border-indigo-500">
                                 </div>
                             </div>
                         </div>
@@ -1894,7 +1901,7 @@
 
                             <div class="mt-6 pt-6 border-t border-slate-700">
                                 <button
-                                    class="w-full bg-amber-600 hover:bg-amber-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors">
+                                    class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-xl transition-colors">
                                     Save Changes
                                 </button>
                             </div>
@@ -1922,13 +1929,13 @@
 
             // Update sidebar navigation states
             document.querySelectorAll('.tab-nav-btn').forEach(btn => {
-                btn.classList.remove('text-amber-600', 'bg-slate-800');
+                btn.classList.remove('text-indigo-600', 'bg-slate-800');
                 btn.classList.add('text-slate-300');
             });
 
             const activeNavBtn = document.querySelector(`.tab-nav-btn[data-tab="${tabName}"]`);
             if (activeNavBtn) {
-                activeNavBtn.classList.add('text-amber-600', 'bg-slate-800');
+                activeNavBtn.classList.add('text-indigo-600', 'bg-slate-800');
                 activeNavBtn.classList.remove('text-slate-300');
             }
         }
@@ -2001,8 +2008,8 @@
                         datasets: [{
                             label: 'Revenue ($M)',
                             data: [0.5, 0.6, 0.7, 0.65, 0.8, 0.75, 0.85, 0.9, 0.95, 0.88, 0.92, 1.0],
-                            borderColor: 'rgba(217, 119, 6, 1)',
-                            backgroundColor: 'rgba(217, 119, 6, 0.1)',
+                            borderColor: 'rgba(99, 102, 241, 1)',
+                            backgroundColor: 'rgba(99, 102, 241, 0.1)',
                             tension: 0.4,
                             fill: true
                         }]
@@ -2038,10 +2045,10 @@
                         datasets: [{
                             data: [35, 25, 20, 20],
                             backgroundColor: [
-                                'rgba(102, 126, 234, 0.8)',
-                                'rgba(240, 147, 251, 0.8)',
-                                'rgba(79, 172, 254, 0.8)',
-                                'rgba(16, 185, 129, 0.8)'
+                                'rgba(79, 70, 229, 0.8)',
+                                'rgba(99, 102, 241, 0.8)',
+                                'rgba(245, 158, 11, 0.8)',
+                                'rgba(180, 83, 9, 0.8)'
                             ],
                             borderWidth: 0
                         }]
@@ -2070,9 +2077,9 @@
                             label: 'Win Rate %',
                             data: [95, 92, 88, 96, 90],
                             backgroundColor: [
-                                'rgba(102, 126, 234, 0.8)',
+                                'rgba(79, 70, 229, 0.8)',
                                 'rgba(240, 147, 251, 0.8)',
-                                'rgba(79, 172, 254, 0.8)',
+                                'rgba(99, 102, 241, 0.8)',
                                 'rgba(16, 185, 129, 0.8)',
                                 'rgba(245, 158, 11, 0.8)'
                             ],

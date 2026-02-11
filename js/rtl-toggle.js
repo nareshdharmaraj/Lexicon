@@ -400,7 +400,7 @@ class AlignmentManager {
     // Robust event delegation for all toggle buttons (mobile & desktop)
     document.body.addEventListener('click', (e) => {
       // Find closest toggle button
-      const target = e.target.closest('#rtl-toggle-btn, #rtl-toggle-btn-mobile, #language-toggle, [data-toggle="rtl"]');
+      const target = e.target.closest('#rtl-toggle-btn, #rtl-toggle-btn-mobile, #language-toggle, #mobile-language-toggle, [data-toggle="rtl"]');
 
       if (target) {
         e.preventDefault();
@@ -408,13 +408,13 @@ class AlignmentManager {
         this.toggleDirection();
 
         // Force update all icons immediately
-        const allBtns = document.querySelectorAll('#rtl-toggle-btn, #rtl-toggle-btn-mobile, #language-toggle, [data-toggle="rtl"]');
+        const allBtns = document.querySelectorAll('#rtl-toggle-btn, #rtl-toggle-btn-mobile, #language-toggle, #mobile-language-toggle, [data-toggle="rtl"]');
         allBtns.forEach(btn => this.updateToggleIcon(btn));
       }
     });
 
     // Initial icon update for any buttons found on load
-    const allBtns = document.querySelectorAll('#rtl-toggle-btn, #rtl-toggle-btn-mobile, #language-toggle, [data-toggle="rtl"]');
+    const allBtns = document.querySelectorAll('#rtl-toggle-btn, #rtl-toggle-btn-mobile, #language-toggle, #mobile-language-toggle, [data-toggle="rtl"]');
     allBtns.forEach(btn => this.updateToggleIcon(btn));
   }
 
@@ -468,7 +468,7 @@ class AlignmentManager {
         position: fixed;
         top: 20px;
         right: 20px;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background: linear-gradient(135deg, #4f46e5 0%, #312e81 100%);
         color: white;
         padding: 12px 20px;
         border-radius: 8px;
@@ -523,3 +523,5 @@ if (document.readyState === 'loading') {
 } else {
   initAlignmentManager();
 }
+
+

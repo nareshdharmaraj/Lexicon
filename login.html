@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portal Login - LexIcon</title>
 
@@ -38,7 +39,7 @@
 </head>
 
 <body
-    class="bg-gradient-to-br from-slate-950 via-indigo-950 to-purple-950 min-h-screen flex items-center justify-center relative overflow-hidden">
+    class="bg-gradient-to-br from-slate-950 via-indigo-950 to-indigo-950 min-h-screen flex items-center justify-center relative overflow-hidden">
 
     <!-- Animated Background -->
     <div class="absolute inset-0">
@@ -46,7 +47,7 @@
             class="absolute top-20 left-10 w-96 h-96 bg-indigo-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob">
         </div>
         <div
-            class="absolute top-40 right-10 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-2000">
+            class="absolute top-40 right-10 w-96 h-96 bg-indigo-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-2000">
         </div>
         <div
             class="absolute bottom-20 left-1/2 w-96 h-96 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-4000">
@@ -55,47 +56,47 @@
 
     <!-- Login/Register Container -->
     <div class="relative w-full max-w-5xl mx-4 my-8 auth-container">
-        <div class="grid md:grid-cols-2 gap-0 rounded-2xl overflow-hidden shadow-2xl auth-card max-h-[90vh] overflow-y-auto"
+        <div class="grid md:grid-cols-2 gap-0 rounded-xl overflow-hidden shadow-2xl auth-card max-h-[90vh] overflow-y-auto"
             id="authCard">
             <!-- Left: Branding -->
             <div
-                class="relative bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 p-6 md:p-8 flex flex-col justify-center items-center text-white auth-face">
+                class="relative bg-gradient-to-br from-indigo-900 via-indigo-800 to-pink-900 p-6 md:p-8 flex flex-col justify-center items-center text-white auth-face">
                 <div class="absolute inset-0 opacity-20">
                     <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1000" alt="Background"
                         class="w-full h-full object-cover">
                 </div>
 
                 <div class="relative z-10 text-center">
-                    <div class="flex items-center justify-center gap-2 mb-4">
+                    <a href="index.html" class="flex items-center justify-center gap-2 mb-4 group">
                         <div
-                            class="w-10 h-10 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center">
+                            class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-indigo-600 flex items-center justify-center group-hover:scale-110 transition-transform">
                             <i class="fas fa-balance-scale text-white text-xl"></i>
                         </div>
                         <h1 class="text-3xl md:text-4xl font-bold gradient-text"
                             style="font-family: 'Playfair Display', serif; background: linear-gradient(135deg, #fff 0%, #e0e7ff 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
                             LexIcon
                         </h1>
-                    </div>
+                    </a>
                     <p class="text-base md:text-lg text-slate-200 mb-4">
                         Secure Portal Access
                     </p>
-                    <div class="w-16 h-0.5 bg-gradient-to-r from-indigo-400 to-purple-400 mx-auto mb-4"></div>
+                    <div class="w-16 h-0.5 bg-gradient-to-r from-indigo-400 to-indigo-400 mx-auto mb-4"></div>
 
                     <div class="space-y-3">
-                        <div class="glass rounded-lg p-3 backdrop-blur-xl border border-white/20">
+                        <div class="glass rounded-xl p-3 backdrop-blur-xl border border-white/20">
                             <i class="fas fa-shield-halved text-2xl text-emerald-400 mb-1"></i>
                             <p class="text-slate-300 text-xs">
                                 256-bit SSL Encryption
                             </p>
                         </div>
-                        <div class="glass rounded-lg p-3 backdrop-blur-xl border border-white/20">
-                            <i class="fas fa-clock text-2xl text-blue-400 mb-1"></i>
+                        <div class="glass rounded-xl p-3 backdrop-blur-xl border border-white/20">
+                            <i class="fas fa-clock text-2xl text-indigo-400 mb-1"></i>
                             <p class="text-slate-300 text-xs">
                                 24/7 Secure Access
                             </p>
                         </div>
-                        <div class="glass rounded-lg p-3 backdrop-blur-xl border border-white/20">
-                            <i class="fas fa-user-shield text-2xl text-purple-400 mb-1"></i>
+                        <div class="glass rounded-xl p-3 backdrop-blur-xl border border-white/20">
+                            <i class="fas fa-user-shield text-2xl text-indigo-400 mb-1"></i>
                             <p class="text-slate-300 text-xs">
                                 Multi-Factor Authentication
                             </p>
@@ -107,13 +108,13 @@
             <!-- Right: Login Form -->
             <div class="bg-white p-6 md:p-8 relative auth-face">
                 <!-- Login/Register Toggle -->
-                <div class="flex gap-2 mb-4 bg-slate-100 rounded-lg p-1">
+                <div class="flex gap-2 mb-4 bg-slate-100 rounded-xl p-1">
                     <button id="login-toggle"
-                        class="flex-1 py-2 text-center font-semibold text-xs md:text-sm transition-all duration-300 bg-white text-indigo-600 rounded-lg shadow-md">
+                        class="flex-1 py-2 text-center font-semibold text-xs md:text-sm transition-all duration-300 bg-white text-indigo-600 rounded-xl shadow-md">
                         <i class="fas fa-sign-in-alt mr-1"></i>Login
                     </button>
                     <button id="register-toggle"
-                        class="flex-1 py-2 text-center font-semibold text-xs md:text-sm transition-all duration-300 text-slate-600 rounded-lg hover:bg-white/50">
+                        class="flex-1 py-2 text-center font-semibold text-xs md:text-sm transition-all duration-300 text-slate-600 rounded-xl hover:bg-white/50">
                         <i class="fas fa-user-plus mr-1"></i>Register
                     </button>
                 </div>
@@ -121,18 +122,18 @@
                 <!-- Portal Type Selection -->
                 <div class="flex gap-2 mb-4">
                     <button id="client-portal"
-                        class="flex-1 py-2 px-3 text-center font-semibold text-xs md:text-sm transition-all duration-300 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg shadow-lg portal-btn active">
+                        class="flex-1 py-2 px-3 text-center font-semibold text-xs md:text-sm transition-all duration-300 bg-gradient-to-r from-indigo-600 to-indigo-600 text-white rounded-xl shadow-lg portal-btn active">
                         <i class="fas fa-user mr-1"></i>Client
                     </button>
                     <button id="attorney-portal"
-                        class="flex-1 py-2 px-3 text-center font-semibold text-xs md:text-sm transition-all duration-300 bg-slate-200 text-slate-600 rounded-lg hover:bg-slate-300 portal-btn">
+                        class="flex-1 py-2 px-3 text-center font-semibold text-xs md:text-sm transition-all duration-300 bg-slate-200 text-slate-600 rounded-xl hover:bg-slate-300 portal-btn">
                         <i class="fas fa-briefcase mr-1"></i>Attorney
                     </button>
                 </div>
 
                 <div id="login-form">
                     <h2 class="text-2xl md:text-3xl font-bold gradient-text mb-1"
-                        style="font-family: 'Playfair Display', serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
+                        style="font-family: 'Playfair Display', serif; background: linear-gradient(135deg, #4f46e5 0%, #312e81 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
                         Welcome Back
                     </h2>
                     <p class="text-slate-600 mb-4 text-sm">Enter your credentials to access your portal</p>
@@ -144,7 +145,7 @@
                                 <i class="fas fa-envelope text-indigo-600 mr-1"></i>Email Address
                             </label>
                             <input type="email" placeholder="your.email@example.com" required
-                                class="w-full px-3 py-2 border-2 border-slate-200 rounded-lg focus:border-indigo-600 focus:outline-none transition-all hover:border-slate-300 text-sm">
+                                class="w-full px-3 py-2 border-2 border-slate-200 rounded-xl focus:border-indigo-600 focus:outline-none transition-all hover:border-slate-300 text-sm">
                         </div>
 
                         <!-- Password -->
@@ -153,7 +154,7 @@
                                 <i class="fas fa-lock text-indigo-600 mr-1"></i>Password
                             </label>
                             <input type="password" placeholder="Enter your password" required
-                                class="w-full px-3 py-2 border-2 border-slate-200 rounded-lg focus:border-indigo-600 focus:outline-none transition-all hover:border-slate-300 text-sm">
+                                class="w-full px-3 py-2 border-2 border-slate-200 rounded-xl focus:border-indigo-600 focus:outline-none transition-all hover:border-slate-300 text-sm">
                         </div>
 
                         <!-- Remember Me & Forgot Password -->
@@ -166,14 +167,14 @@
                                     me</span>
                             </label>
                             <a href="#"
-                                class="text-indigo-600 hover:text-purple-600 text-sm font-semibold transition-colors">
+                                class="text-indigo-600 hover:text-indigo-600 text-sm font-semibold transition-colors">
                                 Forgot Password?
                             </a>
                         </div>
 
                         <!-- Submit Button -->
                         <button type="submit"
-                            class="w-full py-2.5 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all hover:scale-105 text-sm">
+                            class="w-full py-2.5 bg-gradient-to-r from-indigo-600 to-indigo-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all hover:scale-105 text-sm">
                             <i class="fas fa-sign-in-alt mr-2"></i>Sign In
                         </button>
 
@@ -190,16 +191,16 @@
                         <!-- Social Login -->
                         <div class="grid grid-cols-3 gap-2">
                             <button type="button"
-                                class="flex items-center justify-center gap-2 py-2 border-2 border-slate-200 rounded-lg hover:border-indigo-600 hover:bg-slate-50 transition-all">
+                                class="flex items-center justify-center gap-2 py-2 border-2 border-slate-200 rounded-xl hover:border-indigo-600 hover:bg-slate-50 transition-all">
                                 <i class="fab fa-google text-lg text-red-500"></i>
                             </button>
                             <button type="button"
-                                class="flex items-center justify-center gap-2 py-2 border-2 border-slate-200 rounded-lg hover:border-indigo-600 hover:bg-slate-50 transition-all">
-                                <i class="fab fa-microsoft text-lg text-blue-600"></i>
+                                class="flex items-center justify-center gap-2 py-2 border-2 border-slate-200 rounded-xl hover:border-indigo-600 hover:bg-slate-50 transition-all">
+                                <i class="fab fa-microsoft text-lg text-indigo-600"></i>
                             </button>
                             <button type="button"
-                                class="flex items-center justify-center gap-2 py-2 border-2 border-slate-200 rounded-lg hover:border-indigo-600 hover:bg-slate-50 transition-all">
-                                <i class="fab fa-linkedin text-lg text-blue-700"></i>
+                                class="flex items-center justify-center gap-2 py-2 border-2 border-slate-200 rounded-xl hover:border-indigo-600 hover:bg-slate-50 transition-all">
+                                <i class="fab fa-linkedin text-lg text-indigo-700"></i>
                             </button>
                         </div>
 
@@ -207,7 +208,7 @@
                         <div class="mt-6 text-center text-sm">
                             <span class="text-slate-600">Don't have an account?</span>
                             <button type="button" id="start-register-btn"
-                                class="font-semibold text-indigo-600 hover:text-purple-600 ml-1 hover:underline transition-all">
+                                class="font-semibold text-indigo-600 hover:text-indigo-600 ml-1 hover:underline transition-all">
                                 Register Now
                             </button>
                         </div>
@@ -219,7 +220,7 @@
                     <!-- Progress Steps -->
                     <div class="flex items-center justify-between mb-4">
                         <div class="flex items-center flex-1">
-                            <div class="w-8 h-8 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white flex items-center justify-center font-bold text-sm step-indicator"
+                            <div class="w-8 h-8 rounded-full bg-gradient-to-r from-indigo-600 to-indigo-600 text-white flex items-center justify-center font-bold text-sm step-indicator"
                                 data-step="1">1</div>
                             <div class="flex-1 h-0.5 bg-slate-200 mx-1 step-line"></div>
                         </div>
@@ -233,7 +234,7 @@
                     </div>
 
                     <h2 class="text-2xl md:text-3xl font-bold gradient-text mb-1"
-                        style="font-family: 'Playfair Display', serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
+                        style="font-family: 'Playfair Display', serif; background: linear-gradient(135deg, #4f46e5 0%, #312e81 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
                         Create Account
                     </h2>
                     <p class="text-slate-600 mb-4 text-sm" id="step-description">Step 1: Basic Information</p>
@@ -247,7 +248,7 @@
                                         <i class="fas fa-user text-indigo-600 mr-1"></i>Full Name
                                     </label>
                                     <input type="text" id="reg-name" placeholder="John Doe"
-                                        class="w-full px-3 py-2 border-2 border-slate-200 rounded-lg focus:border-indigo-600 focus:outline-none transition-all hover:border-slate-300 text-sm">
+                                        class="w-full px-3 py-2 border-2 border-slate-200 rounded-xl focus:border-indigo-600 focus:outline-none transition-all hover:border-slate-300 text-sm">
                                 </div>
 
                                 <div>
@@ -255,7 +256,7 @@
                                         <i class="fas fa-envelope text-indigo-600 mr-1"></i>Email Address
                                     </label>
                                     <input type="email" id="reg-email" placeholder="your.email@example.com"
-                                        class="w-full px-3 py-2 border-2 border-slate-200 rounded-lg focus:border-indigo-600 focus:outline-none transition-all hover:border-slate-300 text-sm">
+                                        class="w-full px-3 py-2 border-2 border-slate-200 rounded-xl focus:border-indigo-600 focus:outline-none transition-all hover:border-slate-300 text-sm">
                                 </div>
 
                                 <div>
@@ -263,7 +264,7 @@
                                         <i class="fas fa-phone text-indigo-600 mr-1"></i>Phone Number
                                     </label>
                                     <input type="tel" id="reg-phone" placeholder="+1 (555) 123-4567"
-                                        class="w-full px-3 py-2 border-2 border-slate-200 rounded-lg focus:border-indigo-600 focus:outline-none transition-all hover:border-slate-300 text-sm">
+                                        class="w-full px-3 py-2 border-2 border-slate-200 rounded-xl focus:border-indigo-600 focus:outline-none transition-all hover:border-slate-300 text-sm">
                                 </div>
                             </div>
                         </div>
@@ -276,7 +277,7 @@
                                         <i class="fas fa-lock text-indigo-600 mr-1"></i>Password
                                     </label>
                                     <input type="password" id="reg-password" placeholder="Create a strong password"
-                                        class="w-full px-3 py-2 border-2 border-slate-200 rounded-lg focus:border-indigo-600 focus:outline-none transition-all hover:border-slate-300 text-sm">
+                                        class="w-full px-3 py-2 border-2 border-slate-200 rounded-xl focus:border-indigo-600 focus:outline-none transition-all hover:border-slate-300 text-sm">
                                     <p class="text-xs text-slate-500 mt-1">Must be at least 8 characters with numbers
                                         and special characters</p>
                                 </div>
@@ -287,7 +288,7 @@
                                     </label>
                                     <input type="password" id="reg-confirm-password"
                                         placeholder="Re-enter your password"
-                                        class="w-full px-3 py-2 border-2 border-slate-200 rounded-lg focus:border-indigo-600 focus:outline-none transition-all hover:border-slate-300 text-sm">
+                                        class="w-full px-3 py-2 border-2 border-slate-200 rounded-xl focus:border-indigo-600 focus:outline-none transition-all hover:border-slate-300 text-sm">
                                 </div>
 
                                 <div class="bg-indigo-50 border-l-4 border-indigo-600 p-3 rounded">
@@ -310,10 +311,10 @@
                         <div class="registration-step" data-step="3" style="display: none;">
                             <div class="space-y-4">
                                 <div
-                                    class="bg-gradient-to-br from-indigo-50 to-purple-50 p-6 rounded-xl border border-indigo-200">
+                                    class="bg-gradient-to-br from-indigo-50 to-indigo-50 p-6 rounded-xl border border-indigo-200">
                                     <div class="flex items-center gap-4 mb-4">
                                         <div
-                                            class="w-16 h-16 rounded-full bg-gradient-to-br from-indigo-600 to-purple-600 flex items-center justify-center">
+                                            class="w-16 h-16 rounded-full bg-gradient-to-br from-indigo-600 to-indigo-600 flex items-center justify-center">
                                             <i class="fas fa-check text-3xl text-white"></i>
                                         </div>
                                         <div>
@@ -368,15 +369,15 @@
                         <!-- Navigation Buttons -->
                         <div class="flex gap-3 pt-4">
                             <button type="button" id="reg-prev-btn" style="display: none;"
-                                class="flex-1 py-3 bg-slate-200 text-slate-700 font-semibold rounded-lg hover:bg-slate-300 transition-all">
+                                class="flex-1 py-3 bg-slate-200 text-slate-700 font-semibold rounded-xl hover:bg-slate-300 transition-all">
                                 <i class="fas fa-arrow-left mr-2"></i>Previous
                             </button>
                             <button type="button" id="reg-next-btn"
-                                class="flex-1 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all hover:scale-105">
+                                class="flex-1 py-3 bg-gradient-to-r from-indigo-600 to-indigo-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all hover:scale-105">
                                 Next<i class="fas fa-arrow-right ml-2"></i>
                             </button>
                             <button type="submit" id="reg-submit-btn" style="display: none;"
-                                class="flex-1 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all hover:scale-105">
+                                class="flex-1 py-3 bg-gradient-to-r from-indigo-600 to-indigo-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all hover:scale-105">
                                 <i class="fas fa-user-plus mr-2"></i>Create Account
                             </button>
                         </div>
@@ -394,16 +395,16 @@
                         <!-- Social Register -->
                         <div class="grid grid-cols-3 gap-3">
                             <button type="button"
-                                class="flex items-center justify-center gap-2 py-3 border-2 border-slate-200 rounded-lg hover:border-indigo-600 hover:bg-slate-50 transition-all">
+                                class="flex items-center justify-center gap-2 py-3 border-2 border-slate-200 rounded-xl hover:border-indigo-600 hover:bg-slate-50 transition-all">
                                 <i class="fab fa-google text-xl text-red-500"></i>
                             </button>
                             <button type="button"
-                                class="flex items-center justify-center gap-2 py-3 border-2 border-slate-200 rounded-lg hover:border-indigo-600 hover:bg-slate-50 transition-all">
-                                <i class="fab fa-microsoft text-xl text-blue-600"></i>
+                                class="flex items-center justify-center gap-2 py-3 border-2 border-slate-200 rounded-xl hover:border-indigo-600 hover:bg-slate-50 transition-all">
+                                <i class="fab fa-microsoft text-xl text-indigo-600"></i>
                             </button>
                             <button type="button"
-                                class="flex items-center justify-center gap-2 py-3 border-2 border-slate-200 rounded-lg hover:border-indigo-600 hover:bg-slate-50 transition-all">
-                                <i class="fab fa-linkedin text-xl text-blue-700"></i>
+                                class="flex items-center justify-center gap-2 py-3 border-2 border-slate-200 rounded-xl hover:border-indigo-600 hover:bg-slate-50 transition-all">
+                                <i class="fab fa-linkedin text-xl text-indigo-700"></i>
                             </button>
                         </div>
                     </form>
@@ -476,17 +477,17 @@
         let selectedPortal = 'client';
 
         clientPortal.addEventListener('click', function () {
-            this.classList.add('bg-gradient-to-r', 'from-indigo-600', 'to-purple-600', 'text-white', 'shadow-lg');
+            this.classList.add('bg-gradient-to-r', 'from-indigo-600', 'to-indigo-600', 'text-white', 'shadow-lg');
             this.classList.remove('bg-slate-200', 'text-slate-600');
-            attorneyPortal.classList.remove('bg-gradient-to-r', 'from-indigo-600', 'to-purple-600', 'text-white', 'shadow-lg');
+            attorneyPortal.classList.remove('bg-gradient-to-r', 'from-indigo-600', 'to-indigo-600', 'text-white', 'shadow-lg');
             attorneyPortal.classList.add('bg-slate-200', 'text-slate-600');
             selectedPortal = 'client';
         });
 
         attorneyPortal.addEventListener('click', function () {
-            this.classList.add('bg-gradient-to-r', 'from-indigo-600', 'to-purple-600', 'text-white', 'shadow-lg');
+            this.classList.add('bg-gradient-to-r', 'from-indigo-600', 'to-indigo-600', 'text-white', 'shadow-lg');
             this.classList.remove('bg-slate-200', 'text-slate-600');
-            clientPortal.classList.remove('bg-gradient-to-r', 'from-indigo-600', 'to-purple-600', 'text-white', 'shadow-lg');
+            clientPortal.classList.remove('bg-gradient-to-r', 'from-indigo-600', 'to-indigo-600', 'text-white', 'shadow-lg');
             clientPortal.classList.add('bg-slate-200', 'text-slate-600');
             selectedPortal = 'attorney';
         });
@@ -531,15 +532,15 @@
             document.querySelectorAll('.step-indicator').forEach((indicator, index) => {
                 const stepNum = index + 1;
                 if (stepNum < currentStep) {
-                    indicator.classList.add('bg-gradient-to-r', 'from-indigo-600', 'to-purple-600', 'text-white');
+                    indicator.classList.add('bg-gradient-to-r', 'from-indigo-600', 'to-indigo-600', 'text-white');
                     indicator.classList.remove('bg-slate-200', 'text-slate-400');
                     indicator.innerHTML = '<i class="fas fa-check text-sm"></i>';
                 } else if (stepNum === currentStep) {
-                    indicator.classList.add('bg-gradient-to-r', 'from-indigo-600', 'to-purple-600', 'text-white');
+                    indicator.classList.add('bg-gradient-to-r', 'from-indigo-600', 'to-indigo-600', 'text-white');
                     indicator.classList.remove('bg-slate-200', 'text-slate-400');
                     indicator.textContent = stepNum;
                 } else {
-                    indicator.classList.remove('bg-gradient-to-r', 'from-indigo-600', 'to-purple-600', 'text-white');
+                    indicator.classList.remove('bg-gradient-to-r', 'from-indigo-600', 'to-indigo-600', 'text-white');
                     indicator.classList.add('bg-slate-200', 'text-slate-400');
                     indicator.textContent = stepNum;
                 }
@@ -548,10 +549,10 @@
             // Update step lines
             document.querySelectorAll('.step-line').forEach((line, index) => {
                 if (index < currentStep - 1) {
-                    line.classList.add('bg-gradient-to-r', 'from-indigo-600', 'to-purple-600');
+                    line.classList.add('bg-gradient-to-r', 'from-indigo-600', 'to-indigo-600');
                     line.classList.remove('bg-slate-200');
                 } else {
-                    line.classList.remove('bg-gradient-to-r', 'from-indigo-600', 'to-purple-600');
+                    line.classList.remove('bg-gradient-to-r', 'from-indigo-600', 'to-indigo-600');
                     line.classList.add('bg-slate-200');
                 }
             });
@@ -599,23 +600,23 @@
             const confirmPassword = document.getElementById('reg-confirm-password').value;
 
             if (password !== confirmPassword) {
-                if (window.LexIconUI) {
-                    window.LexIconUI.showNotification('Passwords do not match!', 'error');
+                if (window.lexiconUI) {
+                    window.lexiconUI.showNotification('Passwords do not match!', 'error');
                 }
                 return;
             }
 
             // Check terms checkbox
             if (!document.getElementById('reg-terms').checked) {
-                if (window.LexIconUI) {
-                    window.LexIconUI.showNotification('Please accept the Terms of Service', 'error');
+                if (window.lexiconUI) {
+                    window.lexiconUI.showNotification('Please accept the Terms of Service', 'error');
                 }
                 return;
             }
 
             // Show success notification
-            if (window.LexIconUI) {
-                window.LexIconUI.showNotification('Account created successfully!', 'success');
+            if (window.lexiconUI) {
+                window.lexiconUI.showNotification('Account created successfully!', 'success');
             }
 
             // Reset and redirect to login

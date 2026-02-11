@@ -36,7 +36,7 @@ class LexIconUI {
       if (href === currentPage || (currentPage === '' && href === 'index.html')) {
         link.classList.add('active-nav');
         // Add active styling
-        link.style.color = '#4facfe';
+        link.style.color = '#4f46e5';
         const underline = link.querySelector('span');
         if (underline) {
           underline.style.width = '100%';
@@ -66,7 +66,7 @@ class LexIconUI {
     const homeLink = document.querySelector('#nav-home');
     if (homeLink && !homeLink.parentElement.classList.contains('dropdown-wrapper')) {
       const dropdown = this.createDropdown([
-        { label: 'Home - Modern (Vanguard)', url: 'index.html', icon: 'fa-rocket' },
+        { label: 'Home - Modern (LexIcon)', url: 'index.html', icon: 'fa-rocket' },
         { label: 'Home - Classic (Authority)', url: 'index2.html', icon: 'fa-building-columns' }
       ]);
 
@@ -157,7 +157,7 @@ class LexIconUI {
     items.forEach((item, index) => {
       const link = document.createElement('a');
       link.href = item.url;
-      link.className = 'block px-6 py-4 text-slate-700 hover:bg-gradient-to-r hover:from-purple-500 hover:to-blue-500 hover:text-white transition-all duration-300 font-semibold';
+      link.className = 'block px-6 py-4 text-slate-700 hover:bg-gradient-to-r hover:from-indigo-500 hover:to-indigo-600 hover:text-white transition-all duration-300 font-semibold';
       link.innerHTML = `<i class="fas ${item.icon} mr-3"></i>${item.label}`;
       dropdown.appendChild(link);
     });
@@ -176,12 +176,8 @@ class LexIconUI {
 
       if (!track) return;
 
-      const cards = Array.from(track.querySelectorAll('.carousel-card'));
+      let cards = Array.from(track.querySelectorAll('.carousel-card'));
       if (cards.length === 0) return;
-
-      const cardWidth = cards[0].offsetWidth;
-      const gap = 32;
-      const itemWidth = cardWidth + gap;
 
       // Clone first and last cards for infinite effect
       const firstClone = cards[0].cloneNode(true);
@@ -194,15 +190,46 @@ class LexIconUI {
       track.appendChild(firstClone);
       track.insertBefore(lastClone, cards[0]);
 
-      // We now have: [LastClone, Card1, Card2, ..., CardN, FirstClone]
-      // Real Start is index 1.
+      // Re-query all cards including clones for width adjustments
+      let allCards = Array.from(track.querySelectorAll('.carousel-card'));
 
       let currentIndex = 1;
+      let itemWidth = 0;
       let isTransitioning = false;
       let autoPlayInterval;
 
-      // Initial position (show Card 1)
-      track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+      // Function to set card widths and calculate dimensions
+      const updateDimensions = () => {
+        const isMobile = window.innerWidth <= 768;
+        // On mobile, card takes full width of container. On desktop, fixed 350px.
+        // We use carousel.getBoundingClientRect().width to get precise fractional width if needed
+        const containerWidth = carousel.getBoundingClientRect().width;
+        // Ensure we subtract any potential padding from the calculation if necessary, 
+        // but here container is the viewport mask.
+        const cardWidth = isMobile ? containerWidth : 350; // Fixed 350px on desktop
+        const gap = 32; // Matches gap-8 (2rem)
+
+        itemWidth = cardWidth + gap;
+
+        // Apply width to all cards
+        allCards.forEach(card => {
+          card.style.width = `${cardWidth}px`;
+          card.style.minWidth = `${cardWidth}px`; // Force compliance
+          card.style.maxWidth = `${cardWidth}px`;
+        });
+
+        // Reset position without transition
+        track.style.transition = 'none';
+        track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+      };
+
+      // Initial setup
+      updateDimensions();
+
+      // Handle Resize
+      window.addEventListener('resize', () => {
+        updateDimensions();
+      });
 
       const updateCarousel = (withTransition = true) => {
         if (withTransition) {
@@ -218,6 +245,7 @@ class LexIconUI {
       // Handle transition end for seamless jumping
       track.addEventListener('transitionend', () => {
         isTransitioning = false;
+        // Loop logic based on original card count (cards.length)
         if (currentIndex === 0) {
           track.style.transition = 'none';
           currentIndex = cards.length;
@@ -543,10 +571,10 @@ class LexIconUI {
 
   showNotification(message, type = 'info') {
     const colors = {
-      success: 'linear-gradient(135deg, #0ba360 0%, #3cba92 100%)',
-      error: 'linear-gradient(135deg, #f5576c 0%, #f093fb 100%)',
-      info: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-      warning: 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)'
+      success: 'linear-gradient(135deg, #10b981 0%, #059669 100%)',
+      error: 'linear-gradient(135deg, #4f46e5 0%, #312e81 100%)',
+      info: 'linear-gradient(135deg, #4f46e5 0%, #6366f1 100%)',
+      warning: 'linear-gradient(135deg, #6366f1 0%, #4f46e5 100%)'
     };
 
     const notification = document.createElement('div');
@@ -573,12 +601,12 @@ class LexIconUI {
 
         // Remove active from all tabs
         container.querySelectorAll('[data-tab]').forEach(t => {
-          t.classList.remove('active', 'border-purple-500', 'text-purple-600', 'bg-purple-50');
+          t.classList.remove('active', 'border-indigo-500', 'text-indigo-600', 'bg-indigo-50');
           t.classList.add('text-slate-600');
         });
 
         // Add active to clicked tab
-        tab.classList.add('active', 'border-purple-500', 'text-purple-600', 'bg-purple-50');
+        tab.classList.add('active', 'border-indigo-500', 'text-indigo-600', 'bg-indigo-50');
         tab.classList.remove('text-slate-600');
 
         // Hide all contents
@@ -620,3 +648,5 @@ document.head.appendChild(style);
 document.addEventListener('DOMContentLoaded', () => {
   window.lexiconUI = new LexIconUI();
 });
+
+
